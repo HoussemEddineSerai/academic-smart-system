@@ -1,6 +1,6 @@
 {
-  "name": "Academic Smart System",
-  "short_name": "AcademicSmart",
+  "name": "Academic Scholar System",
+  "short_name": "AcademicScholar",
   "description": "Serverless Academic Course & Lab Tracker • Developed by Serai Houssem Eddine | Ferhat Abbas University Sétif 1",
   "start_url": "./index.html",
   "scope": "./",

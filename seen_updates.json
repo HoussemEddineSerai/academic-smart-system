@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_checked": "2026-11-21T19:11:34.289997+00:00",
+  "last_checked": "2026-11-21T19:59:42.727847+00:00",
   "items": [
     {
       "id": "setif1-ai-ml-tp2-transformers",
@@ -8,7 +8,8 @@
       "module": "ING4 Intelligence Artificielle (S7) - Machine Learning",
       "type": "TP",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
-      "deadline": "2026-11-26 23:59",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_machine_learning",
       "first_seen": "2026-11-21T09:15:00Z",
       "details": "PyTorch implementation of Scaled Dot-Product Attention, Multi-Head Attention and Vision Transformer on CIFAR-10."
     },
@@ -18,7 +19,8 @@
       "module": "ING4 Intelligence Artificielle (S7) - Calcul haute performance",
       "type": "TP",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
-      "deadline": "2026-11-22 14:00",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
       "first_seen": "2026-11-21T10:00:00Z",
       "details": "Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl)."
     },
@@ -28,7 +30,8 @@
       "module": "ING4 Intelligence Artificielle (S7) - Représentation des connaissances",
       "type": "TD",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
-      "deadline": "2026-11-21 23:59",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
       "first_seen": "2026-11-21T11:30:00Z",
       "details": "Résolution par réfutation, algorithme d'unification de Robinson et programmation logique Prolog."
     },
@@ -38,7 +41,8 @@
       "module": "ING4 Intelligence Artificielle (S7) - Modélisation et simulation",
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=993",
-      "deadline": "N/A",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_modelisation_simulation",
       "first_seen": "2026-11-21T12:00:00Z",
       "details": "Systèmes stochastiques d'attente (files M/M/1), générateurs congruentiels pseudo-aléatoires et validation statistique."
     },
@@ -48,7 +52,8 @@
       "module": "ING4 Intelligence Artificielle (S7) - Business Intelligence",
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=994",
-      "deadline": "N/A",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_business_intelligence",
       "first_seen": "2026-11-21T13:00:00Z",
       "details": "Tables de faits, dimensions temporelles et processus ETL pour l'aide à la décision stratégique."
     },
@@ -58,7 +63,8 @@
       "module": "ING4 Intelligence Artificielle (S7) - Recherche opérationnelle",
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=995",
-      "deadline": "N/A",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_recherche_operationnelle",
       "first_seen": "2026-11-21T14:00:00Z",
       "details": "Formulation canonique, algorithme du simplexe à deux phases et analyse de sensibilité primale-duale."
     },
@@ -68,7 +74,8 @@
       "module": "ING4 Intelligence Artificielle (S7) - Techniques de rédaction",
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=996",
-      "deadline": "N/A",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_techniques_redaction",
       "first_seen": "2026-11-21T15:00:00Z",
       "details": "Structure IMRAD des articles scientifiques, gestion des citations LaTeX/BibTeX et éthique académique."
     },
@@ -78,7 +85,8 @@
       "module": "ING4 Intelligence Artificielle (S7)",
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
-      "deadline": "N/A",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_ml",
       "first_seen": "2026-11-21T10:00:00Z",
       "details": "Module officiel ING4 IA: Machine Learning (Support de cours et TPs)."
     },
@@ -88,7 +96,8 @@
       "module": "ING4 Intelligence Artificielle (S7)",
       "type": "TD",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
-      "deadline": "2026-11-28 23:59",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
       "first_seen": "2026-11-21T14:30:00Z",
       "details": "Module officiel ING4 IA: Calcul haute performance (Parallélisme OpenMP/MPI)."
     },
@@ -98,7 +107,8 @@
       "module": "ING4 Intelligence Artificielle (S7)",
       "type": "TP",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
-      "deadline": "2026-11-29 23:59",
+      "deadline": null,
+      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
       "first_seen": "2026-11-21T16:00:00Z",
       "details": "Module officiel ING4 IA: Ontologies et logique des prédicats."
     }

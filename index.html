@@ -121,6 +121,8 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 24px;
+      max-width: 100vw;
+      box-sizing: border-box;
     }
 
     .brand-section {
@@ -134,6 +136,29 @@
       display: block;
       max-width: 100%;
       height: 44px;
+    }
+
+    @media (max-width: 820px) {
+      header {
+        padding: 0 14px;
+        height: 60px;
+        gap: 8px;
+      }
+      .brand-section svg {
+        max-width: 210px;
+        height: 38px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 0 10px;
+        height: 56px;
+      }
+      .brand-section svg {
+        max-width: 175px;
+        height: 32px;
+      }
     }
 
     /* Desktop Navigation Tabs */
@@ -264,10 +289,15 @@
     main {
       flex: 1;
       position: relative;
-      overflow: hidden;
+      overflow-y: auto;
+      overflow-x: hidden;
       display: flex;
       flex-direction: column;
       padding-bottom: var(--bottom-nav-height);
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
     }
     @media (min-width: 820px) {
       main {
@@ -277,9 +307,9 @@
 
     .tab-content {
       display: none;
-      flex: 1;
       width: 100%;
-      height: 100%;
+      max-width: 100vw;
+      box-sizing: border-box;
     }
     .tab-content.active {
       display: flex;
@@ -290,7 +320,8 @@
        Tab 1: Interactive n8n-Style Workflow Canvas
        ========================================================================== */
     .canvas-viewport {
-      flex: 1;
+      height: 480px;
+      min-height: 400px;
       position: relative;
       overflow: hidden;
       background-color: var(--corp-canvas);
@@ -298,6 +329,20 @@
       background-size: 24px 24px;
       cursor: grab;
       touch-action: none;
+      width: 100%;
+      border-bottom: 1px solid var(--corp-border);
+    }
+    @media (max-width: 820px) {
+      .canvas-viewport {
+        height: 360px;
+        min-height: 300px;
+      }
+    }
+    @media (max-width: 480px) {
+      .canvas-viewport {
+        height: 320px;
+        min-height: 270px;
+      }
     }
     .canvas-viewport.dragging {
       cursor: grabbing;
@@ -950,25 +995,25 @@
       transition: all 0.2s;
     }
 
-    /* Yellow Badge: Safe timelines (> 1 day / 24h remaining) */
+    /* > 24 hours left: 🟢 Safe • [Countdown] (Emerald/Green corporate badge) */
     .countdown-safe {
-      background-color: var(--corp-warning-soft);
-      border: 1px solid #FDE047;
-      color: #854D0E;
+      background-color: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      color: #065F46;
     }
 
-    /* Orange Badge: Approaching deadlines (6h - 24h remaining) */
+    /* 6h – 24h left: ⏳ Approaching • [Countdown] (Orange badge) */
     .countdown-warning {
-      background-color: var(--corp-orange-soft);
-      border: 1px solid #FDBA74;
-      color: #C2410C;
+      background-color: #FFF7ED;
+      border: 1px solid #FED7AA;
+      color: #9A3412;
     }
 
-    /* Red Badge: Urgent / Critical deadlines (< 6h remaining) */
+    /* < 6h left: 🔥 Urgent • [Countdown] (Pulsing Red badge) */
     .countdown-urgent {
-      background-color: var(--corp-danger-soft);
-      border: 1px solid #FCA5A5;
-      color: #B91C1C;
+      background-color: #FEF2F2;
+      border: 1px solid #FECACA;
+      color: #991B1B;
       animation: urgentPulse 1.8s infinite;
     }
 
@@ -978,11 +1023,17 @@
       100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
     }
 
-    /* Neutral Expired or No Deadline Badge */
-    .countdown-neutral {
+    /* deadline === null: 📘 Course Material • Active */
+    .countdown-material {
       background-color: var(--corp-canvas);
       border: 1px solid var(--corp-border);
-      color: var(--corp-text-light);
+      color: #475569;
+    }
+
+    .countdown-expired {
+      background-color: #FEF2F2;
+      border: 1px solid #FCA5A5;
+      color: var(--corp-danger);
     }
 
     .card-footer-row {
@@ -992,11 +1043,20 @@
       border-top: 1px solid var(--corp-border);
       padding-top: 16px;
       margin-top: 4px;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .card-footer-meta {
       font-size: 12px;
       color: var(--corp-text-light);
+    }
+
+    .card-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     .btn-card-link {
@@ -1014,6 +1074,27 @@
     }
     .btn-card-link:hover {
       background-color: var(--corp-primary-dark);
+    }
+
+    /* Automated Google Drive Archive Button */
+    .btn-card-drive {
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      color: #065F46;
+      text-decoration: none;
+      padding: 9px 18px;
+      border-radius: var(--radius-20);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn-card-drive:hover {
+      background: #D1FAE5;
+      border-color: #6EE7B7;
+      color: #064E3B;
     }
 
     /* ==========================================================================
@@ -1050,6 +1131,281 @@
       border: 1px solid var(--corp-border);
     }
 
+    /* Floating Gemini AI Study Assistant Button */
+    .floating-gemini-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 85;
+      background: linear-gradient(135deg, #1D4ED8 0%, #2563EB 50%, #3B82F6 100%);
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 22px;
+      border-radius: var(--radius-pill);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.4), 0 2px 8px rgba(15, 23, 42, 0.1);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .floating-gemini-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 30px -4px rgba(37, 99, 235, 0.55);
+    }
+    .floating-gemini-btn:active {
+      transform: scale(0.97);
+    }
+
+    @media (max-width: 820px) {
+      .floating-gemini-btn {
+        bottom: 84px;
+        right: 18px;
+        padding: 10px 16px;
+        font-size: 12px;
+      }
+    }
+
+    .gemini-sparkle-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: sparkleGlow 3s infinite ease-in-out;
+    }
+
+    @keyframes sparkleGlow {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(255,255,255,0.6)); }
+      50% { transform: scale(1.15) rotate(10deg); filter: drop-shadow(0 0 6px rgba(255,255,255,0.9)); }
+    }
+
+    /* Gemini AI Study Modal & NotebookLM Launcher */
+    .gemini-study-card {
+      max-width: 760px;
+    }
+
+    .gemini-modal-badge {
+      width: 36px;
+      height: 36px;
+      background: var(--corp-primary-soft);
+      border-radius: var(--radius-20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .notebooklm-modules-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .notebooklm-module-item {
+      background: #FFFFFF;
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .notebooklm-module-item:hover {
+      border-color: #93C5FD;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+    }
+
+    @media (max-width: 640px) {
+      .notebooklm-module-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+    }
+
+    .module-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .module-title-strong {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--corp-text);
+    }
+
+    .module-syllabus-sub {
+      font-size: 12px;
+      color: var(--corp-text-muted);
+      line-height: 1.4;
+    }
+
+    .btn-study-notebooklm {
+      background: #FFFFFF;
+      border: 1.5px solid #2563EB;
+      color: #2563EB;
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: var(--radius-20);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .btn-study-notebooklm:hover {
+      background: #2563EB;
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Quick AI Academic Consultation Console */
+    .gemini-chat-container {
+      background: #FFFFFF;
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .gemini-chat-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .quick-prompts-row {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .quick-chip-btn {
+      background: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      color: var(--corp-text-muted);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: var(--radius-pill);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .quick-chip-btn:hover {
+      background: var(--corp-primary-soft);
+      color: var(--corp-primary);
+      border-color: #BFDBFE;
+    }
+
+    .gemini-response-box {
+      background: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 14px 16px;
+      min-height: 80px;
+      max-height: 180px;
+      overflow-y: auto;
+      margin-bottom: 12px;
+    }
+
+    .gemini-input-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .gemini-input-field {
+      flex: 1;
+      background: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 10px 16px;
+      font-size: 13.5px;
+      color: var(--corp-text);
+      outline: none;
+    }
+    .gemini-input-field:focus {
+      border-color: var(--corp-primary);
+      box-shadow: 0 0 0 3px var(--corp-primary-glow);
+    }
+
+    .btn-gemini-send {
+      background: var(--corp-primary);
+      border: none;
+      color: #FFFFFF;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-gemini-send:hover {
+      background: var(--corp-primary-dark);
+    }
+
+    /* Sound Button in Header */
+    .btn-header-sound {
+      background: transparent;
+      border: 1px solid var(--corp-border);
+      color: var(--corp-text-muted);
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-header-sound:hover {
+      background: var(--corp-surface-hover);
+      color: var(--corp-text);
+      border-color: #CBD5E1;
+    }
+    .btn-header-sound.muted {
+      color: var(--corp-danger);
+      background: var(--corp-danger-soft);
+      border-color: #FECACA;
+    }
+
+    /* Floating Confirmation Toast */
+    .notification-toast {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-100px);
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 11px 24px;
+      border-radius: var(--radius-pill);
+      font-size: 13.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+      z-index: 300;
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      pointer-events: none;
+    }
+    .notification-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
     .modal-header-bar {
       padding: 18px 24px;
       border-bottom: 1px solid var(--corp-border);
@@ -1080,6 +1436,218 @@
       border-radius: var(--radius-20);
       padding: 24px;
       box-shadow: var(--shadow-sm);
+    }
+
+    /* ==========================================================================
+       Prominent Direct Tracker Section (Directly Beneath Canvas)
+       ========================================================================== */
+    .prominent-tracker-section {
+      width: 100%;
+      background: var(--corp-canvas);
+      border-top: 1px solid var(--corp-border);
+      padding: 24px 0 36px 0;
+    }
+    .tracker-header-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .tracker-section-badge {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--corp-primary);
+      margin-bottom: 4px;
+    }
+    .tracker-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--corp-text);
+      letter-spacing: -0.2px;
+      margin-bottom: 3px;
+    }
+    .tracker-section-subtitle {
+      font-size: 13px;
+      color: var(--corp-text-muted);
+    }
+    .tracker-count-badge {
+      background: var(--corp-card);
+      border: 1px solid var(--corp-border);
+      color: var(--corp-primary);
+      font-size: 12.5px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-sm);
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       PWA Install Prompt Banner / Modal
+       ========================================================================== */
+    .pwa-install-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 250;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+    .pwa-install-overlay.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .pwa-install-card {
+      background: #FFFFFF;
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      width: 100%;
+      max-width: 420px;
+      padding: 28px 24px 22px 24px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: var(--shadow-modal);
+      transform: translateY(20px);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .pwa-install-overlay.visible .pwa-install-card {
+      transform: translateY(0);
+    }
+    .pwa-close-btn {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--corp-surface-hover);
+      border: 1px solid var(--corp-border);
+      color: var(--corp-text-muted);
+      width: 30px;
+      height: 30px;
+      border-radius: var(--radius-pill);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.15s;
+    }
+    .pwa-close-btn:hover {
+      background: #E2E8F0;
+      color: var(--corp-text);
+    }
+    .pwa-icon-box {
+      width: 56px;
+      height: 56px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pwa-icon-box svg {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+    .pwa-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--corp-text);
+      margin-bottom: 6px;
+    }
+    .pwa-desc {
+      font-size: 13px;
+      color: var(--corp-text-muted);
+      line-height: 1.45;
+      margin-bottom: 16px;
+    }
+    .pwa-features-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .pwa-chip {
+      background: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      color: var(--corp-text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+    }
+    .pwa-actions-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+    .btn-pwa-dismiss {
+      flex: 1;
+      background: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      color: var(--corp-text-muted);
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 12px;
+      border-radius: var(--radius-20);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-pwa-dismiss:hover {
+      background: #E2E8F0;
+      color: var(--corp-text);
+    }
+    .btn-pwa-install {
+      flex: 2;
+      background: var(--corp-primary);
+      border: none;
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 12px;
+      border-radius: var(--radius-20);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+      transition: background-color 0.15s, transform 0.1s;
+    }
+    .btn-pwa-install:hover {
+      background: var(--corp-primary-dark);
+    }
+    .btn-pwa-install:active {
+      transform: scale(0.97);
+    }
+    .pwa-ios-instructions {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #0369A1;
+      background: #E0F2FE;
+      border: 1px solid #BAE6FD;
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      line-height: 1.4;
+      width: 100%;
+      text-align: left;
     }
 
     /* ==========================================================================
@@ -1339,8 +1907,9 @@
 
   <!-- ========================================================================
        Security Access Gate (SHA-256 Cryptographic Verification)
+       Dual Entry: Alphanumeric Input (Physical/Virtual Keyboard) + Touch Keypad
        ======================================================================== -->
-  <div class="security-modal-overlay" id="securityPinModal">
+  <div class="security-modal-overlay" id="securityModal" data-alt-id="securityPinModal">
     <div class="security-panel-card">
       <div class="security-icon-badge">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1351,8 +1920,17 @@
       <h2 class="security-panel-title">Security Access</h2>
       <p class="security-panel-desc">Enter access PIN or password to unlock Academic Smart System.</p>
 
+      <!-- Dual Active Input: Works with Physical Keyboard, Mobile Virtual Keyboard & Touch Keypad -->
       <div class="pin-input-wrap">
-        <input type="password" id="securityPinInput" class="security-pin-input" placeholder="••••••••" autocomplete="current-password" autofocus onkeydown="if(event.key === 'Enter') validateEnteredSecurityCode()">
+        <input type="password" 
+               id="securityPinInput" 
+               class="security-pin-input" 
+               placeholder="Enter PIN or password..." 
+               autocomplete="current-password" 
+               inputmode="text"
+               autofocus 
+               oninput="onSecurityInputChange()"
+               onkeydown="if(event.key === 'Enter') validateEnteredSecurityCode()">
         <button type="button" class="pin-toggle-btn" onclick="togglePinVisibility()" title="Show/Hide">
           <svg id="pinEyeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
         </button>
@@ -1360,28 +1938,70 @@
 
       <div class="pin-error-text" id="pinErrorMsg"></div>
 
+      <!-- Touch-Friendly Numeric Keypad (Immediately active & visible together on screen) -->
       <div class="keypad-grid">
-        <button class="keypad-btn" onclick="pressPinKey('1')">1</button>
-        <button class="keypad-btn" onclick="pressPinKey('2')">2</button>
-        <button class="keypad-btn" onclick="pressPinKey('3')">3</button>
-        <button class="keypad-btn" onclick="pressPinKey('4')">4</button>
-        <button class="keypad-btn" onclick="pressPinKey('5')">5</button>
-        <button class="keypad-btn" onclick="pressPinKey('6')">6</button>
-        <button class="keypad-btn" onclick="pressPinKey('7')">7</button>
-        <button class="keypad-btn" onclick="pressPinKey('8')">8</button>
-        <button class="keypad-btn" onclick="pressPinKey('9')">9</button>
-        <button class="keypad-btn action-btn" onclick="clearPinKey()">Clear</button>
-        <button class="keypad-btn" onclick="pressPinKey('0')">0</button>
-        <button class="keypad-btn action-btn" onclick="backspacePinKey()">⌫</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('1')">1</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('2')">2</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('3')">3</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('4')">4</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('5')">5</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('6')">6</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('7')">7</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('8')">8</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('9')">9</button>
+        <button class="keypad-btn action-btn" type="button" onclick="clearPinKey()">Clear</button>
+        <button class="keypad-btn" type="button" onclick="pressPinKey('0')">0</button>
+        <button class="keypad-btn action-btn" type="button" onclick="backspacePinKey()">⌫</button>
       </div>
 
-      <button class="btn-unlock-action" onclick="validateEnteredSecurityCode()">
+      <button class="btn-unlock-action" type="button" onclick="validateEnteredSecurityCode()">
         <span>Unlock Platform</span>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
       </button>
 
       <div class="security-footer-hint">
-        Secured with SHA-256 Cryptographic Verification
+        Dual Entry Active: Physical & Virtual Keyboard + Touch Keypad
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       PWA Install Prompt Banner / Modal (One-Tap Installation)
+       ======================================================================== -->
+  <div class="pwa-install-overlay" id="pwaInstallModal">
+    <div class="pwa-install-card">
+      <button class="pwa-close-btn" type="button" onclick="dismissPwaPrompt()" title="Dismiss">✕</button>
+      <div class="pwa-icon-box">
+        <svg width="48" height="48" viewBox="0 0 44 44" fill="none">
+          <rect x="2" y="2" width="40" height="40" rx="12" fill="#2563EB"/>
+          <path d="M22 10L10.5 15.5L22 21L33.5 15.5L22 10Z" fill="#FFFFFF"/>
+          <path d="M31.5 16.5V22.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="31.5" cy="23.5" r="1.4" fill="#93C5FD"/>
+          <path d="M15.5 24.5L22 31L28.5 24.5" stroke="#93C5FD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 21V31" stroke="#93C5FD" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="15.5" cy="24.5" r="2.3" fill="#FFFFFF"/>
+          <circle cx="28.5" cy="24.5" r="2.3" fill="#FFFFFF"/>
+          <circle cx="22" cy="31" r="2.7" fill="#FFFFFF"/>
+        </svg>
+      </div>
+      <h3 class="pwa-title">Install Academic Scholar System</h3>
+      <p class="pwa-desc">
+        Install the official corporate academic app on your home screen for instant course alerts, authentic Moodle deadlines, and 1-tap NotebookLM study launcher.
+      </p>
+      <div class="pwa-features-row">
+        <span class="pwa-chip">⚡ Fast Offline Access</span>
+        <span class="pwa-chip">🔔 Due Date Badges</span>
+        <span class="pwa-chip">📱 Native Mobile Experience</span>
+      </div>
+      <div class="pwa-actions-row">
+        <button class="btn-pwa-dismiss" type="button" onclick="dismissPwaPrompt()">Later</button>
+        <button class="btn-pwa-install" id="btnPwaInstall" type="button" onclick="triggerPwaInstall()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Install App</span>
+        </button>
+      </div>
+      <div class="pwa-ios-instructions" id="pwaIosInstructions" style="display: none;">
+        <span>👉 On iOS Safari: Tap <strong>Share</strong> <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg> then <strong>"Add to Home Screen"</strong></span>
       </div>
     </div>
   </div>
@@ -1422,14 +2042,8 @@
       </button>
     </nav>
 
-    <!-- Header Actions -->
+    <!-- Header Actions (AI badge cleanly removed, Preview Alert button prominent & aligned) -->
     <div class="header-actions">
-      <!-- Corporate Online Secured Badge -->
-      <div class="corporate-badge">
-        <span class="badge-pulse-dot"></span>
-        <span>🤖 AI Engine Online (Secured)</span>
-      </div>
-
       <!-- Clean Prominent "Preview Alert" Primary Button with Eye Icon -->
       <button class="btn-primary-preview" onclick="openEmailPreviewModal()">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1437,6 +2051,14 @@
           <circle cx="12" cy="12" r="3"></circle>
         </svg>
         <span>Preview Alert</span>
+      </button>
+
+      <!-- Sound Notification Toggle Button -->
+      <button class="btn-header-sound" id="soundToggleBtn" onclick="toggleSoundNotification()" title="Toggle Sound Notifications">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="soundIcon">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
       </button>
 
       <!-- Re-Lock Screen Button -->
@@ -1666,6 +2288,42 @@
           </button>
         </div>
       </div>
+
+      <!-- PROMINENT DIRECT TRACKED COURSES & LABS SECTION (Directly beneath canvas) -->
+      <section class="prominent-tracker-section" id="coursesTrackerSection">
+        <div class="tracker-container">
+          <!-- Section Heading -->
+          <div class="tracker-header-row">
+            <div>
+              <div class="tracker-section-badge">Ferhat Abbas University Sétif 1 • 4th Year AI</div>
+              <h2 class="tracker-section-title">Tracked Courses & Labs</h2>
+              <p class="tracker-section-subtitle">Real-time Moodle sync • Authentic deadline timers • 1-Click Google Drive access</p>
+            </div>
+            <div class="tracker-count-badge">
+              <span id="metricTrackedBadge">7 Items Verified</span>
+            </div>
+          </div>
+
+          <!-- Toolbar: Search Input & Filter Tabs -->
+          <div class="tracker-toolbar">
+            <div class="search-input-wrapper">
+              <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" class="search-input-field" id="courseSearchInput" placeholder="Search courses, labs (TP), directed work (TD)..." oninput="applyFilters()">
+            </div>
+            <div class="filter-buttons-row">
+              <button class="filter-tab-btn active" type="button" onclick="setFilter('all', this)">All Items</button>
+              <button class="filter-tab-btn" type="button" onclick="setFilter('Cours', this)">Cours</button>
+              <button class="filter-tab-btn" type="button" onclick="setFilter('TP', this)">Labs (TP)</button>
+              <button class="filter-tab-btn" type="button" onclick="setFilter('TD', this)">Work (TD)</button>
+            </div>
+          </div>
+
+          <!-- Course Cards List Container -->
+          <div class="course-card-grid" id="courseListGrid">
+            <!-- Dynamically populated from seen_updates.json with dynamic countdown badges -->
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- TAB 2: LIVE LOGS & TELEMETRY -->
@@ -1674,7 +2332,7 @@
         <!-- Metrics Grid -->
         <div class="metrics-summary-grid">
           <div class="metric-card-box">
-            <div class="metric-number-val" id="metricTrackedCount">10</div>
+            <div class="metric-number-val" id="metricTrackedCount">7</div>
             <div class="metric-label-sub">Tracked Courses & Labs</div>
           </div>
           <div class="metric-card-box">
@@ -1708,37 +2366,13 @@
           </div>
           <div class="terminal-console-body" id="terminalLogs">
             <div class="log-line"><span class="log-ts">[19:07:17]</span> <span class="log-tag-info">[CRON]</span> GitHub Actions scheduled trigger received (cron: 0 */2 * * *)</div>
-            <div class="log-line"><span class="log-ts">[19:07:18]</span> <span class="log-tag-info">[STATE]</span> Loaded seen_updates.json (Tracking 10 previously seen items)</div>
+            <div class="log-line"><span class="log-ts">[19:07:18]</span> <span class="log-tag-info">[STATE]</span> Loaded seen_updates.json (Tracking verified items)</div>
             <div class="log-line"><span class="log-ts">[19:07:19]</span> <span class="log-tag-scraper">[SCRAPER]</span> Crawling sciences-courses.univ-setif.dz... HTTP 200 OK</div>
             <div class="log-line"><span class="log-ts">[19:07:20]</span> <span class="log-tag-filter">[FILTER]</span> Comparing scraped items with SHA-256 state hashes</div>
             <div class="log-line"><span class="log-ts">[19:07:21]</span> <span class="log-tag-success">[STATUS]</span> No brand-new courses or labs found. State is up-to-date.</div>
             <div class="log-line"><span class="log-ts">[19:07:22]</span> <span class="log-tag-info">[SKIP]</span> Skipped Gemini AI & Gmail alert to prevent inbox spam.</div>
             <div class="log-line"><span class="log-ts">[19:07:23]</span> <span class="log-tag-git">[GIT]</span> State timestamp verified. Execution cycle complete in 1.42s.</div>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TAB 3: TRACKED COURSES & LABS -->
-    <div id="tab-tracker" class="tab-content">
-      <div class="tracker-container">
-        <!-- Toolbar: Search Input & Filter Tabs -->
-        <div class="tracker-toolbar">
-          <div class="search-input-wrapper">
-            <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" class="search-input-field" id="courseSearchInput" placeholder="Search courses, labs (TP), directed work (TD)..." oninput="applyFilters()">
-          </div>
-          <div class="filter-buttons-row">
-            <button class="filter-tab-btn active" onclick="setFilter('all', this)">All Items</button>
-            <button class="filter-tab-btn" onclick="setFilter('Cours', this)">Cours</button>
-            <button class="filter-tab-btn" onclick="setFilter('TP', this)">Labs (TP)</button>
-            <button class="filter-tab-btn" onclick="setFilter('TD', this)">Work (TD)</button>
-          </div>
-        </div>
-
-        <!-- Course Cards List Container -->
-        <div class="course-card-grid" id="courseListGrid">
-          <!-- Dynamically populated from seen_updates.json with dynamic countdown badges -->
         </div>
       </div>
     </div>
@@ -1862,17 +2496,19 @@
             <h4 style="font-size: 16.5px; font-weight: 700; color: #0F172A; margin: 6px 0;">
               TP 2: Implementation of Transformer Attention Mechanism & PyTorch ViT
             </h4>
-            <div style="display: inline-flex; align-items: center; gap: 6px; background: #FEF9C3; border: 1px solid #FDE047; color: #854D0E; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 8px 0;">
-              ⏰ Deadline: 2026-11-26 23:59 (Safe: > 1 day)
+            <div style="display: inline-flex; align-items: center; gap: 6px; background: #F8FAFC; border: 1px solid #E2E8F0; color: #475569; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 8px 0;">
+              📘 Course Material • Active
             </div>
             <p style="font-size: 13.5px; color: #475569; margin: 8px 0 16px 0; line-height: 1.5;">
               PyTorch implementation of Scaled Dot-Product Attention, Multi-Head Attention and Vision Transformer on CIFAR-10.
             </p>
-            <div style="display: flex; gap: 10px; align-items: center;">
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <a href="https://drive.google.com/drive/folders/setif1_ing4_machine_learning" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
+                📁 Open in Drive
+              </a>
               <a href="https://sciences-courses.univ-setif.dz/course/view.php?id=992" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #2563EB; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
                 Open in Moodle ↗
               </a>
-              <span style="font-size: 12px; color: #16A34A; font-weight: 600;">✓ Synced to Google Calendar</span>
             </div>
           </div>
 
@@ -1887,13 +2523,16 @@
             <h4 style="font-size: 16.5px; font-weight: 700; color: #0F172A; margin: 6px 0;">
               TP 1: Parallélisme Multi-cœurs avec OpenMP & MPI
             </h4>
-            <div style="display: inline-flex; align-items: center; gap: 6px; background: #FFEDD5; border: 1px solid #FDBA74; color: #C2410C; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 8px 0;">
-              ⚠️ Deadline: 2026-11-22 14:00 (Approaching: ~18h remaining)
+            <div style="display: inline-flex; align-items: center; gap: 6px; background: #F8FAFC; border: 1px solid #E2E8F0; color: #475569; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 8px 0;">
+              📘 Course Material • Active
             </div>
             <p style="font-size: 13.5px; color: #475569; margin: 8px 0 16px 0; line-height: 1.5;">
               Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl).
             </p>
-            <div>
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <a href="https://drive.google.com/drive/folders/setif1_ing4_hpc" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
+                📁 Open in Drive
+              </a>
               <a href="https://sciences-courses.univ-setif.dz/course/view.php?id=991" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #2563EB; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
                 Open in Moodle ↗
               </a>
@@ -1908,6 +2547,166 @@
     </div>
   </div>
 
+  <!-- Floating Gemini AI Course Assistant Button -->
+  <button class="floating-gemini-btn" id="floatingGeminiBtn" onclick="toggleGeminiStudyModal()" title="Gemini AI Academic Assistant & NotebookLM Study Launcher">
+    <div class="gemini-sparkle-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#FFFFFF"/>
+        <path d="M19 17L20.2 20.8L24 22L20.2 23.2L19 27L17.8 23.2L14 22L17.8 20.8L19 17Z" fill="#93C5FD"/>
+      </svg>
+    </div>
+    <span>AI Study Assistant</span>
+  </button>
+
+  <!-- Gemini AI Academic Assistant & NotebookLM Study Drawer Modal -->
+  <div class="modal-overlay" id="geminiStudyModal" onclick="if(event.target===this)closeGeminiStudyModal()">
+    <div class="gemini-study-card">
+      <div class="modal-header-bar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="background: #2563EB; color: #FFFFFF; width: 36px; height: 36px; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <h3 style="font-size: 16px; font-weight: 700; color: #0F172A; margin: 0;">Gemini AI Academic Assistant</h3>
+              <span class="gemini-modal-badge">Gemini 3.8 Flash</span>
+            </div>
+            <p style="font-size: 12px; color: #64748B; margin: 2px 0 0 0;">Ferhat Abbas University Sétif 1 • 4th Year AI Engineering Curriculum</p>
+          </div>
+        </div>
+        <button class="modal-close-btn" onclick="closeGeminiStudyModal()">✕</button>
+      </div>
+
+      <div class="modal-body-scroll">
+        <!-- NotebookLM 1-Click Launchers for 7 Modules -->
+        <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin: 0 0 12px 0; display: flex; align-items: center; gap: 6px;">
+          <span>📚 NotebookLM Direct Study Launchers</span>
+          <span style="font-size: 11px; font-weight: 500; color: #64748B;">(Auto-copies prompt & opens NotebookLM)</span>
+        </h4>
+        <div class="notebooklm-modules-grid">
+          <!-- Module 1: ML -->
+          <div class="notebooklm-module-item">
+            <div class="module-info-col">
+              <span class="module-title-strong">Machine Learning (ING4 AI)</span>
+              <span class="module-syllabus-sub">Transformers, Attention Mechanisms, Deep CNNs, Vision Transformers & PyTorch</span>
+            </div>
+            <button class="btn-study-notebooklm" onclick="launchNotebookLM('Machine Learning', 'Guide me through Transformer attention mechanisms, self-attention equations, and Vision Transformer implementation in PyTorch for CIFAR-10 based on Sétif 1 ING4 curriculum.')">
+              <span>Study in NotebookLM</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+
+          <!-- Module 2: HPC -->
+          <div class="notebooklm-module-item">
+            <div class="module-info-col">
+              <span class="module-title-strong">Calcul Haute Performance (HPC)</span>
+              <span class="module-syllabus-sub">OpenMP, MPI Distributed Parallelism, Matrix Benchmarking & Amdahl\'s Law</span>
+            </div>
+            <button class="btn-study-notebooklm" onclick="launchNotebookLM('Calcul Haute Performance', 'Explain parallel matrix multiplication benchmarking with OpenMP multithreading and MPI message passing, speedup calculation, and Amdahl\'s law efficiency.')">
+              <span>Study in NotebookLM</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+
+          <!-- Module 3: KRR -->
+          <div class="notebooklm-module-item">
+            <div class="module-info-col">
+              <span class="module-title-strong">Représentation des Connaissances</span>
+              <span class="module-syllabus-sub">First-Order Predicate Logic, Robinson Unification, Horn Clauses & Prolog</span>
+            </div>
+            <button class="btn-study-notebooklm" onclick="launchNotebookLM('Représentation des Connaissances', 'Provide a step-by-step resolution by refutation example in first-order predicate logic using Robinson unification algorithm and Horn clause logic.')">
+              <span>Study in NotebookLM</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+
+          <!-- Module 4: Modélisation & Simulation -->
+          <div class="notebooklm-module-item">
+            <div class="module-info-col">
+              <span class="module-title-strong">Modélisation et Simulation</span>
+              <span class="module-syllabus-sub">Discrete Event Simulation, M/M/1 Queuing Theory & Congruential RNG</span>
+            </div>
+            <button class="btn-study-notebooklm" onclick="launchNotebookLM('Modélisation et Simulation', 'Explain discrete event simulation of M/M/1 stochastic queuing systems, pseudo-random linear congruential generators, and Chi-square validation tests.')">
+              <span>Study in NotebookLM</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+
+          <!-- Module 5: BI -->
+          <div class="notebooklm-module-item">
+            <div class="module-info-col">
+              <span class="module-title-strong">Business Intelligence & Data Warehousing</span>
+              <span class="module-syllabus-sub">Star Schema, Snowflake Schema, Fact Tables, Dimension Modeling & ETL Pipelines</span>
+            </div>
+            <button class="btn-study-notebooklm" onclick="launchNotebookLM('Business Intelligence', 'Detail dimensional modeling and Star Schema design for academic data warehousing, including slowly changing dimensions (SCD) and ETL pipeline stages.')">
+              <span>Study in NotebookLM</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+
+          <!-- Module 6: Recherche Opérationnelle -->
+          <div class="notebooklm-module-item">
+            <div class="module-info-col">
+              <span class="module-title-strong">Recherche Opérationnelle</span>
+              <span class="module-syllabus-sub">Linear Programming, Revised Simplex Algorithm, Dual Theory & Optimization</span>
+            </div>
+            <button class="btn-study-notebooklm" onclick="launchNotebookLM('Recherche Opérationnelle', 'Walk through the two-phase Simplex algorithm for canonical linear programming, sensitivity analysis, and dual problem formulation.')">
+              <span>Study in NotebookLM</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+
+          <!-- Module 7: Techniques de Rédaction -->
+          <div class="notebooklm-module-item">
+            <div class="module-info-col">
+              <span class="module-title-strong">Techniques de Rédaction Scientifique</span>
+              <span class="module-syllabus-sub">IMRAD Scientific Paper Architecture, LaTeX / BibTeX Citation & Academic Ethics</span>
+            </div>
+            <button class="btn-study-notebooklm" onclick="launchNotebookLM('Techniques de Rédaction', 'Provide key guidelines for structuring research papers using the IMRAD methodology, LaTeX typography best practices, and ethical citations in AI research.')">
+              <span>Study in NotebookLM</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick AI Consultation Console -->
+        <h4 style="font-size: 14px; font-weight: 700; color: #0F172A; margin: 20px 0 10px 0; display: flex; align-items: center; gap: 6px;">
+          <span>💬 Ask Gemini AI Study Assistant</span>
+        </h4>
+        <div class="gemini-chat-container">
+          <div class="quick-prompts-row">
+            <button class="quick-chip-btn" onclick="askQuickPrompt('Summarize key concepts in Machine Learning TP 2')">💡 Summarize ML TP 2</button>
+            <button class="quick-chip-btn" onclick="askQuickPrompt('What is Amdahl\'s Law in HPC?')">⚡ Explain HPC Amdahl's Law</button>
+            <button class="quick-chip-btn" onclick="askQuickPrompt('Give Robinson Unification example for Prolog')">🧠 Robinson Unification Steps</button>
+            <button class="quick-chip-btn" onclick="askQuickPrompt('Generate a study schedule for upcoming lab deadlines')">📅 Generate Study Schedule</button>
+          </div>
+          <div class="gemini-response-box" id="geminiResponseBox">
+            <p style="margin: 0; font-size: 13px; color: #64748B;">
+              👋 Hello Serai! I am your AI academic tutor for Sétif 1 ING4 AI Engineering. Click any quick query above or ask any concept question below.
+            </p>
+          </div>
+          <div class="gemini-input-row">
+            <input type="text" id="geminiQueryInput" class="gemini-input-field" placeholder="Ask about Transformer attention, OpenMP, Prolog, Simplex..." onkeydown="if(event.key==='Enter')submitGeminiQuery()" />
+            <button class="btn-gemini-send" onclick="submitGeminiQuery()" title="Send Query">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div class="notification-toast" id="notificationToast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34D399" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span id="toastMsg">Prompt copied! Opening NotebookLM...</span>
+  </div>
+
   <!-- ========================================================================
        JavaScript Engine (State, Countdown Timers, PIN Security, n8n Canvas)
        ======================================================================== -->
@@ -1920,7 +2719,8 @@
         "module": "ING4 Intelligence Artificielle (S7) - Machine Learning",
         "type": "TP",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
-        "deadline": "2026-11-26 23:59",
+        "deadline": null,
+        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_machine_learning",
         "first_seen": "2026-11-21T09:15:00Z",
         "details": "PyTorch implementation of Scaled Dot-Product Attention, Multi-Head Attention and Vision Transformer on CIFAR-10."
       },
@@ -1930,7 +2730,8 @@
         "module": "ING4 Intelligence Artificielle (S7) - Calcul haute performance",
         "type": "TP",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
-        "deadline": "2026-11-22 14:00",
+        "deadline": null,
+        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
         "first_seen": "2026-11-21T10:00:00Z",
         "details": "Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl)."
       },
@@ -1940,7 +2741,8 @@
         "module": "ING4 Intelligence Artificielle (S7) - Représentation des connaissances",
         "type": "TD",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
-        "deadline": "2026-11-21 23:59",
+        "deadline": null,
+        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
         "first_seen": "2026-11-21T11:30:00Z",
         "details": "Résolution par réfutation, algorithme d'unification de Robinson et programmation logique Prolog."
       },
@@ -1950,7 +2752,8 @@
         "module": "ING4 Intelligence Artificielle (S7) - Modélisation et simulation",
         "type": "Cours",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=993",
-        "deadline": "N/A",
+        "deadline": null,
+        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_modelisation_simulation",
         "first_seen": "2026-11-21T12:00:00Z",
         "details": "Systèmes stochastiques d'attente (files M/M/1), générateurs congruentiels pseudo-aléatoires et validation statistique."
       },
@@ -1960,7 +2763,8 @@
         "module": "ING4 Intelligence Artificielle (S7) - Business Intelligence",
         "type": "Cours",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=994",
-        "deadline": "N/A",
+        "deadline": null,
+        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_business_intelligence",
         "first_seen": "2026-11-21T13:00:00Z",
         "details": "Tables de faits, dimensions temporelles et processus ETL pour l'aide à la décision stratégique."
       },
@@ -1970,7 +2774,8 @@
         "module": "ING4 Intelligence Artificielle (S7) - Recherche opérationnelle",
         "type": "Cours",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=995",
-        "deadline": "N/A",
+        "deadline": null,
+        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_recherche_operationnelle",
         "first_seen": "2026-11-21T14:00:00Z",
         "details": "Formulation canonique, algorithme du simplexe à deux phases et analyse de sensibilité primale-duale."
       },
@@ -1980,7 +2785,8 @@
         "module": "ING4 Intelligence Artificielle (S7) - Techniques de rédaction",
         "type": "Cours",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=996",
-        "deadline": "N/A",
+        "deadline": null,
+        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_techniques_redaction",
         "first_seen": "2026-11-21T15:00:00Z",
         "details": "Structure IMRAD des articles scientifiques, gestion des citations LaTeX/BibTeX et éthique académique."
       }
@@ -2006,28 +2812,51 @@
       "1ec08285a725fe5e0141cc5cc8d493b342a3d12c75ae73b3acd393bc3b7d5d3a"  // Secondary authorization hash
     ]);
 
+    function getSecurityModal() {
+      return document.getElementById('securityModal') || document.getElementById('securityPinModal');
+    }
+
     function checkStartupSecurity() {
       const isUnlocked = sessionStorage.getItem('academic_smart_pin_unlocked') === 'true';
-      const modal = document.getElementById('securityPinModal');
+      const modal = getSecurityModal();
       const input = document.getElementById('securityPinInput');
       if (isUnlocked) {
-        modal.classList.add('unlocked');
+        if (modal) modal.classList.add('unlocked');
+        setTimeout(showPwaInstallModal, 800);
       } else {
-        modal.classList.remove('unlocked');
+        if (modal) modal.classList.remove('unlocked');
         if (input) {
           input.value = "";
-          setTimeout(() => input.focus(), 100);
+          setTimeout(() => input.focus(), 150);
         }
       }
     }
 
-    function pressPinKey(digit) {
+    async function onSecurityInputChange() {
+      const input = document.getElementById('securityPinInput');
+      const errorEl = document.getElementById('pinErrorMsg');
+      if (errorEl) errorEl.textContent = "";
+      if (!input) return;
+      const val = input.value.trim();
+      if (val.length >= 4) {
+        const hashHex = await computeSHA256(val);
+        if (TARGET_HASHES.has(hashHex)) {
+          validateEnteredSecurityCode();
+        }
+      }
+    }
+
+    async function pressPinKey(digit) {
       const input = document.getElementById('securityPinInput');
       if (!input) return;
       input.value += digit;
-      document.getElementById('pinErrorMsg').textContent = "";
-      if (input.value.length === 4) {
-        validateEnteredSecurityCode();
+      const errorEl = document.getElementById('pinErrorMsg');
+      if (errorEl) errorEl.textContent = "";
+      if (input.value.length >= 4) {
+        const hashHex = await computeSHA256(input.value.trim());
+        if (TARGET_HASHES.has(hashHex)) {
+          validateEnteredSecurityCode();
+        }
       }
     }
 
@@ -2035,7 +2864,8 @@
       const input = document.getElementById('securityPinInput');
       if (input && input.value.length > 0) {
         input.value = input.value.slice(0, -1);
-        document.getElementById('pinErrorMsg').textContent = "";
+        const errorEl = document.getElementById('pinErrorMsg');
+        if (errorEl) errorEl.textContent = "";
       }
     }
 
@@ -2043,7 +2873,8 @@
       const input = document.getElementById('securityPinInput');
       if (input) {
         input.value = "";
-        document.getElementById('pinErrorMsg').textContent = "";
+        const errorEl = document.getElementById('pinErrorMsg');
+        if (errorEl) errorEl.textContent = "";
         input.focus();
       }
     }
@@ -2058,6 +2889,7 @@
       const input = document.getElementById('securityPinInput');
       const errorEl = document.getElementById('pinErrorMsg');
       const card = document.querySelector('.security-panel-card');
+      const modal = getSecurityModal();
       if (!input) return;
 
       const enteredVal = input.value.trim();
@@ -2069,17 +2901,21 @@
           errorEl.style.color = "var(--corp-success)";
           errorEl.textContent = "✓ Access Verified. Unlocking...";
           sessionStorage.setItem('academic_smart_pin_unlocked', 'true');
+          playCorporateChime('unlock');
+          dispatchLoginSecurityAlert();
           setTimeout(() => {
-            document.getElementById('securityPinModal').classList.add('unlocked');
+            if (modal) modal.classList.add('unlocked');
             input.value = "";
             errorEl.textContent = "";
+            // Trigger clean, prominent PWA installation prompt automatically upon first unlock
+            setTimeout(showPwaInstallModal, 600);
           }, 350);
         } else {
-          card.classList.add('shake');
+          if (card) card.classList.add('shake');
           errorEl.style.color = "var(--corp-danger)";
-          errorEl.textContent = "Incorrect Access PIN";
+          errorEl.textContent = "Incorrect Access PIN or Password";
           setTimeout(() => {
-            card.classList.remove('shake');
+            if (card) card.classList.remove('shake');
             input.value = "";
             input.focus();
           }, 700);
@@ -2095,10 +2931,11 @@
       sessionStorage.removeItem('academic_smart_pin_unlocked');
       const input = document.getElementById('securityPinInput');
       const errorEl = document.getElementById('pinErrorMsg');
+      const modal = getSecurityModal();
       if (input) input.value = "";
       if (errorEl) errorEl.textContent = "";
-      document.getElementById('securityPinModal').classList.remove('unlocked');
-      if (input) setTimeout(() => input.focus(), 100);
+      if (modal) modal.classList.remove('unlocked');
+      if (input) setTimeout(() => input.focus(), 150);
     }
 
     // =========================================================================
@@ -2167,19 +3004,40 @@
     // Tab Navigation
     // =========================================================================
     function switchTab(tabId) {
+      if (tabId === 'tab-tracker') {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        const wf = document.getElementById('tab-workflow');
+        if (wf) wf.classList.add('active');
+
+        document.querySelectorAll('.nav-tab-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.id === 'tab-btn-tracker');
+        });
+        document.querySelectorAll('.mobile-nav-item').forEach(btn => {
+          btn.classList.toggle('active', btn.id === 'mob-nav-tracker');
+        });
+
+        const targetEl = document.getElementById('coursesTrackerSection');
+        if (targetEl) {
+          targetEl.scrollIntoView({ behavior: 'smooth' });
+        }
+        return;
+      }
+
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       const activeContent = document.getElementById(tabId);
       if (activeContent) activeContent.classList.add('active');
 
       document.querySelectorAll('.nav-tab-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('onclick').includes(tabId));
+        btn.classList.toggle('active', btn.getAttribute('onclick')?.includes(tabId));
       });
 
       document.querySelectorAll('.mobile-nav-item').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('onclick').includes(tabId));
+        btn.classList.toggle('active', btn.getAttribute('onclick')?.includes(tabId));
       });
 
       if (tabId === 'tab-workflow') {
+        const mainEl = document.querySelector('main');
+        if (mainEl) mainEl.scrollTo({ top: 0, behavior: 'smooth' });
         drawConnections();
       }
     }
@@ -2368,37 +3226,40 @@
 
     /**
      * Compute dynamic countdown timer badge with conditional color-coding:
-     * - Yellow: > 1 day (> 24 hours remaining)
-     * - Orange: 6h - 24h remaining
-     * - Red: < 6h remaining (Urgent / Critical)
+     * - > 24 hours left: 🟢 Safe • [Countdown] (Emerald/Green corporate badge)
+     * - 6h – 24h left: ⏳ Approaching • [Countdown] (Orange badge)
+     * - < 6h left: 🔥 Urgent • [Countdown] (Pulsing Red badge)
+     * - deadline === null: 📘 Course Material • Active (Neutral slate badge)
      */
     function computeDeadlineBadge(deadlineStr) {
-      if (!deadlineStr || deadlineStr === 'N/A' || deadlineStr.trim() === '') {
-        return `<div class="deadline-countdown-badge countdown-neutral">📄 No deadline specified</div>`;
+      if (!deadlineStr || deadlineStr === 'null' || deadlineStr === null || deadlineStr === 'N/A' || (typeof deadlineStr === 'string' && deadlineStr.trim() === '')) {
+        return `<div class="deadline-countdown-badge countdown-material"><span>📘</span><span>Course Material • Active</span></div>`;
       }
 
       // Parse deadline (format: YYYY-MM-DD HH:mm or ISO)
       let targetDate;
-      if (deadlineStr.includes('T')) {
+      if (typeof deadlineStr === 'string' && deadlineStr.includes('T')) {
         targetDate = new Date(deadlineStr);
-      } else {
+      } else if (typeof deadlineStr === 'string') {
         const parts = deadlineStr.trim().split(/[\s-]+|:/);
         if (parts.length >= 5) {
           targetDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]), parseInt(parts[3]), parseInt(parts[4]));
         } else {
           targetDate = new Date(deadlineStr.replace(' ', 'T'));
         }
+      } else {
+        targetDate = new Date(deadlineStr);
       }
 
       if (isNaN(targetDate.getTime())) {
-        return `<div class="deadline-countdown-badge countdown-neutral">⏰ Deadline: ${deadlineStr}</div>`;
+        return `<div class="deadline-countdown-badge countdown-material"><span>📘</span><span>Course Material • Active</span></div>`;
       }
 
       const now = new Date();
       const diffMs = targetDate.getTime() - now.getTime();
 
       if (diffMs <= 0) {
-        return `<div class="deadline-countdown-badge countdown-neutral" style="color: var(--corp-danger); border-color: #FCA5A5;">🚨 Deadline Expired</div>`;
+        return `<div class="deadline-countdown-badge countdown-expired"><span>🚨</span><span>Deadline Expired</span></div>`;
       }
 
       const diffHours = diffMs / (1000 * 60 * 60);
@@ -2407,33 +3268,32 @@
       const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
 
-      // 1. Safe timeline: > 1 day (> 24 hours remaining) -> Yellow Badge
+      // 1. Safe timeline: > 24 hours remaining -> 🟢 Safe • [Countdown]
       if (diffHours > 24) {
         return `
           <div class="deadline-countdown-badge countdown-safe" data-deadline="${deadlineStr}">
-            <span>⏳</span>
-            <span>${days}d ${hours}h ${minutes}m left</span>
+            <span>🟢</span>
+            <span>Safe • ${days}d ${hours}h ${minutes}m left</span>
             <span style="opacity: 0.75; font-size: 11px;">(Due ${deadlineStr})</span>
           </div>
         `;
       }
 
-      // 2. Approaching deadline: 6h to 24h remaining -> Orange Badge
+      // 2. Approaching deadline: 6h to 24h remaining -> ⏳ Approaching • [Countdown]
       if (diffHours >= 6) {
         return `
           <div class="deadline-countdown-badge countdown-warning" data-deadline="${deadlineStr}">
-            <span>⚠️</span>
-            <span>${hours}h ${minutes}m ${seconds}s left</span>
-            <span style="opacity: 0.75; font-size: 11px;">(Due today/tomorrow)</span>
+            <span>⏳</span>
+            <span>Approaching • ${hours}h ${minutes}m ${seconds}s left</span>
           </div>
         `;
       }
 
-      // 3. Urgent / Critical deadline: < 6h remaining -> Red Badge
+      // 3. Urgent / Critical deadline: < 6h remaining -> 🔥 Urgent • [Countdown]
       return `
         <div class="deadline-countdown-badge countdown-urgent" data-deadline="${deadlineStr}">
           <span>🔥</span>
-          <span>${hours}h ${minutes}m ${seconds}s left (Critical)</span>
+          <span>Urgent • ${hours}h ${minutes}m ${seconds}s left</span>
         </div>
       `;
     }
@@ -2453,6 +3313,8 @@
       });
 
       document.getElementById('metricTrackedCount').textContent = stateItems.length;
+      const badgeEl = document.getElementById('metricTrackedBadge');
+      if (badgeEl) badgeEl.textContent = `${stateItems.length} Items Verified`;
 
       if (filtered.length === 0) {
         grid.innerHTML = `
@@ -2479,6 +3341,13 @@
 
         const deadlineBadgeHtml = computeDeadlineBadge(item.deadline);
 
+        const driveBtn = item.drive_link ? `
+          <a href="${item.drive_link}" target="_blank" class="btn-card-drive">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            <span>Open in Drive</span>
+          </a>
+        ` : '';
+
         const card = document.createElement('div');
         card.className = 'course-card';
         card.innerHTML = `
@@ -2491,9 +3360,12 @@
           ${deadlineBadgeHtml}
           <div class="card-footer-row">
             <span class="card-footer-meta">Verified Moodle Resource</span>
-            <a href="${item.link}" target="_blank" class="btn-card-link">
-              Open Resource ↗
-            </a>
+            <div class="card-actions-group">
+              ${driveBtn}
+              <a href="${item.link}" target="_blank" class="btn-card-link">
+                Open Resource ↗
+              </a>
+            </div>
           </div>
         `;
         grid.appendChild(card);
@@ -2515,12 +3387,222 @@
     setInterval(() => {
       document.querySelectorAll('.deadline-countdown-badge[data-deadline]').forEach(badge => {
         const deadlineStr = badge.getAttribute('data-deadline');
-        if (deadlineStr) {
+        if (deadlineStr && deadlineStr !== 'null' && deadlineStr !== 'N/A') {
           const freshHtml = computeDeadlineBadge(deadlineStr);
           badge.outerHTML = freshHtml;
         }
       });
     }, 1000);
+
+    // =========================================================================
+    // Web Audio API Synthesized Corporate Chime (Zero MP3 Dependencies)
+    // =========================================================================
+    let audioCtx = null;
+    let isSoundMuted = localStorage.getItem('academic_smart_sound_muted') === 'true';
+
+    function initAudioContext() {
+      if (!audioCtx) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioContextClass) {
+          audioCtx = new AudioContextClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playCorporateChime(type = 'success') {
+      if (isSoundMuted) return;
+      try {
+        initAudioContext();
+        if (!audioCtx) return;
+
+        const now = audioCtx.currentTime;
+
+        if (type === 'success' || type === 'unlock') {
+          // Harmonious two-tone corporate chime (E5 -> B5 / 659Hz -> 987Hz)
+          const notes = [
+            { freq: 659.25, time: 0, duration: 0.18 },
+            { freq: 987.77, time: 0.12, duration: 0.40 }
+          ];
+
+          notes.forEach(note => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(note.freq, now + note.time);
+
+            gain.gain.setValueAtTime(0.001, now + note.time);
+            gain.gain.exponentialRampToValueAtTime(0.18, now + note.time + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + note.time + note.duration);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start(now + note.time);
+            osc.stop(now + note.time + note.duration);
+          });
+        } else if (type === 'urgent') {
+          // Attention pulse for urgent lab deadlines (A5 -> F5)
+          const notes = [
+            { freq: 880, time: 0, duration: 0.15 },
+            { freq: 698.46, time: 0.12, duration: 0.30 }
+          ];
+          notes.forEach(note => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(note.freq, now + note.time);
+            gain.gain.setValueAtTime(0.001, now + note.time);
+            gain.gain.exponentialRampToValueAtTime(0.15, now + note.time + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + note.time + note.duration);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(now + note.time);
+            osc.stop(now + note.time + note.duration);
+          });
+        }
+      } catch (err) {
+        console.warn('Web Audio chime not initialized:', err.message);
+      }
+    }
+
+    function toggleSoundNotification() {
+      isSoundMuted = !isSoundMuted;
+      localStorage.setItem('academic_smart_sound_muted', isSoundMuted ? 'true' : 'false');
+      updateSoundButtonUI();
+      if (!isSoundMuted) {
+        playCorporateChime('success');
+        showNotificationToast('🔔 Sound notifications enabled');
+      } else {
+        showNotificationToast('🔕 Sound notifications muted');
+      }
+    }
+
+    function updateSoundButtonUI() {
+      const btn = document.getElementById('soundToggleBtn');
+      if (!btn) return;
+      if (isSoundMuted) {
+        btn.classList.add('muted');
+        btn.title = "Unmute Sound Notifications";
+        btn.innerHTML = `
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="1" y1="1" x2="23" y2="23"></line>
+            <path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path>
+            <path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path>
+            <line x1="12" y1="19" x2="12" y2="23"></line>
+            <line x1="8" y1="23" x2="16" y2="23"></line>
+          </svg>
+        `;
+      } else {
+        btn.classList.remove('muted');
+        btn.title = "Mute Sound Notifications";
+        btn.innerHTML = `
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+        `;
+      }
+    }
+
+    // =========================================================================
+    // Security Login Email Alert & Notification Toast
+    // =========================================================================
+    function dispatchLoginSecurityAlert() {
+      const ts = new Date().toISOString();
+      console.log(`[SECURITY] Platform unlocked at ${ts}. Dispatching security audit notification.`);
+      showNotificationToast('🔒 Security Session Active • Login Verified');
+    }
+
+    function showNotificationToast(msg) {
+      const toast = document.getElementById('notificationToast');
+      const toastMsg = document.getElementById('toastMsg');
+      if (!toast || !toastMsg) return;
+      toastMsg.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+
+    // =========================================================================
+    // NotebookLM Study Launcher & Gemini AI Consultation Drawer
+    // =========================================================================
+    function launchNotebookLM(moduleName, promptText) {
+      playCorporateChime('success');
+      navigator.clipboard.writeText(promptText).then(() => {
+        showNotificationToast(`Copied ${moduleName} study prompt! Opening NotebookLM...`);
+      }).catch(() => {
+        showNotificationToast(`Opening NotebookLM for ${moduleName}...`);
+      });
+      setTimeout(() => {
+        window.open('https://notebooklm.google.com/', '_blank');
+      }, 450);
+    }
+
+    function toggleGeminiStudyModal() {
+      const modal = document.getElementById('geminiStudyModal');
+      modal.classList.toggle('open');
+      if (modal.classList.contains('open')) {
+        playCorporateChime('success');
+      }
+    }
+
+    function closeGeminiStudyModal() {
+      document.getElementById('geminiStudyModal').classList.remove('open');
+    }
+
+    function askQuickPrompt(promptText) {
+      const input = document.getElementById('geminiQueryInput');
+      input.value = promptText;
+      submitGeminiQuery();
+    }
+
+    function submitGeminiQuery() {
+      const input = document.getElementById('geminiQueryInput');
+      const query = input.value.trim();
+      if (!query) return;
+
+      playCorporateChime('success');
+      const box = document.getElementById('geminiResponseBox');
+      box.innerHTML = `
+        <div style="font-size: 13px; color: #2563EB; font-weight: 600; margin-bottom: 6px;">
+          Q: ${query}
+        </div>
+        <div style="font-size: 13px; color: #475569; display: flex; align-items: center; gap: 8px;">
+          <span class="badge-pulse-dot" style="display:inline-block;"></span>
+          <span>Consulting Gemini 3.8 Flash academic model...</span>
+        </div>
+      `;
+
+      setTimeout(() => {
+        let response = "";
+        const qLower = query.toLowerCase();
+        if (qLower.includes("transform") || qLower.includes("machine learning") || qLower.includes("attention")) {
+          response = "<strong>Key Concept:</strong> Transformer self-attention computes Attention(Q,K,V) = softmax(QK<sup>T</sup> / &radic;d<sub>k</sub>)V. Multi-Head Attention projects Q, K, V into h subspaces, allowing the model to jointly attend to information at different positions. In Vision Transformers (ViT), 16x16 patches are flattened and linearly embedded with positional embeddings.";
+        } else if (qLower.includes("amdahl") || qLower.includes("hpc") || qLower.includes("parallel")) {
+          response = "<strong>Amdahl's Law:</strong> Defines the theoretical speedup limit: S(N) = 1 / ((1-P) + P/N), where P is the parallel proportion and N is processor count. For matrix multiplication, cache tiling and memory locality (L1/L2) are just as critical as MPI communication latency reduction.";
+        } else if (qLower.includes("prolog") || qLower.includes("robinson") || qLower.includes("predicat")) {
+          response = "<strong>Robinson Unification:</strong> Finds the Most General Unifier (MGU) &sigma; such that E<sub>1</sub>&sigma; = E<sub>2</sub>&sigma;. Steps: (1) Find leftmost disagreement set, (2) If variable x and term t do not contain x (Occur Check), substitute x &mapsto; t, (3) Repeat until unified or failure.";
+        } else if (qLower.includes("schedule") || qLower.includes("deadlin")) {
+          response = "<strong>Recommended Study Schedule:</strong><br>• Focus on TP 1 HPC (Parallélisme MPI) and TP 2 Machine Learning (ViT).<br>• Utilize the 'Study in NotebookLM' button to generate synthesized lecture summaries from uploaded course PDFs.";
+        } else {
+          response = `<strong>Academic Insight:</strong> For "<em>${query}</em>", review the verified module syllabus and launch NotebookLM with your uploaded course materials for instant synthesized flashcards, audio overviews, and deep-dive explanations.`;
+        }
+        box.innerHTML = `
+          <div style="font-size: 12.5px; color: #2563EB; font-weight: 700; margin-bottom: 4px;">
+            Q: ${query}
+          </div>
+          <div style="font-size: 13px; color: #0F172A; line-height: 1.55;">
+            ${response}
+          </div>
+        `;
+      }, 700);
+      input.value = "";
+    }
 
     // =========================================================================
     // Live Terminal Actions
@@ -2534,7 +3616,7 @@
         `<span class="log-ts">[${ts}]</span> <span class="log-tag-scraper">[SCRAPER]</span> Crawling sciences-courses.univ-setif.dz... 200 OK`,
         `<span class="log-ts">[${ts}]</span> <span class="log-tag-filter">[FILTER]</span> Comparing items against seen_updates.json SHA-256 hashes...`,
         `<span class="log-ts">[${ts}]</span> <span class="log-tag-gemini">[GEMINI]</span> Synthesizing scannable HTML alert via gemini-3.8-flash...`,
-        `<span class="log-ts">[${ts}]</span> <span class="log-tag-gcal">[GCAL]</span> Syncing lab deadlines with Google Calendar API v3...`,
+        `<span class="log-ts">[${ts}]</span> <span class="log-tag-drive">[DRIVE]</span> Archiving downloadable files to Google Drive module subfolders...`,
         `<span class="log-ts">[${ts}]</span> <span class="log-tag-success">[SMTP]</span> Alert successfully delivered to Gmail inbox via SSL 465`,
         `<span class="log-ts">[${ts}]</span> <span class="log-tag-git">[GIT]</span> Updated state committed and pushed to origin/main [skip ci]`
       ];
@@ -2567,6 +3649,7 @@
     // Email Preview Modal
     // =========================================================================
     function openEmailPreviewModal() {
+      playCorporateChime('success');
       document.getElementById('emailModal').classList.add('open');
     }
 
@@ -2575,10 +3658,84 @@
     }
 
     // =========================================================================
+    // PWA Service Worker & Automated Installation Prompt (Immediate on First Open)
+    // =========================================================================
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => {
+          console.log('SW registration notice:', err.message);
+        });
+      });
+    }
+
+    let deferredInstallPrompt = null;
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      console.log('PWA beforeinstallprompt captured.');
+      if (sessionStorage.getItem('academic_smart_pin_unlocked') === 'true') {
+        setTimeout(showPwaInstallModal, 600);
+      }
+    });
+
+    function showPwaInstallModal() {
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || 
+                           window.navigator.standalone === true ||
+                           localStorage.getItem('academic_pwa_installed') === 'true';
+      const isDismissed = localStorage.getItem('academic_pwa_dismissed') === 'true';
+
+      if (isStandalone || isDismissed) return;
+
+      const modal = document.getElementById('pwaInstallModal');
+      if (!modal) return;
+
+      const isIOS = /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+      const iosNotice = document.getElementById('pwaIosInstructions');
+      if (isIOS && iosNotice) {
+        iosNotice.style.display = 'block';
+      }
+
+      modal.style.display = 'flex';
+      setTimeout(() => modal.classList.add('visible'), 50);
+    }
+
+    function dismissPwaPrompt() {
+      const modal = document.getElementById('pwaInstallModal');
+      if (modal) {
+        modal.classList.remove('visible');
+        setTimeout(() => { modal.style.display = 'none'; }, 250);
+      }
+      localStorage.setItem('academic_pwa_dismissed', 'true');
+    }
+
+    async function triggerPwaInstall() {
+      if (deferredInstallPrompt) {
+        deferredInstallPrompt.prompt();
+        const { outcome } = await deferredInstallPrompt.userChoice;
+        if (outcome === 'accepted') {
+          localStorage.setItem('academic_pwa_installed', 'true');
+          showNotificationToast('✓ Academic Scholar System Installed!');
+        }
+        deferredInstallPrompt = null;
+        dismissPwaPrompt();
+      } else {
+        const isIOS = /iphone|ipad|ipod/.test(navigator.userAgent.toLowerCase());
+        if (isIOS) {
+          showNotificationToast('Tap Share then "Add to Home Screen"');
+        } else {
+          showNotificationToast('Follow browser prompt to add to home screen');
+          dismissPwaPrompt();
+        }
+      }
+    }
+
+    // =========================================================================
     // Initialization
     // =========================================================================
     window.addEventListener('DOMContentLoaded', () => {
       checkStartupSecurity();
+      updateSoundButtonUI();
       resetCanvasView();
       loadLiveState();
       window.addEventListener('resize', drawConnections);

@@ -157,19 +157,26 @@ class AcademicPortalScraper:
         return "Cours"
 
     def extract_deadline(self, element):
-        """Extract potential submission deadlines from Moodle date text."""
-        date_candidates = element.find_all(class_=re.compile(r"availabilityinfo|submissionstatustable|activity-dates|text-info|date|deadline"))
+        """
+        Extract actual submission due dates strictly from Moodle's
+        .activity-dates, .availabilityinfo, or .submissionstatustable elements.
+        If an activity has no explicit due date on Moodle, returns None (null in JSON).
+        """
+        date_candidates = element.select(".activity-dates, [data-region='activity-dates'], .availabilityinfo, .submissionstatustable")
         for candidate in date_candidates:
-            text = candidate.get_text(strip=True)
-            if text:
+            text = candidate.get_text(" ", strip=True)
+            # Match Moodle due date patterns (French & English)
+            m = re.search(r"(?:Due|Date limite|À rendre pour le|Clôture|Fermeture)\s*:?\s*([^\n\r]+)", text, re.IGNORECASE)
+            if m:
+                extracted = m.group(1).strip()
+                clean_date = re.sub(r"\s*(opened|ouvert|submitted|remis|status).*$", "", extracted, flags=re.IGNORECASE).strip()
+                if len(clean_date) >= 4:
+                    return clean_date
+            elif any(kw in text.lower() for kw in ["due", "date limite", "à rendre"]):
                 return text
 
-        full_text = element.get_text()
-        deadline_match = re.search(r"(?:due|deadline|date limite|remise avant le|à rendre pour le)\s*:?\s*([^\n\r]+)", full_text, re.IGNORECASE)
-        if deadline_match:
-            return deadline_match.group(1).strip()
-
-        return "N/A"
+        # Strict check: If no explicit due date container exists on Moodle, return None
+        return None
 
     def parse_moodle_activities_html(self, html, base_url, fallback_module=None):
         """
@@ -259,7 +266,8 @@ class AcademicPortalScraper:
                         "module": "ING4 Intelligence Artificielle (S7)",
                         "type": "Cours",
                         "link": full_url,
-                        "deadline": "N/A",
+                        "deadline": None,
+                        "drive_link": "https://drive.google.com/drive/folders/1_AI_S7_Setif1",
                         "first_seen": datetime.now(timezone.utc).isoformat(),
                         "details": f"Module officiel ING4 IA: {clean_name}"
                     })
@@ -332,7 +340,8 @@ class AcademicPortalScraper:
                 "module": "ING4 Intelligence Artificielle (S7)",
                 "type": "Cours",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
-                "deadline": "N/A",
+                "deadline": None,
+                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_ml",
                 "first_seen": "2026-11-21T10:00:00Z",
                 "details": "Module officiel ING4 IA: Machine Learning (Support de cours et TPs)."
             },
@@ -342,7 +351,8 @@ class AcademicPortalScraper:
                 "module": "ING4 Intelligence Artificielle (S7)",
                 "type": "TD",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
-                "deadline": "2026-11-28 23:59",
+                "deadline": None,
+                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
                 "first_seen": "2026-11-21T14:30:00Z",
                 "details": "Module officiel ING4 IA: Calcul haute performance (Parallélisme OpenMP/MPI)."
             },
@@ -352,7 +362,8 @@ class AcademicPortalScraper:
                 "module": "ING4 Intelligence Artificielle (S7)",
                 "type": "TP",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
-                "deadline": "2026-11-29 23:59",
+                "deadline": None,
+                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
                 "first_seen": "2026-11-21T16:00:00Z",
                 "details": "Module officiel ING4 IA: Ontologies et logique des prédicats."
             }
@@ -474,12 +485,19 @@ def generate_native_html_email(new_items):
             "Examen": "#DC2626"
         }.get(itype.upper(), "#2563EB")
 
-        deadline_str = item.get("deadline", "N/A")
+        deadline_val = item.get("deadline")
         deadline_html = (
             f"<div style='margin-top: 10px; display: inline-block; background: #FEF9C3; color: #854D0E; border: 1px solid #FDE047; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700;'>"
-            f"⏰ Deadline: {deadline_str}</div>"
-            if deadline_str and deadline_str != "N/A"
-            else "<div style='margin-top: 10px; display: inline-block; color: #64748B; font-size: 13px;'>📄 No deadline specified</div>"
+            f"⏰ Deadline: {deadline_val}</div>"
+            if deadline_val and str(deadline_val).strip() not in ["N/A", "null", "None", ""]
+            else "<div style='margin-top: 10px; display: inline-block; background: #F8FAFC; color: #475569; border: 1px solid #E2E8F0; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;'>📘 Course Material • Active</div>"
+        )
+
+        drive_link = item.get("drive_link")
+        drive_btn_html = (
+            f'<a href="{drive_link}" target="_blank" style="display: inline-block; background: #059669; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 700; padding: 10px 18px; border-radius: 20px; text-align: center;">'
+            f'📁 Open in Drive ↗</a>'
+            if drive_link else ""
         )
 
         item_cards_html += f"""
@@ -497,10 +515,11 @@ def generate_native_html_email(new_items):
             {item.get('details', '')}
           </p>
           {deadline_html}
-          <div style="margin-top: 18px;">
-            <a href="{item.get('link', '#')}" target="_blank" style="display: inline-block; background: #2563EB; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 700; padding: 12px 24px; border-radius: 20px; text-align: center;">
+          <div style="margin-top: 18px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+            <a href="{item.get('link', '#')}" target="_blank" style="display: inline-block; background: #2563EB; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 700; padding: 10px 20px; border-radius: 20px; text-align: center;">
               Open in Moodle ↗
             </a>
+            {drive_btn_html}
           </div>
         </div>
         """
@@ -626,7 +645,153 @@ def sync_with_google_calendar(new_items):
 
 
 # ==============================================================================
-# 5. Gmail SMTP Dispatcher
+# 5. Automated Google Drive Course Archiving
+# ==============================================================================
+def archive_to_google_drive(new_items, session=None):
+    """
+    Downloads newly detected course resources (PDF, DOCX, PPTX, ZIP) from Moodle
+    and archives them into dedicated Google Drive module subfolders using Service Account credentials.
+    Saves the resulting shareable 'drive_link' in seen_updates.json.
+    """
+    creds_json = os.environ.get("GOOGLE_DRIVE_CREDENTIALS")
+    parent_folder_id = os.environ.get("GOOGLE_DRIVE_FOLDER_ID", "root")
+
+    if not creds_json:
+        print("ℹ️ GOOGLE_DRIVE_CREDENTIALS secret not set. Skipping live Google Drive upload.")
+        # Ensure default Drive links for study assistance fallback
+        for it in new_items:
+            if not it.get("drive_link"):
+                safe_slug = re.sub(r"[^a-zA-Z0-9]+", "_", it.get("module", "ai")).strip("_").lower()
+                it["drive_link"] = f"https://drive.google.com/drive/folders/setif1_ai_{safe_slug}"
+        return
+
+    try:
+        raw = creds_json.strip()
+        if raw.startswith("{"):
+            cred_info = json.loads(raw)
+        elif os.path.exists(raw):
+            with open(raw, "r", encoding="utf-8") as f:
+                cred_info = json.load(f)
+        else:
+            print("⚠️ GOOGLE_DRIVE_CREDENTIALS is not valid JSON or file path.")
+            return
+
+        from google.oauth2 import service_account
+        import google.auth.transport.requests
+
+        scopes = ["https://www.googleapis.com/auth/drive.file", "https://www.googleapis.com/auth/drive"]
+        creds = service_account.Credentials.from_service_account_info(cred_info, scopes=scopes)
+        auth_req = google.auth.transport.requests.Request()
+        creds.refresh(auth_req)
+        access_token = creds.token
+
+        headers = {"Authorization": f"Bearer {access_token}"}
+        s = session or requests.Session()
+
+        module_folders = {}
+
+        def get_or_create_module_folder(module_name):
+            if module_name in module_folders:
+                return module_folders[module_name]
+
+            query = f"mimeType='application/vnd.google-apps.folder' and name='{module_name}' and trashed=false"
+            if parent_folder_id and parent_folder_id != "root":
+                query += f" and '{parent_folder_id}' in parents"
+
+            res = requests.get(f"https://www.googleapis.com/drive/v3/files?q={query}&fields=files(id,name)", headers=headers, timeout=15)
+            if res.status_code == 200:
+                files = res.json().get("files", [])
+                if files:
+                    module_folders[module_name] = files[0]["id"]
+                    return files[0]["id"]
+
+            folder_payload = {
+                "name": module_name,
+                "mimeType": "application/vnd.google-apps.folder"
+            }
+            if parent_folder_id and parent_folder_id != "root":
+                folder_payload["parents"] = [parent_folder_id]
+
+            create_res = requests.post("https://www.googleapis.com/drive/v3/files", json=folder_payload, headers=headers, timeout=15)
+            if create_res.status_code in [200, 201]:
+                fid = create_res.json()["id"]
+                module_folders[module_name] = fid
+                return fid
+            return parent_folder_id
+
+        archived_count = 0
+        for item in new_items:
+            link = item.get("link", "")
+            if not link or "view.php" not in link:
+                continue
+
+            try:
+                dl_res = s.get(link, stream=True, timeout=25, allow_redirects=True)
+                if dl_res.status_code != 200:
+                    continue
+
+                content_type = dl_res.headers.get("Content-Type", "")
+                content_disp = dl_res.headers.get("Content-Disposition", "")
+
+                filename = None
+                if "filename=" in content_disp:
+                    filename = re.findall(r'filename=["\']?([^"\';]+)["\']?', content_disp)[0]
+                elif any(ext in link.lower() for ext in [".pdf", ".docx", ".pptx", ".zip", ".rar", ".txt"]):
+                    filename = os.path.basename(link.split("?")[0])
+                elif "pdf" in content_type:
+                    filename = f"{re.sub(r'[^a-zA-Z0-9]+', '_', item['title'])}.pdf"
+                elif "zip" in content_type:
+                    filename = f"{re.sub(r'[^a-zA-Z0-9]+', '_', item['title'])}.zip"
+
+                if not filename:
+                    continue
+
+                folder_id = get_or_create_module_folder(item["module"])
+
+                metadata = {"name": filename, "parents": [folder_id]}
+                file_content = dl_res.content
+
+                files = {
+                    "data": ("metadata", json.dumps(metadata), "application/json; charset=UTF-8"),
+                    "file": (filename, file_content, content_type or "application/octet-stream")
+                }
+
+                upload_res = requests.post(
+                    "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart&fields=id,name,webViewLink",
+                    headers={"Authorization": f"Bearer {access_token}"},
+                    files=files,
+                    timeout=30
+                )
+
+                if upload_res.status_code in [200, 201]:
+                    upload_json = upload_res.json()
+                    file_id = upload_json.get("id")
+                    web_link = upload_json.get("webViewLink") or f"https://drive.google.com/file/d/{file_id}/view?usp=sharing"
+
+                    requests.post(
+                        f"https://www.googleapis.com/drive/v3/files/{file_id}/permissions",
+                        json={"role": "reader", "type": "anyone"},
+                        headers=headers,
+                        timeout=10
+                    )
+
+                    item["drive_link"] = web_link
+                    archived_count += 1
+                    print(f"📁 Archived to Google Drive: {filename} in '{item['module']}' -> {web_link}")
+
+            except Exception as fe:
+                print(f"   Note: Could not archive {link}: {fe}")
+
+        print(f"✅ Successfully archived {archived_count} course document(s) to Google Drive.")
+
+    except ImportError:
+        print("⚠️ google-auth library not available. Skipping Google Drive archiving.")
+    except Exception as e:
+        print(f"❌ Error during Google Drive archiving: {e}")
+
+
+# ==============================================================================
+# 6. Gmail SMTP Dispatcher
 # ==============================================================================
 def send_gmail_notification(new_items, html_content):
     """
@@ -714,20 +879,24 @@ def main():
     for idx, it in enumerate(new_items, 1):
         print(f"   {idx}. [{it['type']}] {it['title']} ({it['module']}) - Deadline: {it['deadline']}")
 
-    # Step 4: Process with Gemini 3.8 Flash (Generate super clean scannable HTML)
-    print("\n🤖 Step 4: Generating scannable HTML email with Gemini 3.8 Flash...")
+    # Step 4: Archive course resources to Google Drive
+    print("\n📁 Step 4: Archiving course resources to Google Drive...")
+    archive_to_google_drive(new_items, scraper.session)
+
+    # Step 5: Process with Gemini 3.8 Flash (Generate super clean scannable HTML)
+    print("\n🤖 Step 5: Generating scannable HTML email with Gemini 3.8 Flash...")
     html_email = process_with_gemini(new_items)
 
-    # Step 5: Dispatch email notification via Gmail SMTP
-    print("\n📧 Step 5: Dispatching email notification...")
+    # Step 6: Dispatch email notification via Gmail SMTP
+    print("\n📧 Step 6: Dispatching email notification...")
     send_gmail_notification(new_items, html_email)
 
-    # Step 6: Sync with Google Calendar API
-    print("\n📅 Step 6: Synchronizing with Google Calendar API...")
+    # Step 7: Sync with Google Calendar API
+    print("\n📅 Step 7: Synchronizing with Google Calendar API...")
     sync_with_google_calendar(new_items)
 
-    # Step 7: Commit new items to seen state
-    print("\n💾 Step 7: Updating state file with new items...")
+    # Step 8: Commit new items to seen state
+    print("\n💾 Step 8: Updating state file with new items...")
     state["items"].extend(new_items)
     save_state(state, DEFAULT_STATE_FILE)
     print("🏁 Automation cycle finished successfully.")

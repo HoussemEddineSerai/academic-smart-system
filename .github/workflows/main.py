@@ -1,12 +1,7 @@
 import os
 import smtplib
 from email.message import EmailMessage
-from google import genai
-from google.genai import types
-from google.genai.errors import ServerError, ClientError
-
-# 1. Initialize Gemini Client
-client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+import requests
 
 def fetch_university_updates():
     simulated_announcement = """
@@ -17,29 +12,26 @@ def fetch_university_updates():
     return simulated_announcement
 
 def process_with_gemini(raw_text):
-    # Using universally available production model identifiers
-    models_to_try = ['gemini-1.5-flash', 'gemini-1.5-pro']
+    api_key = os.environ["GEMINI_API_KEY"]
+    # استخدام رابط REST API القياسي المدعوم عالمياً لنموذج gemini-1.5-flash
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={api_key}"
     
-    config = types.GenerateContentConfig(
-        system_instruction="You are a precise academic assistant for a 4th-year AI Engineering student. Extract exact deadlines, module names, exam topics, and action items clearly in both English and Arabic without fluff.",
-        temperature=0.3,
-    )
-
-    last_error = None
-    for model_name in models_to_try:
-        try:
-            print(f"Trying model: {model_name}...")
-            response = client.models.generate_content(
-                model=model_name,
-                config=config,
-                contents=raw_text
-            )
-            return response.text
-        except (ServerError, ClientError) as e:
-            print(f"{model_name} failed or not found, switching to next model...")
-            last_error = e
-
-    raise last_error
+    payload = {
+        "contents": [{
+            "parts": [{
+                "text": f"You are a precise academic assistant for a 4th-year AI Engineering student. Extract exact deadlines, module names, exam topics, and action items clearly in both English and Arabic without fluff.\n\nUpdate: {raw_text}"
+            }]
+        }]
+    }
+    
+    headers = {"Content-Type": "application/json"}
+    
+    response = requests.post(url, json=payload, headers=headers)
+    if response.status_code != 200:
+        raise Exception(f"Gemini API Error {response.status_code}: {response.text}")
+        
+    data = response.json()
+    return data['candidates'][0]['content']['parts'][0]['text']
 
 def send_gmail_notification(summary_text):
     sender_email = os.environ["GMAIL_USER"]
@@ -60,7 +52,7 @@ if __name__ == "__main__":
     print("Checking university platform...")
     raw_content = fetch_university_updates()
     
-    print("Processing content with Gemini AI...")
+    print("Processing content with Gemini API via HTTP...")
     ai_summary = process_with_gemini(raw_content)
     print(ai_summary)
     

@@ -2,8 +2,12 @@ name: Academic System Auto-Check
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
-  workflow_dispatch:
+    - cron: '0 */2 * * *'  # Runs every 2 hours automatically
+  workflow_dispatch:       # Allows manual execution anytime via GitHub Actions UI
+
+# Permissions needed to commit and push seen_updates.json state changes back to the repository
+permissions:
+  contents: write
 
 jobs:
   check-updates:
@@ -11,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -19,12 +25,30 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install google-genai requests beautifulsoup4
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
 
-      - name: Run Python script
+      - name: Run Course & Lab Tracker
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          PORTAL_URL: ${{ secrets.PORTAL_URL }}
+          MOODLE_USERNAME: ${{ secrets.MOODLE_USERNAME }}
+          MOODLE_PASSWORD: ${{ secrets.MOODLE_PASSWORD }}
         run: |
           python .github/workflows/main.py
+
+      - name: Commit and push updated state
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -f seen_updates.json ]; then
+            git add seen_updates.json
+            if ! git diff --staged --quiet; then
+              git commit -m "chore(state): update tracked courses and labs [skip ci]"
+              git push
+            else
+              echo "✅ No state changes to commit. Everything is up-to-date."
+            fi
+          fi

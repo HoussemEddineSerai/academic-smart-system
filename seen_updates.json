@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "last_checked": "2026-11-21T17:43:59.198493+00:00",
+  "items": [
+    {
+      "id": "cours-stochastic-processes-ch2",
+      "title": "Chapitre 2: Processus de Poisson et Chaînes de Markov",
+      "module": "Processus Stochastiques (Stochastic Processes)",
+      "type": "Cours",
+      "link": "https://moodle.univ.edu/mod/resource/view.php?id=3101",
+      "deadline": "N/A",
+      "first_seen": "2026-11-20T10:00:00Z",
+      "details": "Diapositives de cours et synthèse mathématique des lois de probabilité exponentielles."
+    },
+    {
+      "id": "td-optim-convex-gradient-descent",
+      "title": "TD 2: Optimisation Convexe et Descente de Gradient Stochastique",
+      "module": "Optimisation pour le Machine Learning",
+      "type": "TD",
+      "link": "https://moodle.univ.edu/mod/resource/view.php?id=3102",
+      "deadline": "2026-11-26 23:59",
+      "first_seen": "2026-11-20T14:30:00Z",
+      "details": "Série d'exercices sur les conditions KKT, dualité de Lagrange et convergence SGD."
+    },
+    {
+      "id": "tp-deep-learning-transformers",
+      "title": "TP 2: Implementation of Transformer Attention Mechanism & PyTorch ViT",
+      "module": "Deep Learning & Computer Vision",
+      "type": "TP",
+      "link": "https://moodle.univ.edu/mod/assign/view.php?id=3103",
+      "deadline": "2026-11-28 23:59",
+      "first_seen": "2026-11-21T09:15:00Z",
+      "details": "Implémentation complète de Scaled Dot-Product Attention et Multi-Head Self-Attention en PyTorch."
+    }
+  ]
+}

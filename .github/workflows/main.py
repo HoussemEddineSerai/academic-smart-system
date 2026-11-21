@@ -17,8 +17,8 @@ def fetch_university_updates():
     return simulated_announcement
 
 def process_with_gemini(raw_text):
-    # Fallback list using rock-solid production models
-    models_to_try = ['gemini-2.5-flash', 'gemini-1.5-pro', 'gemini-1.5-flash']
+    # Using the standard Google GenAI SDK v2.0 model identifiers
+    models_to_try = ['gemini-2.0-flash', 'gemini-2.0-pro']
     
     config = types.GenerateContentConfig(
         system_instruction="You are a precise academic assistant for a 4th-year AI Engineering student. Extract exact deadlines, module names, exam topics, and action items clearly in both English and Arabic without fluff.",
@@ -36,7 +36,7 @@ def process_with_gemini(raw_text):
             )
             return response.text
         except (ServerError, ClientError) as e:
-            print(f"{model_name} failed or overloaded, switching to next model...")
+            print(f"{model_name} failed or not found, switching to next model...")
             last_error = e
 
     raise last_error

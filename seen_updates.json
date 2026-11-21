@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "last_checked": "2026-11-21T18:40:43.961714+00:00",
+  "last_checked": "2026-11-21T18:51:02.864256+00:00",
   "items": [
     {
       "id": "cours-stochastic-processes-ch2",
@@ -31,6 +31,76 @@
       "deadline": "2026-11-28 23:59",
       "first_seen": "2026-11-21T09:15:00Z",
       "details": "Implémentation complète de Scaled Dot-Product Attention et Multi-Head Self-Attention en PyTorch."
+    },
+    {
+      "id": "39029d2547105551",
+      "title": "Techniques de rédaction",
+      "module": "ING4 Intelligence Artificielle (S7)",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=996",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T18:50:40.392244+00:00",
+      "details": "Module officiel ING4 IA: Techniques de rédaction"
+    },
+    {
+      "id": "3cad4fa180f95136",
+      "title": "Recherche opérationnelle",
+      "module": "ING4 Intelligence Artificielle (S7)",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=995",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T18:50:40.392311+00:00",
+      "details": "Module officiel ING4 IA: Recherche opérationnelle"
+    },
+    {
+      "id": "4ef50b00d5125d73",
+      "title": "Business Intelligence",
+      "module": "ING4 Intelligence Artificielle (S7)",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=994",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T18:50:40.392348+00:00",
+      "details": "Module officiel ING4 IA: Business Intelligence"
+    },
+    {
+      "id": "696d532fcdb5935b",
+      "title": "Modélisation et simulation",
+      "module": "ING4 Intelligence Artificielle (S7)",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=993",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T18:50:40.392381+00:00",
+      "details": "Module officiel ING4 IA: Modélisation et simulation"
+    },
+    {
+      "id": "56f9bf3214fea9f6",
+      "title": "Machine Learning",
+      "module": "ING4 Intelligence Artificielle (S7)",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T18:50:40.392412+00:00",
+      "details": "Module officiel ING4 IA: Machine Learning"
+    },
+    {
+      "id": "ec1cff0819280d03",
+      "title": "Calcul haute performance",
+      "module": "ING4 Intelligence Artificielle (S7)",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T18:50:40.392442+00:00",
+      "details": "Module officiel ING4 IA: Calcul haute performance"
+    },
+    {
+      "id": "9f65bc21d08a6aee",
+      "title": "Représentation des  connaissances et  raisonnement",
+      "module": "ING4 Intelligence Artificielle (S7)",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T18:50:40.392475+00:00",
+      "details": "Module officiel ING4 IA: Représentation des  connaissances et  raisonnement"
     }
   ]
 }

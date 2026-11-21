@@ -1083,7 +1083,7 @@
     }
 
     /* ==========================================================================
-       Security Access PIN Modal (Default PIN: 2026)
+       Security Access Gate (SHA-256 Cryptographic Verification)
        ========================================================================== */
     .security-modal-overlay {
       position: fixed;
@@ -1149,28 +1149,78 @@
       line-height: 1.4;
     }
 
-    /* PIN Indicator Dots */
-    .pin-dots-row {
-      display: flex;
-      gap: 16px;
-      margin-bottom: 24px;
+    /* Security Input & Keypad */
+    .pin-input-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 270px;
+      margin-bottom: 8px;
     }
 
-    .pin-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      border: 2px solid #CBD5E1;
-      background: transparent;
-      transition: all 0.15s ease;
+    .security-pin-input {
+      width: 100%;
+      background: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 12px 42px 12px 16px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--corp-text);
+      text-align: center;
+      outline: none;
+      letter-spacing: 2px;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .pin-dot.filled {
-      background: var(--corp-primary);
+    .security-pin-input:focus {
       border-color: var(--corp-primary);
-      transform: scale(1.15);
-      box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 0 0 3px var(--corp-primary-glow);
     }
-    .pin-dots-row.shake {
+
+    .pin-toggle-btn {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: var(--corp-text-light);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+    .pin-toggle-btn:hover {
+      color: var(--corp-text);
+    }
+
+    .btn-unlock-action {
+      background: var(--corp-primary);
+      color: #FFFFFF;
+      border: none;
+      width: 100%;
+      max-width: 270px;
+      padding: 12px;
+      border-radius: var(--radius-20);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 10px;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+      transition: background-color 0.15s, transform 0.1s;
+    }
+    .btn-unlock-action:hover {
+      background: var(--corp-primary-dark);
+    }
+    .btn-unlock-action:active {
+      transform: scale(0.97);
+    }
+
+    .security-panel-card.shake {
       animation: pinShake 0.4s ease-in-out;
     }
 
@@ -1185,7 +1235,7 @@
       font-size: 12px;
       font-weight: 600;
       height: 18px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     /* Numeric Keypad */
@@ -1288,7 +1338,7 @@
 <body>
 
   <!-- ========================================================================
-       Security Access PIN Modal (Gate on Startup, default PIN: 2026)
+       Security Access Gate (SHA-256 Cryptographic Verification)
        ======================================================================== -->
   <div class="security-modal-overlay" id="securityPinModal">
     <div class="security-panel-card">
@@ -1299,13 +1349,13 @@
         </svg>
       </div>
       <h2 class="security-panel-title">Security Access</h2>
-      <p class="security-panel-desc">Enter 4-digit PIN to access Academic Smart System.</p>
+      <p class="security-panel-desc">Enter access PIN or password to unlock Academic Smart System.</p>
 
-      <div class="pin-dots-row" id="pinDotsRow">
-        <div class="pin-dot" id="pindot-0"></div>
-        <div class="pin-dot" id="pindot-1"></div>
-        <div class="pin-dot" id="pindot-2"></div>
-        <div class="pin-dot" id="pindot-3"></div>
+      <div class="pin-input-wrap">
+        <input type="password" id="securityPinInput" class="security-pin-input" placeholder="••••••••" autocomplete="current-password" autofocus onkeydown="if(event.key === 'Enter') validateEnteredSecurityCode()">
+        <button type="button" class="pin-toggle-btn" onclick="togglePinVisibility()" title="Show/Hide">
+          <svg id="pinEyeIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        </button>
       </div>
 
       <div class="pin-error-text" id="pinErrorMsg"></div>
@@ -1325,8 +1375,13 @@
         <button class="keypad-btn action-btn" onclick="backspacePinKey()">⌫</button>
       </div>
 
+      <button class="btn-unlock-action" onclick="validateEnteredSecurityCode()">
+        <span>Unlock Platform</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+      </button>
+
       <div class="security-footer-hint">
-        Protected AI Automation • Default PIN: <strong>2026</strong>
+        Secured with SHA-256 Cryptographic Verification
       </div>
     </div>
   </div>
@@ -1934,100 +1989,117 @@
     let currentFilter = 'all';
 
     // =========================================================================
-    // Security Access PIN Gate (Default PIN: 2026)
+    // Security Access Gate (SHA-256 Cryptographic Verification)
     // =========================================================================
-    const CORRECT_PIN = "2026";
-    let enteredPin = "";
+    async function computeSHA256(str) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(str);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    // Authorized SHA-256 Target Hashes (Non-Plaintext Cryptographic Storage)
+    const TARGET_HASHES = new Set([
+      "c0429edaaed949eada8fe5c6426018f5dc6e4e367c4221c2bfc0c05b627b2c5e", // Primary authorization hash
+      "47888645269e0131e395f8b3b09c698b062135a8a735e862666d85284c04a2b7", // Target authorization hash
+      "1ec08285a725fe5e0141cc5cc8d493b342a3d12c75ae73b3acd393bc3b7d5d3a"  // Secondary authorization hash
+    ]);
 
     function checkStartupSecurity() {
       const isUnlocked = sessionStorage.getItem('academic_smart_pin_unlocked') === 'true';
       const modal = document.getElementById('securityPinModal');
+      const input = document.getElementById('securityPinInput');
       if (isUnlocked) {
         modal.classList.add('unlocked');
       } else {
         modal.classList.remove('unlocked');
-        updatePinDisplay();
-      }
-    }
-
-    function pressPinKey(digit) {
-      if (enteredPin.length < 4) {
-        enteredPin += digit;
-        updatePinDisplay();
-        if (enteredPin.length === 4) {
-          validateEnteredPin();
+        if (input) {
+          input.value = "";
+          setTimeout(() => input.focus(), 100);
         }
       }
     }
 
+    function pressPinKey(digit) {
+      const input = document.getElementById('securityPinInput');
+      if (!input) return;
+      input.value += digit;
+      document.getElementById('pinErrorMsg').textContent = "";
+      if (input.value.length === 4) {
+        validateEnteredSecurityCode();
+      }
+    }
+
     function backspacePinKey() {
-      if (enteredPin.length > 0) {
-        enteredPin = enteredPin.slice(0, -1);
-        updatePinDisplay();
+      const input = document.getElementById('securityPinInput');
+      if (input && input.value.length > 0) {
+        input.value = input.value.slice(0, -1);
         document.getElementById('pinErrorMsg').textContent = "";
       }
     }
 
     function clearPinKey() {
-      enteredPin = "";
-      updatePinDisplay();
-      document.getElementById('pinErrorMsg').textContent = "";
-    }
-
-    function updatePinDisplay() {
-      for (let i = 0; i < 4; i++) {
-        const dot = document.getElementById(`pindot-${i}`);
-        if (dot) {
-          dot.classList.toggle('filled', i < enteredPin.length);
-        }
+      const input = document.getElementById('securityPinInput');
+      if (input) {
+        input.value = "";
+        document.getElementById('pinErrorMsg').textContent = "";
+        input.focus();
       }
     }
 
-    function validateEnteredPin() {
-      if (enteredPin === CORRECT_PIN) {
-        document.getElementById('pinErrorMsg').style.color = "var(--corp-success)";
-        document.getElementById('pinErrorMsg').textContent = "✓ PIN Accepted. Unlocking...";
-        sessionStorage.setItem('academic_smart_pin_unlocked', 'true');
-        setTimeout(() => {
-          document.getElementById('securityPinModal').classList.add('unlocked');
-          enteredPin = "";
-          updatePinDisplay();
-          document.getElementById('pinErrorMsg').textContent = "";
-        }, 400);
-      } else {
-        const row = document.getElementById('pinDotsRow');
-        row.classList.add('shake');
-        document.getElementById('pinErrorMsg').style.color = "var(--corp-danger)";
-        document.getElementById('pinErrorMsg').textContent = "Incorrect PIN. Default PIN: 2026";
-        setTimeout(() => {
-          row.classList.remove('shake');
-          enteredPin = "";
-          updatePinDisplay();
-        }, 700);
+    function togglePinVisibility() {
+      const input = document.getElementById('securityPinInput');
+      if (!input) return;
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    async function validateEnteredSecurityCode() {
+      const input = document.getElementById('securityPinInput');
+      const errorEl = document.getElementById('pinErrorMsg');
+      const card = document.querySelector('.security-panel-card');
+      if (!input) return;
+
+      const enteredVal = input.value.trim();
+      if (!enteredVal) return;
+
+      try {
+        const hashHex = await computeSHA256(enteredVal);
+        if (TARGET_HASHES.has(hashHex)) {
+          errorEl.style.color = "var(--corp-success)";
+          errorEl.textContent = "✓ Access Verified. Unlocking...";
+          sessionStorage.setItem('academic_smart_pin_unlocked', 'true');
+          setTimeout(() => {
+            document.getElementById('securityPinModal').classList.add('unlocked');
+            input.value = "";
+            errorEl.textContent = "";
+          }, 350);
+        } else {
+          card.classList.add('shake');
+          errorEl.style.color = "var(--corp-danger)";
+          errorEl.textContent = "Incorrect Access PIN";
+          setTimeout(() => {
+            card.classList.remove('shake');
+            input.value = "";
+            input.focus();
+          }, 700);
+        }
+      } catch (err) {
+        console.error("Verification error:", err);
+        errorEl.style.color = "var(--corp-danger)";
+        errorEl.textContent = "Verification Failed";
       }
     }
 
     function lockPlatform() {
       sessionStorage.removeItem('academic_smart_pin_unlocked');
-      enteredPin = "";
-      updatePinDisplay();
-      document.getElementById('pinErrorMsg').textContent = "";
+      const input = document.getElementById('securityPinInput');
+      const errorEl = document.getElementById('pinErrorMsg');
+      if (input) input.value = "";
+      if (errorEl) errorEl.textContent = "";
       document.getElementById('securityPinModal').classList.remove('unlocked');
+      if (input) setTimeout(() => input.focus(), 100);
     }
-
-    // Physical keyboard listener for PIN input
-    window.addEventListener('keydown', (e) => {
-      const modal = document.getElementById('securityPinModal');
-      if (!modal.classList.contains('unlocked')) {
-        if (e.key >= '0' && e.key <= '9') {
-          pressPinKey(e.key);
-        } else if (e.key === 'Backspace') {
-          backspacePinKey();
-        } else if (e.key === 'Escape') {
-          clearPinKey();
-        }
-      }
-    });
 
     // =========================================================================
     // Node Inspector Configurations

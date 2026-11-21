@@ -1,0 +1,46 @@
+name: Security Login Alert
+
+on:
+  repository_dispatch:
+    types: [security-alert, login-alert]
+  workflow_dispatch:
+    inputs:
+      timestamp:
+        description: 'Login Timestamp'
+        required: false
+        default: 'Now'
+      user_agent:
+        description: 'Browser User-Agent'
+        required: false
+        default: 'Web Browser'
+      client_info:
+        description: 'Client info'
+        required: false
+        default: 'Dashboard Unlocked'
+
+jobs:
+  dispatch-alert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Send Security Alert Email
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+        run: |
+          python .github/workflows/main.py --security-alert \
+            "${{ github.event.client_payload.timestamp || github.event.inputs.timestamp || 'Now' }}" \
+            "${{ github.event.client_payload.user_agent || github.event.inputs.user_agent || 'Web Client' }}" \
+            "${{ github.event.client_payload.client_info || github.event.inputs.client_info || 'Session Unlocked' }}"

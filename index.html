@@ -1117,6 +1117,263 @@
     }
 
     /* ==========================================================================
+       Semester 7 AI Engineering Progress Tracker & Modules Hub
+       ========================================================================== */
+    .semester-progress-card {
+      background: #FFFFFF;
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .progress-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .progress-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .progress-icon-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--corp-primary-soft);
+      color: var(--corp-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .progress-percent-badge {
+      background: var(--corp-primary);
+      color: #FFFFFF;
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 999px;
+      letter-spacing: -0.2px;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+    .progress-bar-track {
+      width: 100%;
+      height: 12px;
+      background: #E2E8F0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563EB 0%, #3B82F6 100%);
+      border-radius: 999px;
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .progress-stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--corp-border);
+    }
+    .stat-mini-box {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .stat-mini-val {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--corp-text);
+      letter-spacing: -0.2px;
+    }
+    .stat-mini-lbl {
+      font-size: 12px;
+      color: var(--corp-text-muted);
+    }
+
+    /* Modules Hub Grid (All 7 Semester Modules) */
+    .modules-hub-section {
+      margin-bottom: 24px;
+    }
+    .modules-hub-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .modules-hub-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--corp-text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .modules-hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 14px;
+    }
+    @media (max-width: 680px) {
+      .modules-hub-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .module-hub-card {
+      background: #FFFFFF;
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: all 0.18s ease;
+      cursor: pointer;
+    }
+    .module-hub-card:hover {
+      border-color: #93C5FD;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .module-hub-card.active-filter {
+      border-color: var(--corp-primary);
+      background: #F8FAFC;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.25);
+    }
+    .module-hub-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .module-hub-name {
+      margin: 0;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--corp-text);
+      line-height: 1.3;
+    }
+    .module-hub-syllabus {
+      margin: 0;
+      font-size: 12.5px;
+      color: var(--corp-text-muted);
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .module-track-row {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .module-track-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--corp-text-light);
+    }
+    .module-mini-track {
+      width: 100%;
+      height: 6px;
+      background: #E2E8F0;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .module-mini-fill {
+      height: 100%;
+      background: var(--corp-primary);
+      border-radius: 999px;
+      transition: width 0.3s ease;
+    }
+    .module-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding-top: 4px;
+    }
+    .btn-module-action {
+      padding: 5px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: var(--radius-20);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .btn-module-drive {
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      color: #065F46;
+    }
+    .btn-module-drive:hover {
+      background: #D1FAE5;
+      border-color: #6EE7B7;
+    }
+    .btn-module-study {
+      background: #EFF6FF;
+      border: 1px solid #BFDBFE;
+      color: #1D4ED8;
+    }
+    .btn-module-study:hover {
+      background: #DBEAFE;
+      border-color: #93C5FD;
+    }
+
+    /* Course Card Completion Toggle */
+    .btn-card-toggle-complete {
+      background: #F1F5F9;
+      border: 1px solid #CBD5E1;
+      color: #475569;
+      padding: 5px 12px;
+      border-radius: var(--radius-20);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.15s ease;
+    }
+    .btn-card-toggle-complete:hover {
+      background: #E2E8F0;
+      border-color: #94A3B8;
+      color: #1E293B;
+    }
+    .btn-card-toggle-complete.completed {
+      background: #ECFDF5;
+      border-color: #A7F3D0;
+      color: #065F46;
+    }
+    .btn-card-toggle-complete.completed:hover {
+      background: #D1FAE5;
+      border-color: #6EE7B7;
+    }
+    .course-card.is-completed {
+      border-left: 4px solid var(--corp-success);
+      background: #FCFDFD;
+    }
+
+    /* ==========================================================================
        Email Preview Modal (border-radius: 20px)
        ========================================================================== */
     .modal-backdrop-overlay {
@@ -2156,6 +2413,60 @@
             </div>
           </div>
 
+          <!-- Overall Semester 7 Progress Dashboard -->
+          <div class="semester-progress-card" id="semesterProgressCard">
+            <div class="progress-card-top">
+              <div class="progress-title-group">
+                <div class="progress-icon-badge">📊</div>
+                <div>
+                  <h3 style="margin: 0; font-size: 17px; font-weight: 700; color: var(--corp-text); letter-spacing: -0.2px;">Semester 7 AI Engineering Progress</h3>
+                  <p style="margin: 3px 0 0 0; font-size: 13px; color: var(--corp-text-muted);">Real-time completion tracking for all 7 verified modules • Stored locally</p>
+                </div>
+              </div>
+              <span id="overallPercentBadge" class="progress-percent-badge">0% Completed</span>
+            </div>
+
+            <div class="progress-bar-track">
+              <div id="overallProgressFill" class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+
+            <div class="progress-stats-row">
+              <div class="stat-mini-box">
+                <span class="stat-mini-val">7 / 7 Active</span>
+                <span class="stat-mini-lbl">Verified Modules</span>
+              </div>
+              <div class="stat-mini-box">
+                <span class="stat-mini-val"><span id="completedTasksCount">0</span> of <span id="totalTasksCount">0</span></span>
+                <span class="stat-mini-lbl">Tasks / Resources Done</span>
+              </div>
+              <div class="stat-mini-box">
+                <span class="stat-mini-val" id="pendingDeadlinesCount">0</span>
+                <span class="stat-mini-lbl">Active Deadlines</span>
+              </div>
+              <div class="stat-mini-box">
+                <span class="stat-mini-val" style="color: var(--corp-success);">● Live Synced</span>
+                <span class="stat-mini-lbl">Moodle Chronology</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Semester 7 Core Curriculum Modules Hub (All 7 Modules) -->
+          <div class="modules-hub-section" id="modulesHubSection">
+            <div class="modules-hub-header">
+              <div class="modules-hub-title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                <span>Semester 7 Modules (Click any module to filter)</span>
+              </div>
+              <div id="activeModuleFilterBadge" style="display: none; align-items: center; gap: 6px; padding: 4px 12px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 999px; font-size: 12px; color: #1D4ED8; font-weight: 600;">
+                <span id="activeModuleFilterText">Filtered: Machine Learning</span>
+                <button onclick="clearModuleFilter()" style="background: none; border: none; cursor: pointer; font-weight: 700; color: #1D4ED8; padding: 0 2px;" title="Clear module filter">✕</button>
+              </div>
+            </div>
+            <div class="modules-hub-grid" id="modulesHubGrid">
+              <!-- Dynamically rendered for all 7 modules with interactive progress bars & quick actions -->
+            </div>
+          </div>
+
           <!-- Toolbar: Search Input & Filter Tabs -->
           <div class="tracker-toolbar">
             <div class="search-input-wrapper">
@@ -2167,6 +2478,8 @@
               <button class="filter-tab-btn" type="button" onclick="setFilter('Cours', this)">Cours</button>
               <button class="filter-tab-btn" type="button" onclick="setFilter('TP', this)">Labs (TP)</button>
               <button class="filter-tab-btn" type="button" onclick="setFilter('TD', this)">Work (TD)</button>
+              <button class="filter-tab-btn" type="button" onclick="setFilter('completed', this)">✓ Completed</button>
+              <button class="filter-tab-btn" type="button" onclick="setFilter('pending', this)">⏳ Pending</button>
             </div>
           </div>
 
@@ -2419,7 +2732,7 @@
                 <span class="module-syllabus-sub">Transformers, Attention Mechanisms, Deep CNNs, Vision Transformers & PyTorch</span>
               </div>
               <div class="integration-actions-group">
-                <a href="https://drive.google.com/drive/folders/setif1_ing4_machine_learning" target="_blank" class="btn-card-drive">
+                <a href="https://drive.google.com/drive/search?q=Machine+Learning" target="_blank" class="btn-card-drive">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                   <span>Open in Drive</span>
                 </a>
@@ -2440,7 +2753,7 @@
                 <span class="module-syllabus-sub">OpenMP, MPI Distributed Parallelism, Matrix Benchmarking & Amdahl\'s Law</span>
               </div>
               <div class="integration-actions-group">
-                <a href="https://drive.google.com/drive/folders/setif1_ing4_hpc" target="_blank" class="btn-card-drive">
+                <a href="https://drive.google.com/drive/search?q=Calcul+Haute+Performance" target="_blank" class="btn-card-drive">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                   <span>Open in Drive</span>
                 </a>
@@ -2461,7 +2774,7 @@
                 <span class="module-syllabus-sub">First-Order Predicate Logic, Robinson Unification, Horn Clauses & Prolog</span>
               </div>
               <div class="integration-actions-group">
-                <a href="https://drive.google.com/drive/folders/setif1_ing4_krr" target="_blank" class="btn-card-drive">
+                <a href="https://drive.google.com/drive/search?q=Représentation+des+Connaissances" target="_blank" class="btn-card-drive">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                   <span>Open in Drive</span>
                 </a>
@@ -2482,7 +2795,7 @@
                 <span class="module-syllabus-sub">Discrete Event Simulation, M/M/1 Queuing Theory & Congruential RNG</span>
               </div>
               <div class="integration-actions-group">
-                <a href="https://drive.google.com/drive/folders/setif1_ing4_modelisation_simulation" target="_blank" class="btn-card-drive">
+                <a href="https://drive.google.com/drive/search?q=Modélisation+et+Simulation" target="_blank" class="btn-card-drive">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                   <span>Open in Drive</span>
                 </a>
@@ -2503,7 +2816,7 @@
                 <span class="module-syllabus-sub">Star Schema, Snowflake Schema, Fact Tables, Dimension Modeling & ETL Pipelines</span>
               </div>
               <div class="integration-actions-group">
-                <a href="https://drive.google.com/drive/folders/setif1_ing4_business_intelligence" target="_blank" class="btn-card-drive">
+                <a href="https://drive.google.com/drive/search?q=Business+Intelligence" target="_blank" class="btn-card-drive">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                   <span>Open in Drive</span>
                 </a>
@@ -2524,7 +2837,7 @@
                 <span class="module-syllabus-sub">Linear Programming, Revised Simplex Algorithm, Dual Theory & Optimization</span>
               </div>
               <div class="integration-actions-group">
-                <a href="https://drive.google.com/drive/folders/setif1_ing4_recherche_operationnelle" target="_blank" class="btn-card-drive">
+                <a href="https://drive.google.com/drive/search?q=Recherche+Opérationnelle" target="_blank" class="btn-card-drive">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                   <span>Open in Drive</span>
                 </a>
@@ -2545,7 +2858,7 @@
                 <span class="module-syllabus-sub">IMRAD Scientific Paper Architecture, LaTeX / BibTeX Citation & Academic Ethics</span>
               </div>
               <div class="integration-actions-group">
-                <a href="https://drive.google.com/drive/folders/setif1_ing4_techniques_redaction" target="_blank" class="btn-card-drive">
+                <a href="https://drive.google.com/drive/search?q=Techniques+de+Rédaction" target="_blank" class="btn-card-drive">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
                   <span>Open in Drive</span>
                 </a>
@@ -2737,7 +3050,7 @@
               KNN, Decision Trees & Naive Bayes classification deposit link on Sétif 1 Moodle.
             </p>
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-              <a href="https://drive.google.com/drive/folders/setif1_ing4_machine_learning" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
+              <a href="https://drive.google.com/drive/search?q=Machine+Learning" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
                 📁 Open in Drive
               </a>
               <a href="https://sciences-courses.univ-setif.dz/course/view.php?id=992" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #2563EB; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
@@ -2764,7 +3077,7 @@
               Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl).
             </p>
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-              <a href="https://drive.google.com/drive/folders/setif1_ing4_hpc" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
+              <a href="https://drive.google.com/drive/search?q=Calcul+Haute+Performance" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
                 📁 Open in Drive
               </a>
               <a href="https://sciences-courses.univ-setif.dz/course/view.php?id=991" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #2563EB; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
@@ -2954,7 +3267,7 @@
         "type": "TP",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
         "deadline": "2026-11-25 23:59",
-        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_machine_learning",
+        "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning",
         "first_seen": "2026-11-21T09:15:00Z",
         "details": "KNN, Decision Trees & Naive Bayes classification deposit link on Sétif 1 Moodle."
       },
@@ -2965,7 +3278,7 @@
         "type": "TP",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
         "deadline": "2026-11-26 18:00",
-        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
+        "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance",
         "first_seen": "2026-11-21T10:00:00Z",
         "details": "Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl)."
       },
@@ -2976,7 +3289,7 @@
         "type": "TD",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
         "deadline": "2026-11-27 23:59",
-        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
+        "drive_link": "https://drive.google.com/drive/search?q=Représentation+des+Connaissances",
         "first_seen": "2026-11-21T11:30:00Z",
         "details": "Résolution par réfutation, algorithme d'unification de Robinson et programmation logique Prolog."
       },
@@ -2987,7 +3300,7 @@
         "type": "Cours",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=993",
         "deadline": null,
-        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_modelisation_simulation",
+        "drive_link": "https://drive.google.com/drive/search?q=Modélisation+et+Simulation",
         "first_seen": "2026-11-21T12:00:00Z",
         "details": "Systèmes stochastiques d'attente (files M/M/1), générateurs congruentiels pseudo-aléatoires et validation statistique."
       },
@@ -2998,7 +3311,7 @@
         "type": "Cours",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=994",
         "deadline": null,
-        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_business_intelligence",
+        "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence",
         "first_seen": "2026-11-21T13:00:00Z",
         "details": "Tables de faits, dimensions temporelles et processus ETL pour l'aide à la décision stratégique."
       },
@@ -3009,7 +3322,7 @@
         "type": "Cours",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=995",
         "deadline": null,
-        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_recherche_operationnelle",
+        "drive_link": "https://drive.google.com/drive/search?q=Recherche+Opérationnelle",
         "first_seen": "2026-11-21T14:00:00Z",
         "details": "Formulation canonique, algorithme du simplexe à deux phases et analyse de sensibilité primale-duale."
       },
@@ -3020,7 +3333,7 @@
         "type": "Cours",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=996",
         "deadline": null,
-        "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_techniques_redaction",
+        "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+Rédaction",
         "first_seen": "2026-11-21T15:00:00Z",
         "details": "Structure IMRAD des articles scientifiques, gestion des citations LaTeX/BibTeX et éthique académique."
       }
@@ -3438,6 +3751,285 @@
     }
 
     // =========================================================================
+    // Semester 7 AI Engineering Modules Master Registry
+    // =========================================================================
+    const S7_MODULES = [
+      {
+        id: 'ml',
+        name: 'Machine Learning',
+        fullName: 'ING4 Intelligence Artificielle (S7) - Machine Learning',
+        tag: 'TP / LAB',
+        keywords: ['machine learning', 'ml', 'knn', 'svm', 'regression', 'decision tree', 'classification'],
+        driveQuery: 'Machine Learning',
+        syllabus: 'Transformers, Attention Mechanisms, Deep CNNs, Vision Transformers & PyTorch',
+        studyPrompt: 'Act as an academic tutor for Ferhat Abbas University Sétif 1 ING4 AI Engineering. Guide me through Transformer attention mechanisms, self-attention equations, Scaled Dot-Product Attention, Multi-Head Attention, and Vision Transformer (ViT) implementation in PyTorch for CIFAR-10 based on our curriculum.'
+      },
+      {
+        id: 'hpc',
+        name: 'Calcul haute performance',
+        fullName: 'ING4 Intelligence Artificielle (S7) - Calcul haute performance',
+        tag: 'TP / LAB',
+        keywords: ['calcul haute performance', 'hpc', 'parallél', 'openmp', 'mpi', 'amdahl'],
+        driveQuery: 'Calcul Haute Performance',
+        syllabus: 'OpenMP, MPI Distributed Parallelism, Matrix Benchmarking & Amdahl\'s Law',
+        studyPrompt: 'Act as an academic tutor for Ferhat Abbas University Sétif 1 ING4 AI Engineering. Explain parallel matrix multiplication benchmarking with OpenMP multithreading and MPI distributed message passing, speedup calculation, cache locality, and Amdahl\'s law efficiency analysis.'
+      },
+      {
+        id: 'krr',
+        name: 'Représentation des connaissances',
+        fullName: 'ING4 Intelligence Artificielle (S7) - Représentation des connaissances',
+        tag: 'TD / WORK',
+        keywords: ['représentation des connaissances', 'connaissance', 'krr', 'prédicat', 'prolog', 'robinson', 'unification', 'horn'],
+        driveQuery: 'Représentation des Connaissances',
+        syllabus: 'First-Order Predicate Logic, Robinson Unification, Horn Clauses & Prolog',
+        studyPrompt: 'Act as an academic tutor for Ferhat Abbas University Sétif 1 ING4 AI Engineering. Guide me through First-Order Logic syntax/semantics, Clausal Normal Form (CNF) conversion, Robinson\'s Unification Algorithm, SLD-resolution refutation, and Prolog knowledge base query mechanics.'
+      },
+      {
+        id: 'modsim',
+        name: 'Modélisation et simulation',
+        fullName: 'ING4 Intelligence Artificielle (S7) - Modélisation et simulation',
+        tag: 'COURS',
+        keywords: ['modélisation et simulation', 'modélisation', 'simulation', 'queuing', 'lcg', 'monte carlo'],
+        driveQuery: 'Modélisation et Simulation',
+        syllabus: 'Discrete Event Simulation, M/M/1 Queuing Systems, LCG RNG & Monte Carlo',
+        studyPrompt: 'Act as an academic tutor for Ferhat Abbas University Sétif 1 ING4 AI Engineering. Guide me through discrete-event system simulation, state transition tables, M/M/1 queuing equations (Little\'s Law, server utilization), Linear Congruential Generators (LCG), and Monte Carlo variance reduction.'
+      },
+      {
+        id: 'bi',
+        name: 'Business Intelligence',
+        fullName: 'ING4 Intelligence Artificielle (S7) - Business Intelligence',
+        tag: 'COURS',
+        keywords: ['business intelligence', 'bi', 'entrepôt', 'etl', 'star schema', 'snowflake', 'olap'],
+        driveQuery: 'Business Intelligence',
+        syllabus: 'Data Warehousing, Dimensional Modeling, Star/Snowflake Schemas & ETL',
+        studyPrompt: 'Act as an academic tutor for Ferhat Abbas University Sétif 1 ING4 AI Engineering. Detail dimensional modeling best practices for data warehouses: Star Schema vs. Snowflake Schema, Kimball methodology, Slowly Changing Dimensions (SCD Type 1/2), Fact table grain, and automated ETL pipelines.'
+      },
+      {
+        id: 'ro',
+        name: 'Recherche opérationnelle',
+        fullName: 'ING4 Intelligence Artificielle (S7) - Recherche opérationnelle',
+        tag: 'COURS',
+        keywords: ['recherche opérationnelle', 'recherche op', 'opérationnelle', 'simplex', 'duality', 'dual'],
+        driveQuery: 'Recherche Opérationnelle',
+        syllabus: 'Linear Programming, Simplex Method, Dual Theory & Sensitivity Analysis',
+        studyPrompt: 'Act as an academic tutor for Ferhat Abbas University Sétif 1 ING4 AI Engineering. Walk through linear programming optimization: formulation of objective functions and constraints, Standard Simplex tableau pivoting, Dual Problem derivation, Shadow Prices, and post-optimality sensitivity analysis.'
+      },
+      {
+        id: 'redaction',
+        name: 'Techniques de rédaction',
+        fullName: 'ING4 Intelligence Artificielle (S7) - Techniques de rédaction',
+        tag: 'COURS',
+        keywords: ['techniques de rédaction', 'rédaction', 'redaction', 'imrad', 'latex', 'bibtex'],
+        driveQuery: 'Techniques de Rédaction',
+        syllabus: 'Scientific Methodology, IMRAD Academic Paper Structure, LaTeX & BibTeX',
+        studyPrompt: 'Act as an academic writing supervisor for Ferhat Abbas University Sétif 1. Guide me through drafting a high-impact computer science paper: IMRAD structure (Introduction, Methods, Results, Discussion), LaTeX manuscript formatting, BibTeX citation hygiene, peer review expectations, and avoiding common pitfalls.'
+      }
+    ];
+
+    let currentModuleFilter = null;
+
+    /**
+     * Resolves reliable Google Drive search query URL for any module to prevent 404 errors
+     */
+    function getGoogleDriveUrl(item) {
+      if (item && item.drive_link && item.drive_link.includes('/file/d/')) {
+        return item.drive_link;
+      }
+      const text = ((item?.module || '') + ' ' + (item?.title || '')).toLowerCase();
+      for (const m of S7_MODULES) {
+        if (m.keywords.some(k => text.includes(k))) {
+          return `https://drive.google.com/drive/search?q=${encodeURIComponent(m.driveQuery).replace(/%20/g, '+')}`;
+        }
+      }
+      let clean = (item?.module || '').replace(/^ING4\s+Intelligence\s+Artificielle\s*\((?:S7)?\)\s*[-:]?\s*/i, '').trim();
+      if (!clean) clean = 'ING4 Intelligence Artificielle S7';
+      return `https://drive.google.com/drive/search?q=${encodeURIComponent(clean).replace(/%20/g, '+')}`;
+    }
+
+    function getItemModule(item) {
+      const text = ((item?.module || '') + ' ' + (item?.title || '')).toLowerCase();
+      for (const m of S7_MODULES) {
+        if (m.keywords.some(k => text.includes(k))) {
+          return m;
+        }
+      }
+      return null;
+    }
+
+    function getCompletedItemIds() {
+      try {
+        const raw = localStorage.getItem('academic_completed_items');
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function isItemCompleted(itemId) {
+      if (!itemId) return false;
+      return getCompletedItemIds().includes(itemId);
+    }
+
+    function toggleItemCompletion(itemId) {
+      let list = getCompletedItemIds();
+      const idx = list.indexOf(itemId);
+      let isDone = false;
+      if (idx >= 0) {
+        list.splice(idx, 1);
+        isDone = false;
+      } else {
+        list.push(itemId);
+        isDone = true;
+      }
+      localStorage.setItem('academic_completed_items', JSON.stringify(list));
+
+      if (isDone) {
+        playCorporateChime('success');
+        showNotificationToast('✅ Task marked as completed!');
+      } else {
+        playCorporateChime('click');
+        showNotificationToast('↩ Task marked as pending.');
+      }
+
+      updateProgressDashboard();
+      renderCourses();
+    }
+
+    function toggleModuleFilter(moduleId) {
+      if (currentModuleFilter === moduleId) {
+        currentModuleFilter = null;
+      } else {
+        currentModuleFilter = moduleId;
+      }
+      updateModuleFilterBadge();
+      renderCourses();
+      updateProgressDashboard();
+    }
+
+    function clearModuleFilter() {
+      currentModuleFilter = null;
+      updateModuleFilterBadge();
+      renderCourses();
+      updateProgressDashboard();
+    }
+
+    function updateModuleFilterBadge() {
+      const badge = document.getElementById('activeModuleFilterBadge');
+      const text = document.getElementById('activeModuleFilterText');
+      if (!badge || !text) return;
+
+      if (currentModuleFilter) {
+        const mod = S7_MODULES.find(m => m.id === currentModuleFilter);
+        text.textContent = `Filtered: ${mod ? mod.name : currentModuleFilter}`;
+        badge.style.display = 'inline-flex';
+      } else {
+        badge.style.display = 'none';
+      }
+    }
+
+    function updateProgressDashboard() {
+      const completedList = getCompletedItemIds();
+      const totalItems = stateItems.length;
+      const completedCount = stateItems.filter(it => completedList.includes(it.id)).length;
+      const overallPercent = totalItems > 0 ? Math.round((completedCount / totalItems) * 100) : 0;
+
+      let activeDeadlinesCount = 0;
+      const now = new Date();
+      stateItems.forEach(it => {
+        if (it.deadline && it.deadline !== 'null' && it.deadline !== 'N/A') {
+          const d = new Date(it.deadline.includes('T') ? it.deadline : it.deadline.replace(' ', 'T'));
+          if (!isNaN(d.getTime()) && d > now && !completedList.includes(it.id)) {
+            activeDeadlinesCount++;
+          }
+        }
+      });
+
+      const badgeEl = document.getElementById('overallPercentBadge');
+      if (badgeEl) badgeEl.textContent = `${overallPercent}% Completed`;
+
+      const fillEl = document.getElementById('overallProgressFill');
+      if (fillEl) fillEl.style.width = `${overallPercent}%`;
+
+      const completedCountEl = document.getElementById('completedTasksCount');
+      if (completedCountEl) completedCountEl.textContent = completedCount;
+
+      const totalCountEl = document.getElementById('totalTasksCount');
+      if (totalCountEl) totalCountEl.textContent = totalItems;
+
+      const deadlinesCountEl = document.getElementById('pendingDeadlinesCount');
+      if (deadlinesCountEl) deadlinesCountEl.textContent = activeDeadlinesCount;
+
+      renderModulesHub(completedList);
+    }
+
+    function renderModulesHub(completedList) {
+      const container = document.getElementById('modulesHubGrid');
+      if (!container) return;
+
+      container.innerHTML = '';
+      S7_MODULES.forEach(mod => {
+        const modItems = stateItems.filter(it => {
+          const m = getItemModule(it);
+          return m && m.id === mod.id;
+        });
+
+        const totalMod = modItems.length;
+        const completedMod = modItems.filter(it => completedList.includes(it.id)).length;
+        const modPercent = totalMod > 0 ? Math.round((completedMod / totalMod) * 100) : 0;
+        const isFiltered = currentModuleFilter === mod.id;
+
+        const driveUrl = `https://drive.google.com/drive/search?q=${encodeURIComponent(mod.driveQuery).replace(/%20/g, '+')}`;
+        const cleanStudyPrompt = mod.studyPrompt.replace(/'/g, "\\'");
+
+        let badgeColor = 'var(--corp-primary)';
+        let badgeBg = 'var(--corp-primary-soft)';
+        if (mod.tag.includes('TP')) {
+          badgeColor = 'var(--corp-success)';
+          badgeBg = 'var(--corp-success-soft)';
+        } else if (mod.tag.includes('TD')) {
+          badgeColor = '#7E22CE';
+          badgeBg = '#F3E8FF';
+        }
+
+        const card = document.createElement('div');
+        card.className = `module-hub-card ${isFiltered ? 'active-filter' : ''}`;
+        card.innerHTML = `
+          <div class="module-hub-top" onclick="toggleModuleFilter('${mod.id}')">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <h4 class="module-hub-name">${mod.name}</h4>
+              <span class="node-badge" style="background: ${badgeBg}; color: ${badgeColor}; font-weight: 700; font-size: 11px;">${mod.tag}</span>
+            </div>
+            <span style="font-size: 12px; font-weight: 700; color: ${modPercent === 100 ? 'var(--corp-success)' : 'var(--corp-primary)'};">${modPercent}%</span>
+          </div>
+          <p class="module-hub-syllabus" onclick="toggleModuleFilter('${mod.id}')">${mod.syllabus}</p>
+          <div class="module-track-row" onclick="toggleModuleFilter('${mod.id}')">
+            <div class="module-track-meta">
+              <span>${completedMod} of ${totalMod} Done</span>
+              <span>${totalMod} Resources</span>
+            </div>
+            <div class="module-mini-track">
+              <div class="module-mini-fill" style="width: ${modPercent}%; background: ${modPercent === 100 ? 'var(--corp-success)' : 'var(--corp-primary)'};"></div>
+            </div>
+          </div>
+          <div class="module-actions-row">
+            <a href="${driveUrl}" target="_blank" class="btn-module-action btn-module-drive" onclick="event.stopPropagation()">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+              <span>Drive</span>
+            </a>
+            <button class="btn-module-action btn-module-study" onclick="event.stopPropagation(); launchNotebookLM('${mod.name}', '${cleanStudyPrompt}')">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"></path></svg>
+              <span>NotebookLM</span>
+            </button>
+            <button class="btn-module-action" style="background: #F8FAFC; border: 1px solid var(--corp-border); color: var(--corp-text-muted);" onclick="toggleModuleFilter('${mod.id}')">
+              <span>${isFiltered ? '✕ Clear' : 'Filter'}</span>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // =========================================================================
     // State Loading & Dynamic Deadline Countdown Calculation
     // =========================================================================
     async function loadLiveState() {
@@ -3446,12 +4038,19 @@
         if (res.ok) {
           const json = await res.json();
           if (json && Array.isArray(json.items) && json.items.length > 0) {
-            stateItems = json.items;
+            const uniqueMap = new Map();
+            json.items.forEach(it => {
+              if (it && it.id && !uniqueMap.has(it.id)) {
+                uniqueMap.set(it.id, it);
+              }
+            });
+            stateItems = Array.from(uniqueMap.values());
           }
         }
       } catch (err) {
         console.log('ℹ️ Using seed state fallback:', err.message);
       }
+      updateProgressDashboard();
       renderCourses();
     }
 
@@ -3534,13 +4133,28 @@
       const searchVal = document.getElementById('courseSearchInput').value.toLowerCase().trim();
       grid.innerHTML = '';
 
+      const completedList = getCompletedItemIds();
+
       const filtered = stateItems.filter(item => {
-        const matchesFilter = currentFilter === 'all' || item.type.toLowerCase() === currentFilter.toLowerCase();
+        let matchesFilter = true;
+        if (currentFilter === 'cours') matchesFilter = item.type.toLowerCase() === 'cours';
+        else if (currentFilter === 'tp') matchesFilter = item.type.toLowerCase() === 'tp';
+        else if (currentFilter === 'td') matchesFilter = item.type.toLowerCase() === 'td';
+        else if (currentFilter === 'completed') matchesFilter = completedList.includes(item.id);
+        else if (currentFilter === 'pending') matchesFilter = !completedList.includes(item.id);
+
+        let matchesModule = true;
+        if (currentModuleFilter) {
+          const mod = getItemModule(item);
+          matchesModule = mod && mod.id === currentModuleFilter;
+        }
+
         const matchesSearch = !searchVal || 
           item.title.toLowerCase().includes(searchVal) ||
           item.module.toLowerCase().includes(searchVal) ||
           (item.details && item.details.toLowerCase().includes(searchVal));
-        return matchesFilter && matchesSearch;
+
+        return matchesFilter && matchesModule && matchesSearch;
       });
 
       document.getElementById('metricTrackedCount').textContent = stateItems.length;
@@ -3551,7 +4165,7 @@
         grid.innerHTML = `
           <div style="text-align: center; padding: 48px 20px; color: var(--corp-text-light);">
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 12px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <p style="font-size: 16px; font-weight: 700; color: var(--corp-text);">No courses or labs found.</p>
+            <p style="font-size: 16px; font-weight: 700; color: var(--corp-text);">No courses or labs match the criteria.</p>
             <p style="font-size: 13px; margin-top: 4px;">Try searching for another keyword or resetting filters.</p>
           </div>
         `;
@@ -3559,7 +4173,7 @@
       }
 
       filtered.forEach(item => {
-        const itype = item.type.toUpperCase();
+        const itype = (item.type || 'COURS').toUpperCase();
         let badgeColor = 'var(--corp-primary)';
         let badgeBg = 'var(--corp-primary-soft)';
         if (itype === 'TP') {
@@ -3570,41 +4184,40 @@
           badgeBg = '#F3E8FF';
         }
 
+        const isDone = completedList.includes(item.id);
         const deadlineBadgeHtml = computeDeadlineBadge(item.deadline);
-
-        const driveBtn = item.drive_link ? `
-          <a href="${item.drive_link}" target="_blank" class="btn-card-drive">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
-            <span>Open in Drive</span>
-          </a>
-        ` : '';
+        const driveUrl = getGoogleDriveUrl(item);
 
         const cleanTitle = (item.title || '').replace(/'/g, "\\'");
         const cleanModule = (item.module || '').replace(/'/g, "\\'");
         const studyPrompt = `Act as an academic tutor for Ferhat Abbas University Sétif 1. Guide me through ${cleanTitle} for ${cleanModule} based on our official 4th Year AI curriculum.`;
 
-        const studyBtn = `
-          <button class="btn-card-study" onclick="launchNotebookLM('${cleanModule}', '${studyPrompt}')" title="Launch NotebookLM AI Study">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"></path></svg>
-            <span>Study in NotebookLM</span>
-          </button>
-        `;
-
         const card = document.createElement('div');
-        card.className = 'course-card';
+        card.className = `course-card ${isDone ? 'is-completed' : ''}`;
         card.innerHTML = `
           <div class="card-top-row">
-            <span class="node-badge" style="background: ${badgeBg}; color: ${badgeColor}; font-weight: 700;">${item.type}</span>
-            <span class="course-module-tag">${item.module}</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span class="node-badge" style="background: ${badgeBg}; color: ${badgeColor}; font-weight: 700;">${item.type}</span>
+              <span class="course-module-tag">${item.module}</span>
+            </div>
+            <button class="btn-card-toggle-complete ${isDone ? 'completed' : ''}" onclick="toggleItemCompletion('${item.id}')" title="Click to toggle completion status">
+              <span>${isDone ? '✓ Completed' : '○ Mark Done'}</span>
+            </button>
           </div>
           <h3 class="course-card-title">${item.title}</h3>
           <p class="course-card-desc">${item.details || ''}</p>
           ${deadlineBadgeHtml}
           <div class="card-footer-row">
-            <span class="card-footer-meta">Verified Moodle Resource</span>
+            <span class="card-footer-meta">${isDone ? '✅ Verified Completed' : 'Verified Moodle Resource'}</span>
             <div class="card-actions-group">
-              ${driveBtn}
-              ${studyBtn}
+              <a href="${driveUrl}" target="_blank" class="btn-card-drive">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+                <span>Open in Drive</span>
+              </a>
+              <button class="btn-card-study" onclick="launchNotebookLM('${cleanModule}', '${studyPrompt}')" title="Launch NotebookLM AI Study">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"></path></svg>
+                <span>Study in NotebookLM</span>
+              </button>
               <a href="${item.link}" target="_blank" class="btn-card-link">
                 Open Resource ↗
               </a>
@@ -3616,9 +4229,9 @@
     }
 
     function setFilter(filterType, btnEl) {
-      currentFilter = filterType;
+      currentFilter = filterType.toLowerCase();
       document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
-      btnEl.classList.add('active');
+      if (btnEl) btnEl.classList.add('active');
       renderCourses();
     }
 
@@ -3751,13 +4364,81 @@
       }
     }
 
+    function unlockDashboard() {
+      return validateEnteredSecurityCode();
+    }
+
     // =========================================================================
     // Security Login Email Alert & Notification Toast
     // =========================================================================
     function dispatchLoginSecurityAlert() {
-      const ts = new Date().toISOString();
-      console.log(`[SECURITY] Platform unlocked at ${ts}. Dispatching security audit notification.`);
-      showNotificationToast('🔒 Security Session Active • Login Verified');
+      const tsLocale = new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Algiers' }) + ' (Algiers) / ' + new Date().toISOString() + ' (UTC)';
+      const isoTime = new Date().toISOString();
+      const ua = navigator.userAgent;
+      const platform = navigator.userAgentData?.platform || navigator.platform || 'Unknown OS';
+      const screenRes = `${window.screen.width}x${window.screen.height} (${window.devicePixelRatio || 1}x)`;
+      const subject = "🔐 Security Alert: Academic Smart System Accessed";
+
+      console.log(`[SECURITY] Platform unlocked at ${isoTime}. Dispatching security audit notification.`);
+
+      // Immediate non-blocking background webhook / API call (e.g. Formspree / Webhook / EmailJS)
+      const webhookUrl = localStorage.getItem('academic_security_webhook') || 'https://formspree.io/f/mqaeedpl';
+      const payload = {
+        _subject: subject,
+        subject: subject,
+        timestamp: tsLocale,
+        iso_timestamp: isoTime,
+        user_agent: ua,
+        platform: platform,
+        screen_resolution: screenRes,
+        status: 'Dashboard Unlocked & Session Verified',
+        details: `Academic Smart System accessed and verified via SHA-256 Gate at ${tsLocale}.\nDevice: ${ua}\nPlatform: ${platform} (${screenRes})\nStatus: Dashboard Unlocked`,
+        email: 'houssem.eddine.serai@gmail.com'
+      };
+
+      try {
+        fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload),
+          mode: 'cors'
+        }).then(res => {
+          console.log('[SECURITY] Security audit notification dispatched:', res.status);
+        }).catch(err => {
+          console.debug('[SECURITY] Background security dispatch note:', err);
+        });
+      } catch (e) {
+        // Non-blocking
+      }
+
+      // Optional: GitHub repository_dispatch if personal token is stored
+      const ghToken = localStorage.getItem('academic_gh_token');
+      if (ghToken) {
+        try {
+          fetch('https://api.github.com/repos/HoussemEddineSerai/academic-smart-system/dispatches', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${ghToken}`,
+              'Accept': 'application/vnd.github.v3+json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              event_type: 'security-alert',
+              client_payload: {
+                timestamp: tsLocale,
+                user_agent: ua,
+                client_info: 'Dashboard Unlocked via Verified PIN Gate'
+              }
+            })
+          }).catch(() => {});
+        } catch (e) {}
+      }
+
+      // Subtle toast notification
+      showNotificationToast("🛡️ Security login alert dispatched to Gmail.");
     }
 
     function showNotificationToast(msg) {
@@ -4007,6 +4688,8 @@
       const mainEl = document.querySelector('main');
       if (mainEl) mainEl.scrollTop = 0;
       window.scrollTo(0, 0);
+      updateProgressDashboard();
+      renderCourses();
       loadLiveState();
       window.addEventListener('resize', drawConnections);
     });

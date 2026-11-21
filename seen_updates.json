@@ -9,7 +9,7 @@
       "type": "TP",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
       "deadline": "2026-11-25 23:59",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_machine_learning",
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning",
       "first_seen": "2026-11-21T09:15:00Z",
       "details": "KNN, Decision Trees & Naive Bayes classification deposit link on Sétif 1 Moodle."
     },
@@ -20,7 +20,7 @@
       "type": "TP",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
       "deadline": "2026-11-26 18:00",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance",
       "first_seen": "2026-11-21T10:00:00Z",
       "details": "Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl)."
     },
@@ -31,7 +31,7 @@
       "type": "TD",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
       "deadline": "2026-11-27 23:59",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances",
       "first_seen": "2026-11-21T11:30:00Z",
       "details": "Résolution par réfutation, algorithme d'unification de Robinson et programmation logique Prolog."
     },
@@ -42,7 +42,7 @@
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=993",
       "deadline": null,
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_modelisation_simulation",
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation",
       "first_seen": "2026-11-21T12:00:00Z",
       "details": "Systèmes stochastiques d'attente (files M/M/1), générateurs congruentiels pseudo-aléatoires et validation statistique."
     },
@@ -53,7 +53,7 @@
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=994",
       "deadline": null,
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_business_intelligence",
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation",
       "first_seen": "2026-11-21T13:00:00Z",
       "details": "Tables de faits, dimensions temporelles et processus ETL pour l'aide à la décision stratégique."
     },
@@ -64,7 +64,7 @@
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=995",
       "deadline": null,
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_recherche_operationnelle",
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle",
       "first_seen": "2026-11-21T14:00:00Z",
       "details": "Formulation canonique, algorithme du simplexe à deux phases et analyse de sensibilité primale-duale."
     },
@@ -75,7 +75,7 @@
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=996",
       "deadline": null,
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_techniques_redaction",
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction",
       "first_seen": "2026-11-21T15:00:00Z",
       "details": "Structure IMRAD des articles scientifiques, gestion des citations LaTeX/BibTeX et éthique académique."
     },
@@ -88,7 +88,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:38.038872+00:00",
       "details": "Moodle Chronologie Assignment: KNN & Naïve Bayes Classification Deposit Link doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_knn_nai_ve_bayes_classification_deposit_link_doit_tre_rendu"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "5212227b0a1aa56d",
@@ -99,7 +99,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:38.039292+00:00",
       "details": "Moodle Chronologie Assignment: SVM Classification Deposit Link - Devoir doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_svm_classification_deposit_link_devoir_doit_tre_rendu"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "a974141131bb62e2",
@@ -110,7 +110,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:38.041392+00:00",
       "details": "Moodle Chronologie Assignment: Homework doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "21f6c458868f6a62",
@@ -121,7 +121,7 @@
       "deadline": "2026-10-15 00:00",
       "first_seen": "2026-11-21T20:24:38.041626+00:00",
       "details": "Moodle Chronologie Assignment: Link to submitting the Logistic Regression practical work doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "efd5133fe1ece3d6",
@@ -132,7 +132,7 @@
       "deadline": "2026-10-05 00:00",
       "first_seen": "2026-11-21T20:24:38.041850+00:00",
       "details": "Moodle Chronologie Assignment: Linear and Polynomial Regression Deposit Link doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "8e517e2a0b997bf3",
@@ -143,7 +143,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:38.042058+00:00",
       "details": "Moodle Chronologie Assignment: Lab Solution doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "6fd0a2d58fe1ca38",
@@ -154,7 +154,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:38.042256+00:00",
       "details": "Moodle Chronologie Assignment: Homework Solution doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "2d82d2bd6357d93c",
@@ -165,7 +165,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:38.042453+00:00",
       "details": "Moodle Chronologie Assignment: Decision Trees Deposit Link doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "f88a26f57f356b83",
@@ -176,7 +176,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:38.042668+00:00",
       "details": "Moodle Chronologie Assignment: KNN & Naïve Bayes Classification Deposit Link doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "1d53bece97ee90b1",
@@ -187,7 +187,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:38.042871+00:00",
       "details": "Moodle Chronologie Assignment: SVM Classification Deposit Link - Devoir doit être rendu due on schedule.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "923a88c13ff4f2c7",
@@ -198,7 +198,7 @@
       "deadline": "2026-11-25 23:59",
       "first_seen": "2026-11-21T20:24:38.752461+00:00",
       "details": "Moodle Chronologie Assignment: Ajouter un travail due 2026-11-25 23:59.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "a26306e4c4af6748",
@@ -209,7 +209,7 @@
       "deadline": "2026-11-30 23:59",
       "first_seen": "2026-11-21T20:24:38.754485+00:00",
       "details": "Moodle Chronologie Assignment: Ajouter un travail due 2026-11-30 23:59.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_ing4_intelligence_artificielle_s7"
+      "drive_link": "https://drive.google.com/drive/search?q=ING4+Intelligence+Artificielle+S7"
     },
     {
       "id": "e583f58d3804837c",
@@ -220,7 +220,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.565537+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "e583f58d3804837c",
@@ -231,7 +231,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.566098+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "9dc5f4d009185469",
@@ -242,7 +242,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.566843+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "9dc5f4d009185469",
@@ -253,7 +253,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.567551+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "68d11324146580fd",
@@ -264,7 +264,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.568275+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "68d11324146580fd",
@@ -275,7 +275,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.568959+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "ff304c1add563353",
@@ -286,7 +286,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.569680+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "ff304c1add563353",
@@ -297,7 +297,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.570370+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "2dca409f1fc5ed84",
@@ -308,7 +308,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.571156+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "2dca409f1fc5ed84",
@@ -319,7 +319,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.571917+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "a7a2ceca539a913e",
@@ -330,7 +330,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.572697+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "a7a2ceca539a913e",
@@ -341,7 +341,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.573442+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "2e3ff7bbabaedd68",
@@ -352,7 +352,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.574214+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "2e3ff7bbabaedd68",
@@ -363,7 +363,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.574965+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "161e1a2dd015e74c",
@@ -374,7 +374,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.575733+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "161e1a2dd015e74c",
@@ -385,7 +385,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.576501+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "1ae0c43429e98ec0",
@@ -396,7 +396,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.577165+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "1ae0c43429e98ec0",
@@ -407,7 +407,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.577780+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "b6f5d6dc50e4c5b9",
@@ -418,7 +418,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.578431+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "b6f5d6dc50e4c5b9",
@@ -429,7 +429,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.579057+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "57a262a6f188ee4a",
@@ -440,7 +440,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.580029+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "57a262a6f188ee4a",
@@ -451,7 +451,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.580958+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "d622e14275df8730",
@@ -462,7 +462,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.581911+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "d622e14275df8730",
@@ -473,7 +473,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.582837+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "12c29288aef2fad6",
@@ -484,7 +484,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.583797+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "12c29288aef2fad6",
@@ -495,7 +495,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.584720+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "f5abda4d9926b58c",
@@ -506,7 +506,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.585661+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "f5abda4d9926b58c",
@@ -517,7 +517,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.586592+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "af8dd74ad0a696e6",
@@ -528,7 +528,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.587636+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "af8dd74ad0a696e6",
@@ -539,7 +539,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.588590+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "04ffb927ed7632a0",
@@ -550,7 +550,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.589534+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "04ffb927ed7632a0",
@@ -561,7 +561,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.590461+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "6ad75081744c6346",
@@ -572,7 +572,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.591401+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "6ad75081744c6346",
@@ -583,7 +583,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.592319+00:00",
       "details": "Newly published TD in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "016956cae736c159",
@@ -594,7 +594,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.593303+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "016956cae736c159",
@@ -605,7 +605,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.594215+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "dfaf2f3dcd83b201",
@@ -616,7 +616,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.595164+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "dfaf2f3dcd83b201",
@@ -627,7 +627,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.596083+00:00",
       "details": "Newly published Cours in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "a75f0724755f7a31",
@@ -638,7 +638,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.597093+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "a75f0724755f7a31",
@@ -649,7 +649,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.598081+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "b0a5a1bf60f42c02",
@@ -660,7 +660,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.599029+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "b0a5a1bf60f42c02",
@@ -671,7 +671,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.599969+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "147af74e12fa2dde",
@@ -682,7 +682,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.600911+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "147af74e12fa2dde",
@@ -693,7 +693,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.601826+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "5c616e362aa43d45",
@@ -704,7 +704,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.602772+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "5c616e362aa43d45",
@@ -715,7 +715,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.603680+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "bbb623fd4f38eac2",
@@ -726,7 +726,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.604625+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "bbb623fd4f38eac2",
@@ -737,7 +737,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:39.605541+00:00",
       "details": "Newly published TP in Représentation des  connaissances et  raisonnement on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_repr_sentation_des_connaissances_et_raisonnement"
+      "drive_link": "https://drive.google.com/drive/search?q=Repr%C3%A9sentation+des+Connaissances"
     },
     {
       "id": "f67953d408dd9e4c",
@@ -748,7 +748,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.264841+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "f67953d408dd9e4c",
@@ -759,7 +759,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.265370+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "ea45d0a5545699ad",
@@ -770,7 +770,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.266275+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "ea45d0a5545699ad",
@@ -781,7 +781,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.267195+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "b5d18c4efb5eb240",
@@ -792,7 +792,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.268080+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "b5d18c4efb5eb240",
@@ -803,7 +803,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.268927+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "a14e23a56000159c",
@@ -814,7 +814,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.269811+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "a14e23a56000159c",
@@ -825,7 +825,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.270661+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "ec1dc3b72dbfb432",
@@ -836,7 +836,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.271535+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "ec1dc3b72dbfb432",
@@ -847,7 +847,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.272382+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "9ef562001f824cef",
@@ -858,7 +858,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.273252+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "9ef562001f824cef",
@@ -869,7 +869,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.274097+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "188a8b1498847b69",
@@ -880,7 +880,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.275090+00:00",
       "details": "Newly published TP in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "188a8b1498847b69",
@@ -891,7 +891,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.276053+00:00",
       "details": "Newly published TP in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "27987997f90196d2",
@@ -902,7 +902,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.276871+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "27987997f90196d2",
@@ -913,7 +913,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.277666+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "2e68860b631a5816",
@@ -924,7 +924,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.278477+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "2e68860b631a5816",
@@ -935,7 +935,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.279276+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "7db0320dc9553a64",
@@ -946,7 +946,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.280098+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "7db0320dc9553a64",
@@ -957,7 +957,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.280883+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "a5f2c55e97f5e47d",
@@ -968,7 +968,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.281708+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "a5f2c55e97f5e47d",
@@ -979,7 +979,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.282534+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "6e371c339435ea6a",
@@ -990,7 +990,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.283366+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "6e371c339435ea6a",
@@ -1001,7 +1001,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:40.284176+00:00",
       "details": "Newly published Cours in Calcul haute performance on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_calcul_haute_performance"
+      "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance"
     },
     {
       "id": "a0804d69a138b57a",
@@ -1012,7 +1012,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.323788+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "a0804d69a138b57a",
@@ -1023,7 +1023,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.324332+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "06a6b1ea4dfd4e73",
@@ -1034,7 +1034,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.325031+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "06a6b1ea4dfd4e73",
@@ -1045,7 +1045,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.325685+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "3dc1ade8832154e6",
@@ -1056,7 +1056,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.326362+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "3dc1ade8832154e6",
@@ -1067,7 +1067,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.327000+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "ed2f5df9c2f4af41",
@@ -1078,7 +1078,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.328460+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "ed2f5df9c2f4af41",
@@ -1089,7 +1089,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.329846+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "c982317dbfeaaa6a",
@@ -1100,7 +1100,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.331672+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "c982317dbfeaaa6a",
@@ -1111,7 +1111,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.333460+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "4e1bd9df7063dde7",
@@ -1122,7 +1122,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.335506+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "4e1bd9df7063dde7",
@@ -1133,7 +1133,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.337523+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "2ef4ddd5f9763a1f",
@@ -1144,7 +1144,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.339322+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "2ef4ddd5f9763a1f",
@@ -1155,7 +1155,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.341093+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "275b96ba9f32d139",
@@ -1166,7 +1166,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.342889+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "275b96ba9f32d139",
@@ -1177,7 +1177,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.344663+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "fc359890fd0c45a7",
@@ -1188,7 +1188,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.346480+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "fc359890fd0c45a7",
@@ -1199,7 +1199,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.348262+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "1a9967561096f1b4",
@@ -1210,7 +1210,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.350067+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "1a9967561096f1b4",
@@ -1221,7 +1221,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.351845+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "c5a2e5f6ee91db9f",
@@ -1232,7 +1232,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.353257+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "c5a2e5f6ee91db9f",
@@ -1243,7 +1243,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.354639+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "8087ea19c9abe610",
@@ -1254,7 +1254,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.356056+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "8087ea19c9abe610",
@@ -1265,7 +1265,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.357430+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "0120ac307ea6d7db",
@@ -1276,7 +1276,7 @@
       "deadline": "2026-10-05 00:00",
       "first_seen": "2026-11-21T20:24:41.359720+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "0120ac307ea6d7db",
@@ -1287,7 +1287,7 @@
       "deadline": "2026-10-05 00:00",
       "first_seen": "2026-11-21T20:24:41.361761+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "403da88bcea3a2ff",
@@ -1298,7 +1298,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.362567+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "403da88bcea3a2ff",
@@ -1309,7 +1309,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.363304+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "8df64da1dfd4b9af",
@@ -1320,7 +1320,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.364098+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "8df64da1dfd4b9af",
@@ -1331,7 +1331,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.364837+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "c1b59dc1e694a237",
@@ -1342,7 +1342,7 @@
       "deadline": "2026-10-15 00:00",
       "first_seen": "2026-11-21T20:24:41.366171+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "c1b59dc1e694a237",
@@ -1353,7 +1353,7 @@
       "deadline": "2026-10-15 00:00",
       "first_seen": "2026-11-21T20:24:41.367473+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "8cd5e4dba75c9bc1",
@@ -1364,7 +1364,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.368338+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "8cd5e4dba75c9bc1",
@@ -1375,7 +1375,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.369144+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "a1c98da4f34b4d60",
@@ -1386,7 +1386,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.369963+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "a1c98da4f34b4d60",
@@ -1397,7 +1397,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.370769+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "ecd582d0b0900cc4",
@@ -1408,7 +1408,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.371575+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "ecd582d0b0900cc4",
@@ -1419,7 +1419,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.372350+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "21e524a16dd636fe",
@@ -1430,7 +1430,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:41.373551+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "21e524a16dd636fe",
@@ -1441,7 +1441,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:41.374729+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "31acd0dc65503efe",
@@ -1452,7 +1452,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.375342+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "31acd0dc65503efe",
@@ -1463,7 +1463,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.375900+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "0e1897005ef3e7cc",
@@ -1474,7 +1474,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.376720+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "0e1897005ef3e7cc",
@@ -1485,7 +1485,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.377492+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "7417906de0a3b355",
@@ -1496,7 +1496,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:41.378290+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "7417906de0a3b355",
@@ -1507,7 +1507,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:41.379057+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "caf003cbadaeefb4",
@@ -1518,7 +1518,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.379852+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "caf003cbadaeefb4",
@@ -1529,7 +1529,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.380626+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "b5f27c83fdc8200d",
@@ -1540,7 +1540,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:41.381813+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "b5f27c83fdc8200d",
@@ -1551,7 +1551,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:41.382988+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "b34e06e0f2fb7428",
@@ -1562,7 +1562,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.383848+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "b34e06e0f2fb7428",
@@ -1573,7 +1573,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.384653+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "fe4caefbc5a455c1",
@@ -1584,7 +1584,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.385476+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "fe4caefbc5a455c1",
@@ -1595,7 +1595,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.386265+00:00",
       "details": "Newly published Cours in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "261ca1177e762428",
@@ -1606,7 +1606,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.387080+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "261ca1177e762428",
@@ -1617,7 +1617,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:41.387863+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "90e07f6bb2284a3a",
@@ -1628,7 +1628,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:41.389376+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "90e07f6bb2284a3a",
@@ -1639,7 +1639,7 @@
       "deadline": "2026-11-01 00:00",
       "first_seen": "2026-11-21T20:24:41.390860+00:00",
       "details": "Newly published TP in Machine Learning on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_machine_learning"
+      "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning"
     },
     {
       "id": "c037ad0b98969091",
@@ -1650,7 +1650,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.138702+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "c037ad0b98969091",
@@ -1661,7 +1661,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.139245+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "e7437636116594aa",
@@ -1672,7 +1672,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.140249+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "e7437636116594aa",
@@ -1683,7 +1683,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.141193+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "d4e124c5d07bab0e",
@@ -1694,7 +1694,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.142158+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "d4e124c5d07bab0e",
@@ -1705,7 +1705,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.143093+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "d5f58bc3d4282b49",
@@ -1716,7 +1716,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.144015+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "d5f58bc3d4282b49",
@@ -1727,7 +1727,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.144922+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "05d5a466d8d9634a",
@@ -1738,7 +1738,7 @@
       "deadline": "2026-10-24 00:00",
       "first_seen": "2026-11-21T20:24:42.146056+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "05d5a466d8d9634a",
@@ -1749,7 +1749,7 @@
       "deadline": "2026-10-24 00:00",
       "first_seen": "2026-11-21T20:24:42.147167+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "318978bab23de6a6",
@@ -1760,7 +1760,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.148116+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "318978bab23de6a6",
@@ -1771,7 +1771,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.149026+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "3b1ec97966d11fcc",
@@ -1782,7 +1782,7 @@
       "deadline": "2026-11-05 00:00",
       "first_seen": "2026-11-21T20:24:42.150156+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "3b1ec97966d11fcc",
@@ -1793,7 +1793,7 @@
       "deadline": "2026-11-05 00:00",
       "first_seen": "2026-11-21T20:24:42.151258+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "a811b02b076e5257",
@@ -1804,7 +1804,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.152218+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "a811b02b076e5257",
@@ -1815,7 +1815,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.153139+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "f7ce87b535125788",
@@ -1826,7 +1826,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.154073+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "f7ce87b535125788",
@@ -1837,7 +1837,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.154967+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "e23ed7cffa6f48f8",
@@ -1848,7 +1848,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.155912+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "e23ed7cffa6f48f8",
@@ -1859,7 +1859,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.156840+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "909eca18f31fa737",
@@ -1870,7 +1870,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.157774+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "909eca18f31fa737",
@@ -1881,7 +1881,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.158728+00:00",
       "details": "Newly published Cours in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "1db183e1e015b183",
@@ -1892,7 +1892,7 @@
       "deadline": "2026-11-10 00:00",
       "first_seen": "2026-11-21T20:24:42.159880+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "1db183e1e015b183",
@@ -1903,7 +1903,7 @@
       "deadline": "2026-11-10 00:00",
       "first_seen": "2026-11-21T20:24:42.160983+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "17f1995764dab1e8",
@@ -1914,7 +1914,7 @@
       "deadline": "2026-11-10 00:00",
       "first_seen": "2026-11-21T20:24:42.162108+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "17f1995764dab1e8",
@@ -1925,7 +1925,7 @@
       "deadline": "2026-11-10 00:00",
       "first_seen": "2026-11-21T20:24:42.163197+00:00",
       "details": "Newly published TP in Modélisation et simulation on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_mod_lisation_et_simulation"
+      "drive_link": "https://drive.google.com/drive/search?q=Mod%C3%A9lisation+et+Simulation"
     },
     {
       "id": "5bd655fe5fd8fa8b",
@@ -1936,7 +1936,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.824216+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "5bd655fe5fd8fa8b",
@@ -1947,7 +1947,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.824750+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "fcbb7a7676e6701f",
@@ -1958,7 +1958,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.825357+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "fcbb7a7676e6701f",
@@ -1969,7 +1969,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.825919+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "959e660e984d7a5f",
@@ -1980,7 +1980,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.826571+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "959e660e984d7a5f",
@@ -1991,7 +1991,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.827192+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "1473aed2ef9f43c5",
@@ -2002,7 +2002,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.827811+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "1473aed2ef9f43c5",
@@ -2013,7 +2013,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.828377+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "85018f8dec08fe26",
@@ -2024,7 +2024,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.828989+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "85018f8dec08fe26",
@@ -2035,7 +2035,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.829557+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "2694aa78c5d3c5bf",
@@ -2046,7 +2046,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.830141+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "2694aa78c5d3c5bf",
@@ -2057,7 +2057,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.830704+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "59034dcf8434283d",
@@ -2068,7 +2068,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.831301+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "59034dcf8434283d",
@@ -2079,7 +2079,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:42.831862+00:00",
       "details": "Newly published Cours in Business Intelligence on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_business_intelligence"
+      "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence"
     },
     {
       "id": "80ee2290539c7c02",
@@ -2090,7 +2090,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.831614+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "80ee2290539c7c02",
@@ -2101,7 +2101,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.832332+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "e22bdedd916fee80",
@@ -2112,7 +2112,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.833121+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "e22bdedd916fee80",
@@ -2123,7 +2123,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.833878+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "c02ab77e7765dcb5",
@@ -2134,7 +2134,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.834643+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "c02ab77e7765dcb5",
@@ -2145,7 +2145,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.835379+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "5d377028be0d452a",
@@ -2156,7 +2156,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.836156+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "5d377028be0d452a",
@@ -2167,7 +2167,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.836906+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "036b9724eb1fba3f",
@@ -2178,7 +2178,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.837652+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "036b9724eb1fba3f",
@@ -2189,7 +2189,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.838364+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "4bad3f1ca12e227b",
@@ -2200,7 +2200,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.839104+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "4bad3f1ca12e227b",
@@ -2211,7 +2211,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.839800+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "b58e9292cbae133e",
@@ -2222,7 +2222,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.840542+00:00",
       "details": "Newly published TP in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "b58e9292cbae133e",
@@ -2233,7 +2233,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.841242+00:00",
       "details": "Newly published TP in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "018087b25972a654",
@@ -2244,7 +2244,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.841974+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "018087b25972a654",
@@ -2255,7 +2255,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.842705+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "c75d1324c7e094c4",
@@ -2266,7 +2266,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.843445+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "c75d1324c7e094c4",
@@ -2277,7 +2277,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.844150+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "2e472869ccb85c01",
@@ -2288,7 +2288,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.844876+00:00",
       "details": "Newly published TP in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "2e472869ccb85c01",
@@ -2299,7 +2299,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.845578+00:00",
       "details": "Newly published TP in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "5bd1d03420acc884",
@@ -2310,7 +2310,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.846396+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "5bd1d03420acc884",
@@ -2321,7 +2321,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.847186+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "6684ebc9906b14be",
@@ -2332,7 +2332,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.847995+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "6684ebc9906b14be",
@@ -2343,7 +2343,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.848791+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "1a566269592e8d66",
@@ -2354,7 +2354,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.849616+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "1a566269592e8d66",
@@ -2365,7 +2365,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.850409+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "9c29143c7fec5053",
@@ -2376,7 +2376,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.851249+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "9c29143c7fec5053",
@@ -2387,7 +2387,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.852038+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "4e2e2b6f7a83103c",
@@ -2398,7 +2398,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.852851+00:00",
       "details": "Newly published TP in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "4e2e2b6f7a83103c",
@@ -2409,7 +2409,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.853643+00:00",
       "details": "Newly published TP in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "f905c751977150ce",
@@ -2420,7 +2420,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.854286+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "f905c751977150ce",
@@ -2431,7 +2431,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.854884+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "66897c4675f3b8dd",
@@ -2442,7 +2442,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.855519+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "66897c4675f3b8dd",
@@ -2453,7 +2453,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:43.856128+00:00",
       "details": "Newly published Cours in Recherche opérationnelle on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_recherche_op_rationnelle"
+      "drive_link": "https://drive.google.com/drive/search?q=Recherche+Op%C3%A9rationnelle"
     },
     {
       "id": "94dab7b95635fd9d",
@@ -2464,7 +2464,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.454741+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "94dab7b95635fd9d",
@@ -2475,7 +2475,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.455271+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "7474168e6c284d51",
@@ -2486,7 +2486,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.456111+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "7474168e6c284d51",
@@ -2497,7 +2497,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.456898+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "53645d735ce6eeae",
@@ -2508,7 +2508,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.457710+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "53645d735ce6eeae",
@@ -2519,7 +2519,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.458566+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "5d10a0ffd0242a64",
@@ -2530,7 +2530,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.459394+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "5d10a0ffd0242a64",
@@ -2541,7 +2541,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.460199+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "7959b295fa7ddea2",
@@ -2552,7 +2552,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.461007+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "7959b295fa7ddea2",
@@ -2563,7 +2563,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.461804+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "0ee5576f4297d3cc",
@@ -2574,7 +2574,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.462627+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     },
     {
       "id": "0ee5576f4297d3cc",
@@ -2585,7 +2585,7 @@
       "deadline": null,
       "first_seen": "2026-11-21T20:24:45.463430+00:00",
       "details": "Newly published Cours in Techniques de rédaction on Sétif 1 Moodle.",
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ai_techniques_de_r_daction"
+      "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+R%C3%A9daction"
     }
   ]
 }

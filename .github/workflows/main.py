@@ -1,4 +1,5 @@
 import os
+import sys
 import smtplib
 import json
 import time
@@ -6,7 +7,7 @@ import re
 import hashlib
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, quote_plus
 from email.message import EmailMessage
 
 import requests
@@ -509,7 +510,7 @@ class AcademicPortalScraper:
                 "type": "TP",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
                 "deadline": "2026-11-25 23:59",
-                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_machine_learning",
+                "drive_link": "https://drive.google.com/drive/search?q=Machine+Learning",
                 "first_seen": "2026-11-21T09:15:00Z",
                 "details": "KNN, Decision Trees & Naive Bayes classification deposit link on Sétif 1 Moodle."
             },
@@ -520,7 +521,7 @@ class AcademicPortalScraper:
                 "type": "TP",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
                 "deadline": "2026-11-26 18:00",
-                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
+                "drive_link": "https://drive.google.com/drive/search?q=Calcul+Haute+Performance",
                 "first_seen": "2026-11-21T10:00:00Z",
                 "details": "Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl)."
             },
@@ -531,7 +532,7 @@ class AcademicPortalScraper:
                 "type": "TD",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
                 "deadline": "2026-11-27 23:59",
-                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
+                "drive_link": "https://drive.google.com/drive/search?q=Représentation+des+Connaissances",
                 "first_seen": "2026-11-21T11:30:00Z",
                 "details": "Résolution par réfutation, algorithme d'unification de Robinson et programmation logique Prolog."
             },
@@ -542,7 +543,7 @@ class AcademicPortalScraper:
                 "type": "Cours",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=993",
                 "deadline": None,
-                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_modelisation_simulation",
+                "drive_link": "https://drive.google.com/drive/search?q=Modélisation+et+Simulation",
                 "first_seen": "2026-11-21T12:00:00Z",
                 "details": "Systèmes stochastiques d'attente (files M/M/1), générateurs congruentiels pseudo-aléatoires et validation statistique."
             },
@@ -553,7 +554,7 @@ class AcademicPortalScraper:
                 "type": "Cours",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=994",
                 "deadline": None,
-                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_business_intelligence",
+                "drive_link": "https://drive.google.com/drive/search?q=Business+Intelligence",
                 "first_seen": "2026-11-21T13:00:00Z",
                 "details": "Tables de faits, dimensions temporelles et processus ETL pour l'aide à la décision stratégique."
             },
@@ -564,7 +565,7 @@ class AcademicPortalScraper:
                 "type": "Cours",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=995",
                 "deadline": None,
-                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_recherche_operationnelle",
+                "drive_link": "https://drive.google.com/drive/search?q=Recherche+Opérationnelle",
                 "first_seen": "2026-11-21T14:00:00Z",
                 "details": "Formulation canonique, algorithme du simplexe à deux phases et analyse de sensibilité primale-duale."
             },
@@ -575,7 +576,7 @@ class AcademicPortalScraper:
                 "type": "Cours",
                 "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=996",
                 "deadline": None,
-                "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_techniques_redaction",
+                "drive_link": "https://drive.google.com/drive/search?q=Techniques+de+Rédaction",
                 "first_seen": "2026-11-21T15:00:00Z",
                 "details": "Structure IMRAD des articles scientifiques, gestion des citations LaTeX/BibTeX et éthique académique."
             }
@@ -870,11 +871,12 @@ def archive_to_google_drive(new_items, session=None):
 
     if not creds_json:
         print("ℹ️ GOOGLE_DRIVE_CREDENTIALS secret not set. Skipping live Google Drive upload.")
-        # Ensure default Drive links for study assistance fallback
+        # Ensure safe Drive search query links for study assistance fallback (never 404)
         for it in new_items:
-            if not it.get("drive_link"):
-                safe_slug = re.sub(r"[^a-zA-Z0-9]+", "_", it.get("module", "ai")).strip("_").lower()
-                it["drive_link"] = f"https://drive.google.com/drive/folders/setif1_ai_{safe_slug}"
+            if not it.get("drive_link") or "folders/setif1_" in it.get("drive_link", "") or "folders/1_AI_" in it.get("drive_link", ""):
+                mod_name = it.get("module", "ING4 AI")
+                clean_name = mod_name.replace("ING4 Intelligence Artificielle (S7) - ", "").strip()
+                it["drive_link"] = f"https://drive.google.com/drive/search?q={urllib.parse.quote_plus(clean_name)}"
         return
 
     try:
@@ -1055,6 +1057,117 @@ def send_gmail_notification(new_items, html_content):
         print(f"❌ Error sending Gmail notification: {e}")
 
 
+def send_security_alert_email(timestamp=None, user_agent=None, client_info=None):
+    """
+    Sends an instant security login audit alert to the user's Gmail inbox via Gmail SMTP (SSL 465).
+    Subject: 🔐 Security Alert: Academic Smart System Accessed
+    """
+    sender_email = os.environ.get("GMAIL_USER")
+    app_password = os.environ.get("GMAIL_APP_PASSWORD")
+
+    if not timestamp:
+        timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    if not user_agent:
+        user_agent = "Web Browser / Authenticated Device"
+    if not client_info:
+        client_info = "Dashboard Unlocked & Session Verified"
+
+    subject = "🔐 Security Alert: Academic Smart System Accessed"
+
+    if not sender_email or not app_password:
+        print("ℹ️ GMAIL_USER or GMAIL_APP_PASSWORD not set. Logging security audit alert locally:")
+        print(f"   Subject: {subject}")
+        print(f"   Timestamp: {timestamp}")
+        print(f"   User-Agent: {user_agent}")
+        print(f"   Status: {client_info}")
+        return
+
+    msg = EmailMessage()
+    msg['Subject'] = subject
+    msg['From'] = sender_email
+    msg['To'] = sender_email
+
+    plain_text = (
+        f"🔐 Security Alert: Academic Smart System Accessed\n\n"
+        f"The Academic Smart System dashboard was successfully unlocked.\n\n"
+        f"• Timestamp: {timestamp}\n"
+        f"• Device / User-Agent: {user_agent}\n"
+        f"• Verification: SHA-256 Gate Passed (Zero-Plaintext Security)\n"
+        f"• Status: {client_info}\n\n"
+        f"If this was you, you can safely ignore this alert.\n"
+        f"Developed by Serai Houssem Eddine | Ferhat Abbas University Sétif 1\n"
+    )
+
+    html_content = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Alert</title>
+</head>
+<body style="margin: 0; padding: 24px 0; background-color: #F8FAFC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 580px; margin: 0 auto; background-color: #FFFFFF; border-radius: 20px; border: 1px solid #E2E8F0; box-shadow: 0 4px 16px rgba(15,23,42,0.06); overflow: hidden;">
+    <tr>
+      <td style="padding: 24px 32px; background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%); border-bottom: 2px solid #2563EB;">
+        <span style="display: inline-block; padding: 4px 10px; background: rgba(37, 99, 235, 0.25); border: 1px solid #3B82F6; border-radius: 12px; color: #93C5FD; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Security Audit</span>
+        <h1 style="margin: 10px 0 0 0; color: #FFFFFF; font-size: 20px; font-weight: 700; letter-spacing: -0.3px;">Academic Smart System</h1>
+        <p style="margin: 4px 0 0 0; color: #94A3B8; font-size: 12.5px;">Ferhat Abbas University Sétif 1 • 4th Year AI Engineering</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 32px;">
+        <div style="margin-bottom: 20px;">
+          <h2 style="margin: 0; color: #0F172A; font-size: 17px; font-weight: 700;">🔐 Platform Access Unlocked</h2>
+          <p style="margin: 4px 0 0 0; color: #64748B; font-size: 13px;">A successful PIN / security credential verification just took place.</p>
+        </div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 14px; margin: 16px 0 24px 0;">
+          <tr>
+            <td style="padding: 12px 18px; border-bottom: 1px solid #E2E8F0; font-size: 13px; color: #64748B; width: 35%;"><strong>Timestamp</strong></td>
+            <td style="padding: 12px 18px; border-bottom: 1px solid #E2E8F0; font-size: 13px; color: #0F172A; font-weight: 600;">{timestamp}</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 18px; border-bottom: 1px solid #E2E8F0; font-size: 13px; color: #64748B;"><strong>Device / Browser</strong></td>
+            <td style="padding: 12px 18px; border-bottom: 1px solid #E2E8F0; font-size: 12.5px; color: #0F172A; word-break: break-all;">{user_agent}</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 18px; border-bottom: 1px solid #E2E8F0; font-size: 13px; color: #64748B;"><strong>Verification Gate</strong></td>
+            <td style="padding: 12px 18px; border-bottom: 1px solid #E2E8F0; font-size: 13px; color: #059669; font-weight: 700;">✓ SHA-256 Passed (Zero-Plaintext)</td>
+          </tr>
+          <tr>
+            <td style="padding: 12px 18px; font-size: 13px; color: #64748B;"><strong>Action Status</strong></td>
+            <td style="padding: 12px 18px; font-size: 13px; color: #2563EB; font-weight: 600;">{client_info}</td>
+          </tr>
+        </table>
+        <p style="margin: 0; font-size: 12.5px; color: #64748B; line-height: 1.5;">
+          If this session was initiated by you, no further action is required. If you did not unlock your Academic Smart System dashboard at this time, review your network and device security immediately.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding: 18px 32px; background-color: #F8FAFC; border-top: 1px solid #E2E8F0; text-align: center;">
+        <p style="margin: 0; font-size: 11.5px; color: #94A3B8;">
+          Developed by <strong>Serai Houssem Eddine</strong> | 4th Year AI Engineering<br>
+          Ferhat Abbas University Sétif 1 • Automated Security Guard
+        </p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>"""
+
+    msg.set_content(plain_text)
+    msg.add_alternative(html_content, subtype='html')
+
+    try:
+        print(f"📨 Connecting to smtp.gmail.com:465 as {sender_email} for security alert...")
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+            smtp.login(sender_email, app_password)
+            smtp.send_message(msg)
+        print("✅ Instant security login alert successfully sent to Gmail!")
+    except Exception as e:
+        print(f"❌ Error sending security login alert: {e}")
+
+
 # ==============================================================================
 # 6. Main Automation Controller
 # ==============================================================================
@@ -1115,5 +1228,11 @@ def main():
 
 
 if __name__ == "__main__":
+    if "--security-alert" in sys.argv:
+        ts = sys.argv[2] if len(sys.argv) > 2 else None
+        ua = sys.argv[3] if len(sys.argv) > 3 else None
+        info = sys.argv[4] if len(sys.argv) > 4 else None
+        send_security_alert_email(ts, ua, info)
+        sys.exit(0)
     main()
 

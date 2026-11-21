@@ -1,6 +1,7 @@
 import os
 import smtplib
 from email.message import EmailMessage
+import time
 import requests
 
 def fetch_university_updates():
@@ -25,12 +26,17 @@ def process_with_gemini(raw_text):
     
     headers = {"Content-Type": "application/json"}
     
-    response = requests.post(url, json=payload, headers=headers)
-    if response.status_code != 200:
-        raise Exception(f"Gemini API Error {response.status_code}: {response.text}")
-        
-    data = response.json()
-    return data['candidates'][0]['content']['parts'][0]['text']
+    # Automatically retry up to 3 times if a 503 high demand spike occurs
+    for attempt in range(3):
+        response = requests.post(url, json=payload, headers=headers)
+        if response.status_code == 200:
+            data = response.json()
+            return data['candidates'][0]['content']['parts'][0]['text']
+        elif response.status_code == 503 and attempt < 2:
+            print(f"Server overloaded (503), retrying attempt {attempt + 2} in 5 seconds...")
+            time.sleep(5)
+        else:
+            raise Exception(f"Gemini API Error {response.status_code}: {response.text}")
 
 def send_gmail_notification(summary_text):
     sender_email = os.environ["GMAIL_USER"]

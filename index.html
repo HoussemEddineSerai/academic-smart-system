@@ -3379,32 +3379,17 @@
       }
     }
 
-    async function onSecurityInputChange() {
-      const input = document.getElementById('securityPinInput');
+    function onSecurityInputChange() {
       const errorEl = document.getElementById('pinErrorMsg');
       if (errorEl) errorEl.textContent = "";
-      if (!input) return;
-      const val = input.value.trim();
-      if (val.length >= 4) {
-        const hashHex = await computeSHA256(val);
-        if (TARGET_HASHES.has(hashHex)) {
-          validateEnteredSecurityCode();
-        }
-      }
     }
 
-    async function pressPinKey(digit) {
+    function pressPinKey(digit) {
       const input = document.getElementById('securityPinInput');
       if (!input) return;
       input.value += digit;
       const errorEl = document.getElementById('pinErrorMsg');
       if (errorEl) errorEl.textContent = "";
-      if (input.value.length >= 4) {
-        const hashHex = await computeSHA256(input.value.trim());
-        if (TARGET_HASHES.has(hashHex)) {
-          validateEnteredSecurityCode();
-        }
-      }
     }
 
     function backspacePinKey() {
@@ -4251,7 +4236,7 @@
     }, 1000);
 
     // =========================================================================
-    // Web Audio API Synthesized Corporate Chime (Zero MP3 Dependencies)
+    // Web Audio API Synthesized Corporate Chime (Direct User Clicks Only)
     // =========================================================================
     let audioCtx = null;
     let isSoundMuted = localStorage.getItem('academic_smart_sound_muted') === 'true';
@@ -4268,51 +4253,68 @@
       }
     }
 
-    function playCorporateChime(type = 'success') {
+    /**
+     * Corporate audio playback strictly restricted to direct user click events
+     * (e.g. clicking the unlock button, preview alert button, or sound toggle).
+     * Any automated, interval, or background audio trigger is strictly blocked.
+     */
+    function playCorporateChime(type = 'success', forceUserGesture = false) {
       if (isSoundMuted) return;
+
+      // Strictly verify that the call originated from a direct trusted user interaction
+      const ev = window.event;
+      const isDirectUserEvent = forceUserGesture || (ev && (
+        ev.type === 'click' ||
+        ev.type === 'pointerdown' ||
+        ev.type === 'touchend' ||
+        (ev.type === 'keydown' && ev.key === 'Enter')
+      ));
+
+      if (!isDirectUserEvent && !forceUserGesture) {
+        return; // Block automated/background audio trigger
+      }
+
       try {
         initAudioContext();
         if (!audioCtx) return;
 
         const now = audioCtx.currentTime;
 
-        if (type === 'success' || type === 'unlock') {
-          // Harmonious two-tone corporate chime (E5 -> B5 / 659Hz -> 987Hz)
+        if (type === 'unlock') {
+          // Three-tone corporate unlock chord (C5 -> E5 -> G5)
           const notes = [
-            { freq: 659.25, time: 0, duration: 0.18 },
-            { freq: 987.77, time: 0.12, duration: 0.40 }
+            { freq: 523.25, time: 0, duration: 0.14 },
+            { freq: 659.25, time: 0.08, duration: 0.18 },
+            { freq: 783.99, time: 0.16, duration: 0.35 }
           ];
 
           notes.forEach(note => {
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
-
             osc.type = 'sine';
             osc.frequency.setValueAtTime(note.freq, now + note.time);
-
             gain.gain.setValueAtTime(0.001, now + note.time);
             gain.gain.exponentialRampToValueAtTime(0.18, now + note.time + 0.02);
             gain.gain.exponentialRampToValueAtTime(0.0001, now + note.time + note.duration);
-
             osc.connect(gain);
             gain.connect(audioCtx.destination);
-
             osc.start(now + note.time);
             osc.stop(now + note.time + note.duration);
           });
-        } else if (type === 'urgent') {
-          // Attention pulse for urgent lab deadlines (A5 -> F5)
+        } else {
+          // Harmonious two-tone corporate chime (E5 -> B5 / 659Hz -> 987Hz)
           const notes = [
-            { freq: 880, time: 0, duration: 0.15 },
-            { freq: 698.46, time: 0.12, duration: 0.30 }
+            { freq: 659.25, time: 0, duration: 0.16 },
+            { freq: 987.77, time: 0.10, duration: 0.35 }
           ];
+
           notes.forEach(note => {
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
-            osc.type = 'triangle';
+            osc.type = 'sine';
             osc.frequency.setValueAtTime(note.freq, now + note.time);
             gain.gain.setValueAtTime(0.001, now + note.time);
-            gain.gain.exponentialRampToValueAtTime(0.15, now + note.time + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.16, now + note.time + 0.02);
             gain.gain.exponentialRampToValueAtTime(0.0001, now + note.time + note.duration);
             osc.connect(gain);
             gain.connect(audioCtx.destination);
@@ -4369,7 +4371,7 @@
     }
 
     // =========================================================================
-    // Security Login Email Alert & Notification Toast
+    // Security Login Email Alert & Notification Toast (Client-Side Dispatch)
     // =========================================================================
     function dispatchLoginSecurityAlert() {
       const tsLocale = new Date().toLocaleString('fr-FR', { timeZone: 'Africa/Algiers' }) + ' (Algiers) / ' + new Date().toISOString() + ' (UTC)';
@@ -4378,67 +4380,90 @@
       const platform = navigator.userAgentData?.platform || navigator.platform || 'Unknown OS';
       const screenRes = `${window.screen.width}x${window.screen.height} (${window.devicePixelRatio || 1}x)`;
       const subject = "🔐 Security Alert: Academic Smart System Accessed";
+      const userEmail = "houssem.eddine.serai@gmail.com";
 
-      console.log(`[SECURITY] Platform unlocked at ${isoTime}. Dispatching security audit notification.`);
+      console.log(`[SECURITY] Platform unlocked at ${isoTime}. Dispatching client-side security alert.`);
 
-      // Immediate non-blocking background webhook / API call (e.g. Formspree / Webhook / EmailJS)
-      const webhookUrl = localStorage.getItem('academic_security_webhook') || 'https://formspree.io/f/mqaeedpl';
+      const auditMessage = 
+`🔐 Security Alert: Academic Smart System Accessed
+
+The platform dashboard was successfully unlocked at:
+• Local Time (Algiers): ${tsLocale}
+• UTC Timestamp: ${isoTime}
+
+Device & Session Audit:
+• User-Agent: ${ua}
+• Platform: ${platform}
+• Screen Resolution: ${screenRes}
+• Security Gate: SHA-256 Verified (Zero-Plaintext)
+• Status: Dashboard Unlocked & Session Active
+
+If this session was initiated by you, no further action is required.
+Ferhat Abbas University Sétif 1 • 4th Year AI Engineering`;
+
+      // Web3Forms free client-side API endpoint (supports CORS on all origins)
+      // Custom key can be provided via localStorage.getItem('academic_web3forms_key') or default client key
+      const web3FormsKey = localStorage.getItem('academic_web3forms_key') || 'd8a8b122-38d6-444a-9eb4-850c9581c7e9';
+
       const payload = {
-        _subject: subject,
+        access_key: web3FormsKey,
         subject: subject,
+        from_name: "Academic Smart System Security Guard",
+        email: userEmail,
         timestamp: tsLocale,
-        iso_timestamp: isoTime,
         user_agent: ua,
         platform: platform,
         screen_resolution: screenRes,
-        status: 'Dashboard Unlocked & Session Verified',
-        details: `Academic Smart System accessed and verified via SHA-256 Gate at ${tsLocale}.\nDevice: ${ua}\nPlatform: ${platform} (${screenRes})\nStatus: Dashboard Unlocked`,
-        email: 'houssem.eddine.serai@gmail.com'
+        status: "Dashboard Unlocked & Session Verified",
+        message: auditMessage
       };
 
+      // Completely non-blocking, silent and CORS-safe background dispatch
       try {
-        fetch(webhookUrl, {
-          method: 'POST',
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
           headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
+            "Accept": "application/json"
           },
           body: JSON.stringify(payload),
-          mode: 'cors'
+          mode: "cors",
+          cache: "no-cache"
         }).then(res => {
-          console.log('[SECURITY] Security audit notification dispatched:', res.status);
+          if (res.ok) {
+            console.log("[SECURITY] Security audit notification dispatched via Web3Forms API.");
+          } else {
+            fallbackClientDispatch(payload, userEmail);
+          }
         }).catch(err => {
-          console.debug('[SECURITY] Background security dispatch note:', err);
+          // Never throw or interrupt the unlock flow
+          console.debug("[SECURITY] Client notification handled gracefully:", err.message);
+          fallbackClientDispatch(payload, userEmail);
         });
       } catch (e) {
-        // Non-blocking
+        // Completely isolated from unlock execution
       }
 
-      // Optional: GitHub repository_dispatch if personal token is stored
-      const ghToken = localStorage.getItem('academic_gh_token');
-      if (ghToken) {
-        try {
-          fetch('https://api.github.com/repos/HoussemEddineSerai/academic-smart-system/dispatches', {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${ghToken}`,
-              'Accept': 'application/vnd.github.v3+json',
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              event_type: 'security-alert',
-              client_payload: {
-                timestamp: tsLocale,
-                user_agent: ua,
-                client_info: 'Dashboard Unlocked via Verified PIN Gate'
-              }
-            })
-          }).catch(() => {});
-        } catch (e) {}
-      }
-
-      // Subtle toast notification
+      // Display the subtle toast notification
       showNotificationToast("🛡️ Security login alert dispatched to Gmail.");
+    }
+
+    function fallbackClientDispatch(payload, targetEmail) {
+      try {
+        fetch(`https://formsubmit.co/ajax/${targetEmail}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(payload),
+          mode: "cors"
+        }).then(res => {
+          console.log("[SECURITY] Fallback client email dispatch status:", res.status);
+        }).catch(() => {
+          // Completely silent, never blocks UI
+        });
+      } catch (e) {}
     }
 
     function showNotificationToast(msg) {
@@ -4456,7 +4481,6 @@
     // NotebookLM Study Launcher & Gemini AI Consultation Drawer
     // =========================================================================
     function launchNotebookLM(moduleName, promptText) {
-      playCorporateChime('success');
       const tailoredPrompt = promptText || `Act as a senior university professor and academic tutor for Ferhat Abbas University Sétif 1 ING4 AI Engineering (Semestre 7). Guide me through the core concepts, mathematical foundations, practical implementation, and exam preparation for ${moduleName} based on our official curriculum.`;
 
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -4494,9 +4518,6 @@
     function toggleGeminiStudyModal() {
       const modal = document.getElementById('geminiStudyModal');
       modal.classList.toggle('open');
-      if (modal.classList.contains('open')) {
-        playCorporateChime('success');
-      }
     }
 
     function closeGeminiStudyModal() {
@@ -4514,7 +4535,6 @@
       const query = input.value.trim();
       if (!query) return;
 
-      playCorporateChime('success');
       const box = document.getElementById('geminiResponseBox');
       box.innerHTML = `
         <div style="font-size: 13px; color: #2563EB; font-weight: 600; margin-bottom: 6px;">

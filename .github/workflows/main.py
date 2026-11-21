@@ -13,7 +13,7 @@ def fetch_university_updates():
 
 def process_with_gemini(raw_text):
     api_key = os.environ["GEMINI_API_KEY"]
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key={api_key}"
     
     payload = {
         "contents": [{

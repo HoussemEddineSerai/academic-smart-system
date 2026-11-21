@@ -1,17 +1,17 @@
 {
   "version": "1.0",
-  "last_checked": "2026-11-21T19:59:42.727847+00:00",
+  "last_checked": "2026-11-21T20:22:09.397431+00:00",
   "items": [
     {
-      "id": "setif1-ai-ml-tp2-transformers",
-      "title": "TP 2: Implementation of Transformer Attention Mechanism & PyTorch ViT",
+      "id": "setif1-ai-ml-tp2-classification",
+      "title": "TP 2: KNN & Naive Bayes Classification Deposit Link",
       "module": "ING4 Intelligence Artificielle (S7) - Machine Learning",
       "type": "TP",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
-      "deadline": null,
+      "deadline": "2026-11-25 23:59",
       "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_machine_learning",
       "first_seen": "2026-11-21T09:15:00Z",
-      "details": "PyTorch implementation of Scaled Dot-Product Attention, Multi-Head Attention and Vision Transformer on CIFAR-10."
+      "details": "KNN, Decision Trees & Naive Bayes classification deposit link on Sétif 1 Moodle."
     },
     {
       "id": "setif1-ai-hpc-tp1-mpi",
@@ -19,7 +19,7 @@
       "module": "ING4 Intelligence Artificielle (S7) - Calcul haute performance",
       "type": "TP",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
-      "deadline": null,
+      "deadline": "2026-11-26 18:00",
       "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
       "first_seen": "2026-11-21T10:00:00Z",
       "details": "Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl)."
@@ -30,7 +30,7 @@
       "module": "ING4 Intelligence Artificielle (S7) - Représentation des connaissances",
       "type": "TD",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
-      "deadline": null,
+      "deadline": "2026-11-27 23:59",
       "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
       "first_seen": "2026-11-21T11:30:00Z",
       "details": "Résolution par réfutation, algorithme d'unification de Robinson et programmation logique Prolog."
@@ -78,39 +78,6 @@
       "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_techniques_redaction",
       "first_seen": "2026-11-21T15:00:00Z",
       "details": "Structure IMRAD des articles scientifiques, gestion des citations LaTeX/BibTeX et éthique académique."
-    },
-    {
-      "id": "56f9bf3214fea9f6",
-      "title": "Machine Learning (Apprentissage Automatique)",
-      "module": "ING4 Intelligence Artificielle (S7)",
-      "type": "Cours",
-      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
-      "deadline": null,
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_ml",
-      "first_seen": "2026-11-21T10:00:00Z",
-      "details": "Module officiel ING4 IA: Machine Learning (Support de cours et TPs)."
-    },
-    {
-      "id": "ec1cff0819280d03",
-      "title": "Calcul haute performance (HPC)",
-      "module": "ING4 Intelligence Artificielle (S7)",
-      "type": "TD",
-      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
-      "deadline": null,
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
-      "first_seen": "2026-11-21T14:30:00Z",
-      "details": "Module officiel ING4 IA: Calcul haute performance (Parallélisme OpenMP/MPI)."
-    },
-    {
-      "id": "ca0dbd88ca5a2199",
-      "title": "Représentation des connaissances et raisonnement",
-      "module": "ING4 Intelligence Artificielle (S7)",
-      "type": "TP",
-      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
-      "deadline": null,
-      "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
-      "first_seen": "2026-11-21T16:00:00Z",
-      "details": "Module officiel ING4 IA: Ontologies et logique des prédicats."
     }
   ]
 }

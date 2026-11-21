@@ -209,21 +209,6 @@
       gap: 12px;
     }
 
-    /* Professional Corporate Status Badge */
-    .corporate-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(37, 99, 235, 0.08);
-      border: 1px solid rgba(37, 99, 235, 0.2);
-      color: var(--corp-primary);
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: -0.1px;
-    }
-
     .badge-pulse-dot {
       width: 7px;
       height: 7px;
@@ -2494,13 +2479,13 @@
               <span style="font-size: 13px; color: #64748B; font-weight: 600;">Machine Learning</span>
             </div>
             <h4 style="font-size: 16.5px; font-weight: 700; color: #0F172A; margin: 6px 0;">
-              TP 2: Implementation of Transformer Attention Mechanism & PyTorch ViT
+              TP 2: KNN & Naive Bayes Classification Deposit Link
             </h4>
-            <div style="display: inline-flex; align-items: center; gap: 6px; background: #F8FAFC; border: 1px solid #E2E8F0; color: #475569; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 8px 0;">
-              📘 Course Material • Active
+            <div style="display: inline-flex; align-items: center; gap: 6px; background: #DCFCE7; border: 1px solid #BBF7D0; color: #15803D; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 8px 0;">
+              🟢 Safe • Due 2026-11-25 23:59
             </div>
             <p style="font-size: 13.5px; color: #475569; margin: 8px 0 16px 0; line-height: 1.5;">
-              PyTorch implementation of Scaled Dot-Product Attention, Multi-Head Attention and Vision Transformer on CIFAR-10.
+              KNN, Decision Trees & Naive Bayes classification deposit link on Sétif 1 Moodle.
             </p>
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
               <a href="https://drive.google.com/drive/folders/setif1_ing4_machine_learning" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
@@ -2714,15 +2699,15 @@
     // Authentic Academic State Fallback matching Ferhat Abbas University Sétif 1 AI Engineering
     let stateItems = [
       {
-        "id": "setif1-ai-ml-tp2-transformers",
-        "title": "TP 2: Implementation of Transformer Attention Mechanism & PyTorch ViT",
+        "id": "setif1-ai-ml-tp2-classification",
+        "title": "TP 2: KNN & Naive Bayes Classification Deposit Link",
         "module": "ING4 Intelligence Artificielle (S7) - Machine Learning",
         "type": "TP",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
-        "deadline": null,
+        "deadline": "2026-11-25 23:59",
         "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_machine_learning",
         "first_seen": "2026-11-21T09:15:00Z",
-        "details": "PyTorch implementation of Scaled Dot-Product Attention, Multi-Head Attention and Vision Transformer on CIFAR-10."
+        "details": "KNN, Decision Trees & Naive Bayes classification deposit link on Sétif 1 Moodle."
       },
       {
         "id": "setif1-ai-hpc-tp1-mpi",
@@ -2730,7 +2715,7 @@
         "module": "ING4 Intelligence Artificielle (S7) - Calcul haute performance",
         "type": "TP",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
-        "deadline": null,
+        "deadline": "2026-11-26 18:00",
         "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_hpc",
         "first_seen": "2026-11-21T10:00:00Z",
         "details": "Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl)."
@@ -2741,7 +2726,7 @@
         "module": "ING4 Intelligence Artificielle (S7) - Représentation des connaissances",
         "type": "TD",
         "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
-        "deadline": null,
+        "deadline": "2026-11-27 23:59",
         "drive_link": "https://drive.google.com/drive/folders/setif1_ing4_krr",
         "first_seen": "2026-11-21T11:30:00Z",
         "details": "Résolution par réfutation, algorithme d'unification de Robinson et programmation logique Prolog."
@@ -2907,6 +2892,11 @@
             if (modal) modal.classList.add('unlocked');
             input.value = "";
             errorEl.textContent = "";
+            switchTab('tab-workflow');
+            const mainEl = document.querySelector('main');
+            if (mainEl) mainEl.scrollTop = 0;
+            window.scrollTo(0, 0);
+            drawConnections();
             // Trigger clean, prominent PWA installation prompt automatically upon first unlock
             setTimeout(showPwaInstallModal, 600);
           }, 350);
@@ -3736,6 +3726,10 @@
     window.addEventListener('DOMContentLoaded', () => {
       checkStartupSecurity();
       updateSoundButtonUI();
+      switchTab('tab-workflow');
+      const mainEl = document.querySelector('main');
+      if (mainEl) mainEl.scrollTop = 0;
+      window.scrollTo(0, 0);
       resetCanvasView();
       loadLiveState();
       window.addEventListener('resize', drawConnections);

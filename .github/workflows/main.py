@@ -17,8 +17,8 @@ def fetch_university_updates():
     return simulated_announcement
 
 def process_with_gemini(raw_text):
-    # Using the standard Google GenAI SDK v2.0 model identifiers
-    models_to_try = ['gemini-2.0-flash', 'gemini-2.0-pro']
+    # Using universally available production model identifiers
+    models_to_try = ['gemini-1.5-flash', 'gemini-1.5-pro']
     
     config = types.GenerateContentConfig(
         system_instruction="You are a precise academic assistant for a 4th-year AI Engineering student. Extract exact deadlines, module names, exam topics, and action items clearly in both English and Arabic without fluff.",

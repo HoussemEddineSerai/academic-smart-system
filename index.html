@@ -11,8 +11,8 @@
   <meta name="apple-mobile-web-app-title" content="AcademicSmart">
   <meta name="theme-color" content="#2563EB">
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563EB'/%3E%3Cpath d='M26 28 V72 M26 50 H46 M46 28 V72' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M74 34 C74 26 60 26 58 36 C55 46 75 49 72 61 C69 73 54 71 52 65' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563EB'/%3E%3Cpath d='M26 28 V72 M26 50 H46 M46 28 V72' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M74 34 C74 26 60 26 58 36 C55 46 75 49 72 61 C69 73 54 71 52 65' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='2' y='2' width='40' height='40' rx='12' fill='%232563EB'/%3E%3Cpath d='M22 10L10.5 15.5L22 21L33.5 15.5L22 10Z' fill='%23FFFFFF'/%3E%3Cpath d='M31.5 16.5V22.5' stroke='%23FFFFFF' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='31.5' cy='23.5' r='1.4' fill='%2393C5FD'/%3E%3Cpath d='M15.5 24.5L22 31L28.5 24.5' stroke='%2393C5FD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22 21V31' stroke='%2393C5FD' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='15.5' cy='24.5' r='2.3' fill='%23FFFFFF'/%3E%3Ccircle cx='28.5' cy='24.5' r='2.3' fill='%23FFFFFF'/%3E%3Ccircle cx='22' cy='31' r='2.7' fill='%23FFFFFF'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='2' y='2' width='40' height='40' rx='12' fill='%232563EB'/%3E%3Cpath d='M22 10L10.5 15.5L22 21L33.5 15.5L22 10Z' fill='%23FFFFFF'/%3E%3Cpath d='M31.5 16.5V22.5' stroke='%23FFFFFF' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='31.5' cy='23.5' r='1.4' fill='%2393C5FD'/%3E%3Cpath d='M15.5 24.5L22 31L28.5 24.5' stroke='%2393C5FD' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M22 21V31' stroke='%2393C5FD' stroke-width='1.8' stroke-linecap='round'/%3E%3Ccircle cx='15.5' cy='24.5' r='2.3' fill='%23FFFFFF'/%3E%3Ccircle cx='28.5' cy='24.5' r='2.3' fill='%23FFFFFF'/%3E%3Ccircle cx='22' cy='31' r='2.7' fill='%23FFFFFF'/%3E%3C/svg%3E">
 
   <style>
     /* ==========================================================================
@@ -126,59 +126,14 @@
     .brand-section {
       display: flex;
       align-items: center;
-      gap: 14px;
       text-decoration: none;
-    }
-
-    .brand-logo-container {
-      width: 42px;
-      height: 42px;
       flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    .brand-logo-svg {
-      width: 42px;
-      height: 42px;
+    .brand-section svg {
       display: block;
-      border-radius: var(--radius-20);
-      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
-    }
-
-    .brand-text-block {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-title {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--corp-text);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .brand-version-pill {
-      background: var(--corp-primary-soft);
-      color: var(--corp-primary);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(37, 99, 235, 0.2);
-    }
-
-    .developer-attribution-text {
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--corp-text-light);
-      display: flex;
-      align-items: center;
-      gap: 4px;
+      max-width: 100%;
+      height: 44px;
     }
 
     /* Desktop Navigation Tabs */
@@ -1381,24 +1336,19 @@
        ======================================================================== -->
   <header>
     <div class="brand-section">
-      <div class="brand-logo-container">
-        <!-- Minimalist blue-and-white vector SVG logo representing "HS" geometry -->
-        <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-          <rect width="100" height="100" rx="20" fill="#2563EB"/>
-          <!-- Geometric interlocking H and S white vectors -->
-          <path d="M26 28 V72 M26 50 H46 M46 28 V72" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
-          <path d="M74 34 C74 26 60 26 58 36 C55 46 75 49 72 61 C69 73 54 71 52 65" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none"/>
-        </svg>
-      </div>
-      <div class="brand-text-block">
-        <div class="brand-title">
-          <span>Academic Smart System</span>
-          <span class="brand-version-pill">v2.4</span>
-        </div>
-        <div class="developer-attribution-text">
-          Developed by Serai Houssem Eddine | 4th Year AI Engineering, Ferhat Abbas University Sétif 1
-        </div>
-      </div>
+      <svg width="290" height="44" viewBox="0 0 290 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="40" height="40" rx="12" fill="#2563EB"/>
+        <path d="M22 10L10.5 15.5L22 21L33.5 15.5L22 10Z" fill="#FFFFFF"/>
+        <path d="M31.5 16.5V22.5" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="31.5" cy="23.5" r="1.4" fill="#93C5FD"/>
+        <path d="M15.5 24.5L22 31L28.5 24.5" stroke="#93C5FD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 21V31" stroke="#93C5FD" stroke-width="1.8" stroke-linecap="round"/>
+        <circle cx="15.5" cy="24.5" r="2.3" fill="#FFFFFF"/>
+        <circle cx="28.5" cy="24.5" r="2.3" fill="#FFFFFF"/>
+        <circle cx="22" cy="31" r="2.7" fill="#FFFFFF"/>
+        <text x="52" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14.5" font-weight="700" fill="#0F172A" letter-spacing="-0.2">Academic Smart System</text>
+        <text x="52" y="34" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500" fill="#64748B">By Serai Houssem Eddine</text>
+      </svg>
     </div>
 
     <!-- Desktop Navigation Tab Bar -->

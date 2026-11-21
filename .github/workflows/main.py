@@ -3,7 +3,7 @@ import smtplib
 from email.message import EmailMessage
 from google import genai
 from google.genai import types
-from google.genai.errors import ServerError
+from google.genai.errors import ServerError, ClientError
 
 # 1. Initialize Gemini Client
 client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
@@ -17,8 +17,8 @@ def fetch_university_updates():
     return simulated_announcement
 
 def process_with_gemini(raw_text):
-    # Tries gemini-3.8-flash first; automatically falls back if 503 high demand happens
-    models_to_try = ['gemini-3.8-flash', 'gemini-3.8-flash-lite', 'gemini-3.8-pro']
+    # Fallback list using rock-solid production models
+    models_to_try = ['gemini-2.5-flash', 'gemini-1.5-pro', 'gemini-1.5-flash']
     
     config = types.GenerateContentConfig(
         system_instruction="You are a precise academic assistant for a 4th-year AI Engineering student. Extract exact deadlines, module names, exam topics, and action items clearly in both English and Arabic without fluff.",
@@ -35,8 +35,8 @@ def process_with_gemini(raw_text):
                 contents=raw_text
             )
             return response.text
-        except ServerError as e:
-            print(f"{model_name} overloaded (503), switching to next model...")
+        except (ServerError, ClientError) as e:
+            print(f"{model_name} failed or overloaded, switching to next model...")
             last_error = e
 
     raise last_error

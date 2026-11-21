@@ -2,8 +2,8 @@ name: Academic System Auto-Check
 
 on:
   schedule:
-    - cron: '0 */2 * * *' # يعمل تلقائياً كل ساعتين
-  workflow_dispatch: # يتيح لك تشغيله يدوياً في أي وقت من زر الموقع
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
 
 jobs:
   check-updates:
@@ -27,4 +27,4 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
         run: |
-         python .github/workflows/main.py
+          python .github/workflows/main.py

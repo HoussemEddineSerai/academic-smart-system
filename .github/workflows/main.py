@@ -380,37 +380,38 @@ def process_with_gemini(new_items):
     items_summary_json = json.dumps(new_items, indent=2, ensure_ascii=False)
 
     prompt = f"""
-You are an expert academic notification designer creating a clean, modern email alert following Meta's design voice (stark white canvas, generous rounding, saturated cobalt blue CTAs, and pill-shaped badges).
+You are an expert academic notification designer creating a clean, modern corporate email alert for university engineering students.
 Generate a super clean, scannable, mobile-responsive HTML email notification highlighting ONLY newly posted courses and labs (TP / TD).
 
 INPUT ITEMS (JSON):
 {items_summary_json}
 
-STRICT META DESIGN SYSTEM REQUIREMENTS:
+STRICT CORPORATE DESIGN REQUIREMENTS:
 1. Output ONLY clean, valid HTML ready for an email body. Do NOT include markdown code fences (no ```html, no ```). Do NOT include conversational filler like 'Here is your email'.
-2. Mobile-first design: Looks gorgeous on phone screens (Gmail app, Apple Mail, Outlook). Use clean inline CSS.
-3. Palette & Geometry (Meta Hardware Merchandising voice):
-   - Outer background: #f1f4f7 (surface-soft)
-   - Email container card: #ffffff (stark canvas), border: 1px solid #dee3e9 (hairline-soft), border-radius: 24px, padding: 28px, box-shadow: rgba(20, 22, 26, 0.08) 0px 1px 4px 0px.
-   - Primary headline: #0a1317 (ink-deep), letter-spacing: -0.2px.
-   - Subtitle and metadata: #5d6c7b (steel).
+2. Mobile-first design: Looks gorgeous on phone screens (Gmail app, Apple Mail, Outlook). Use clean inline CSS with high contrast.
+3. Palette & Geometry (Corporate High-Contrast):
+   - Outer background: #F8FAFC (crisp off-white)
+   - Email container card: #FFFFFF (pure white), border: 1px solid #E2E8F0, border-radius: 20px, padding: 28px, box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06).
+   - Primary headline: #0F172A (slate dark), letter-spacing: -0.2px.
+   - Subtitle and metadata: #475569 (slate muted).
 4. Header:
-   - Header with badge 'ACADEMIC ALERT' (in #0064e0 cobalt text on rgba(0, 100, 224, 0.1) background, 100px radius).
-   - Title: '🎓 New Course & Lab Updates' in bold 22px #0a1317.
-5. For EACH item in the list, render an individual Meta feature card:
-   - Card background: #ffffff, border: 1px solid #dee3e9, border-radius: 24px, padding: 20px, margin-bottom: 16px.
-   - Type Badge (Pill with border-radius: 100px, 4px 12px padding, bold 11px uppercase):
-     * If 'COURS': Cobalt pill (#0064e0 background, white text, '[COURS]')
-     * If 'TP': Emerald green pill (#31a24c background, white text, '[TP / LAB]')
-     * If 'TD': Oculus purple pill (#a121ce background, white text, '[TD / DIRECTED WORK]')
-     * If 'Examen': Crimson pill (#e41e3f background, white text, '[EXAMEN]')
-   - Course / Lab Title: 18px bold, #0a1317, prominent.
-   - Module Name: Crisp subtitle in #5d6c7b (e.g., 'Deep Learning & Computer Vision').
-   - Deadline Badge: Prominently displayed pill badge with clock icon '⏰ Deadline: [Exact Deadline]' (amber #f7b928 background with #92400e text, border-radius: 100px, or gray if N/A).
-   - Direct Action Button: Meta Cobalt Buy CTA (#0064e0 background, white text, font-weight: 700, padding: 12px 24px, border-radius: 100px, text-decoration: none) labeled 'Open in Moodle ↗'.
-   - Concise 1-sentence action summary in English and Arabic (e.g. 'Submit PyTorch implementation before deadline | يرجى تسليم التقرير والكود قبل الموعد المحدد').
+   - Corporate security badge: '🤖 AI ENGINE ONLINE (SECURED)' in #2563EB cobalt text on #EFF6FF background with border-radius: 20px.
+   - Title: '🎓 Academic Smart Alert — University Updates' in bold 22px #0F172A.
+5. For EACH item in the list, render a distinct corporate card:
+   - Card background: #FFFFFF, border: 1px solid #E2E8F0, border-radius: 20px, padding: 20px, margin-bottom: 16px.
+   - Type Badge (rounded pill with border-radius: 20px, 4px 12px padding, bold 11px uppercase):
+     * If 'COURS': Cobalt pill (#2563EB background, white text, '[COURS]')
+     * If 'TP': Emerald green pill (#059669 background, white text, '[TP / LAB]')
+     * If 'TD': Indigo pill (#4F46E5 background, white text, '[TD / DIRECTED WORK]')
+     * If 'Examen': Crimson pill (#DC2626 background, white text, '[EXAMEN]')
+   - Course / Lab Title: 18px bold, #0F172A, prominent.
+   - Module Name: Crisp subtitle in #475569 (e.g., 'ING4 Intelligence Artificielle (S7)').
+   - Deadline Badge: Prominently displayed pill badge with clock icon '⏰ Deadline: [Exact Deadline]' (yellow #FEF9C3 background with #854D0E text, border: 1px solid #FDE047, border-radius: 20px, or gray if N/A).
+   - Direct Action Button: Cobalt Blue CTA (#2563EB background, white text, font-weight: 700, padding: 12px 24px, border-radius: 20px, text-decoration: none) labeled 'Open in Moodle ↗'.
+   - Concise 1-sentence action summary in English and Arabic (e.g. 'Submit report before deadline | يرجى تسليم التقرير والكود قبل الموعد المحدد').
 6. Footer:
-   - Minimalist footer in #8595a4 (stone): 'Automated by academic-smart-system via Gemini 3.8 Flash • Meta Design Voice'.
+   - Clear developer attribution: 'Developed by Serai Houssem Eddine | 4th Year AI Engineering, Ferhat Abbas University Sétif 1'.
+   - System note: 'Automated by academic-smart-system • Gemini 3.8 Flash • Gmail SMTP & Google Calendar Sync'.
 7. ZERO unnecessary fluff or greetings. Strictly scannable information.
 """
 
@@ -461,43 +462,43 @@ STRICT META DESIGN SYSTEM REQUIREMENTS:
 def generate_native_html_email(new_items):
     """
     Bulletproof native HTML email fallback in case Gemini API is unreachable or unconfigured.
-    Guarantees clean, responsive Meta design system cards with cobalt pill buttons.
+    Guarantees clean, corporate blue-and-white cards with 20px rounded corners.
     """
     item_cards_html = ""
     for item in new_items:
         itype = item.get("type", "Cours")
         badge_bg = {
-            "COURS": "#0064e0",
-            "TP": "#31a24c",
-            "TD": "#a121ce",
-            "Examen": "#e41e3f"
-        }.get(itype.upper(), "#0064e0")
+            "COURS": "#2563EB",
+            "TP": "#059669",
+            "TD": "#4F46E5",
+            "Examen": "#DC2626"
+        }.get(itype.upper(), "#2563EB")
 
         deadline_str = item.get("deadline", "N/A")
         deadline_html = (
-            f"<div style='margin-top: 10px; display: inline-block; background: rgba(247, 185, 40, 0.2); color: #92400e; padding: 4px 12px; border-radius: 100px; font-size: 13px; font-weight: 700;'>"
+            f"<div style='margin-top: 10px; display: inline-block; background: #FEF9C3; color: #854D0E; border: 1px solid #FDE047; padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700;'>"
             f"⏰ Deadline: {deadline_str}</div>"
             if deadline_str and deadline_str != "N/A"
-            else "<div style='margin-top: 10px; display: inline-block; color: #5d6c7b; font-size: 13px;'>📄 No deadline specified</div>"
+            else "<div style='margin-top: 10px; display: inline-block; color: #64748B; font-size: 13px;'>📄 No deadline specified</div>"
         )
 
         item_cards_html += f"""
-        <div style="background-color: #ffffff; border: 1px solid #dee3e9; border-radius: 24px; padding: 22px; margin-bottom: 16px;">
+        <div style="background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 22px; margin-bottom: 16px;">
           <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-            <span style="background-color: {badge_bg}; color: #ffffff; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; letter-spacing: 0.5px;">
+            <span style="background-color: {badge_bg}; color: #FFFFFF; font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; letter-spacing: 0.5px;">
               {itype}
             </span>
-            <span style="color: #5d6c7b; font-size: 13px; font-weight: 600;">{item.get('module', 'University Module')}</span>
+            <span style="color: #64748B; font-size: 13px; font-weight: 600;">{item.get('module', 'University Module')}</span>
           </div>
-          <h3 style="margin: 8px 0 6px 0; color: #0a1317; font-size: 18px; font-weight: 700; line-height: 1.4; letter-spacing: -0.16px;">
+          <h3 style="margin: 8px 0 6px 0; color: #0F172A; font-size: 18px; font-weight: 700; line-height: 1.4; letter-spacing: -0.16px;">
             {item.get('title', 'Academic Update')}
           </h3>
-          <p style="margin: 0 0 12px 0; color: #444950; font-size: 14px; line-height: 1.5;">
+          <p style="margin: 0 0 12px 0; color: #334155; font-size: 14px; line-height: 1.5;">
             {item.get('details', '')}
           </p>
           {deadline_html}
           <div style="margin-top: 18px;">
-            <a href="{item.get('link', '#')}" target="_blank" style="display: inline-block; background: #0064e0; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 700; padding: 12px 26px; border-radius: 100px; text-align: center;">
+            <a href="{item.get('link', '#')}" target="_blank" style="display: inline-block; background: #2563EB; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 700; padding: 12px 24px; border-radius: 20px; text-align: center;">
               Open in Moodle ↗
             </a>
           </div>
@@ -511,16 +512,16 @@ def generate_native_html_email(new_items):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Academic Smart Alert</title>
 </head>
-<body style="margin: 0; padding: 24px 12px; background-color: #f1f4f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #1c1e21;">
-  <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #dee3e9; border-radius: 24px; padding: 28px; box-shadow: rgba(20, 22, 26, 0.08) 0px 1px 4px 0px;">
-    <div style="border-bottom: 1px solid #dee3e9; padding-bottom: 18px; margin-bottom: 22px;">
-      <span style="background: rgba(0, 100, 224, 0.1); color: #0064e0; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px; text-transform: uppercase;">
-        Academic Alert
-      </span>
-      <h1 style="margin: 12px 0 4px 0; color: #0a1317; font-size: 24px; font-weight: 700; letter-spacing: -0.2px;">
+<body style="margin: 0; padding: 24px 12px; background-color: #F8FAFC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #0F172A;">
+  <div style="max-width: 620px; margin: 0 auto; background-color: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 28px; box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);">
+    <div style="border-bottom: 1px solid #E2E8F0; padding-bottom: 18px; margin-bottom: 22px;">
+      <div style="display: inline-block; background: #EFF6FF; color: #2563EB; border: 1px solid #BFDBFE; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 20px; text-transform: uppercase;">
+        🤖 AI Engine Online (Secured)
+      </div>
+      <h1 style="margin: 12px 0 4px 0; color: #0F172A; font-size: 24px; font-weight: 700; letter-spacing: -0.2px;">
         🎓 New Course & Lab Updates
       </h1>
-      <p style="margin: 0; color: #5d6c7b; font-size: 14px;">
+      <p style="margin: 0; color: #64748B; font-size: 14px;">
         {len(new_items)} brand-new update(s) detected on university portal.
       </p>
     </div>
@@ -529,9 +530,9 @@ def generate_native_html_email(new_items):
       {item_cards_html}
     </div>
 
-    <div style="border-top: 1px solid #dee3e9; padding-top: 18px; margin-top: 24px; text-align: center; color: #8595a4; font-size: 12px;">
-      <p style="margin: 0;">Automated by <strong style="color: #0a1317;">academic-smart-system</strong> via GitHub Actions.</p>
-      <p style="margin: 4px 0 0 0;">Meta Design Voice • Gemini 3.8 Flash • Gmail SMTP</p>
+    <div style="border-top: 1px solid #E2E8F0; padding-top: 20px; margin-top: 24px; text-align: center; color: #64748B; font-size: 12px; line-height: 1.6;">
+      <p style="margin: 0; font-weight: 600; color: #0F172A;">Developed by Serai Houssem Eddine | 4th Year AI Engineering, Ferhat Abbas University Sétif 1</p>
+      <p style="margin: 4px 0 0 0; color: #94A3B8;">academic-smart-system • Gemini 3.8 Flash • Google Calendar & Gmail Sync</p>
     </div>
   </div>
 </body>
@@ -540,7 +541,92 @@ def generate_native_html_email(new_items):
 
 
 # ==============================================================================
-# 4. Gmail SMTP Dispatcher
+# 4. Google Calendar API Integration
+# ==============================================================================
+def sync_with_google_calendar(new_items):
+    """
+    Sync newly discovered assignments and labs with Google Calendar via Service Account credentials.
+    """
+    creds_json = os.environ.get("GOOGLE_CALENDAR_CREDENTIALS")
+    calendar_id = os.environ.get("GOOGLE_CALENDAR_ID", "primary")
+
+    if not creds_json:
+        print("ℹ️ GOOGLE_CALENDAR_CREDENTIALS secret not set. Skipping Google Calendar synchronization.")
+        return
+
+    try:
+        raw = creds_json.strip()
+        if raw.startswith("{"):
+            cred_info = json.loads(raw)
+        elif os.path.exists(raw):
+            with open(raw, "r", encoding="utf-8") as f:
+                cred_info = json.load(f)
+        else:
+            print("⚠️ GOOGLE_CALENDAR_CREDENTIALS is not valid JSON or file path.")
+            return
+
+        from google.oauth2 import service_account
+        import google.auth.transport.requests
+
+        scopes = ["https://www.googleapis.com/auth/calendar.events"]
+        creds = service_account.Credentials.from_service_account_info(cred_info, scopes=scopes)
+        auth_req = google.auth.transport.requests.Request()
+        creds.refresh(auth_req)
+        access_token = creds.token
+
+        headers = {
+            "Authorization": f"Bearer {access_token}",
+            "Content-Type": "application/json"
+        }
+        endpoint = f"https://www.googleapis.com/calendar/v3/calendars/{calendar_id}/events"
+
+        synced_count = 0
+        for item in new_items:
+            # Create calendar event
+            summary = f"🎓 [{item['type']}] {item['title']}"
+            description = (
+                f"Module: {item['module']}\n"
+                f"Type: {item['type']}\n"
+                f"Deadline: {item.get('deadline', 'N/A')}\n"
+                f"Details: {item.get('details', '')}\n"
+                f"Direct Moodle Link: {item.get('link', '')}\n\n"
+                "Automated by academic-smart-system\n"
+                "Developed by Serai Houssem Eddine | Ferhat Abbas University Sétif 1"
+            )
+
+            # Date fallback
+            now_iso = datetime.now(timezone.utc).isoformat()
+            event_payload = {
+                "summary": summary,
+                "description": description,
+                "start": {"dateTime": now_iso, "timeZone": "Africa/Algiers"},
+                "end": {"dateTime": now_iso, "timeZone": "Africa/Algiers"},
+                "reminders": {
+                    "useDefault": False,
+                    "overrides": [
+                        {"method": "popup", "minutes": 1440},
+                        {"method": "popup", "minutes": 120}
+                    ]
+                }
+            }
+
+            resp = requests.post(endpoint, json=event_payload, headers=headers, timeout=15)
+            if resp.status_code in [200, 201]:
+                print(f"📅 Event synced with Google Calendar: {item['title']}")
+                synced_count += 1
+            else:
+                print(f"⚠️ Calendar API returned HTTP {resp.status_code}: {resp.text}")
+
+        print(f"✅ Successfully synchronized {synced_count} event(s) with Google Calendar.")
+
+    except ImportError:
+        print("⚠️ google-auth library not available. Skipping Google Calendar sync.")
+    except Exception as e:
+        print(f"❌ Error during Google Calendar synchronization: {e}")
+
+
+# ==============================================================================
+# 5. Gmail SMTP Dispatcher
 # ==============================================================================
 def send_gmail_notification(new_items, html_content):
     """
@@ -577,6 +663,7 @@ def send_gmail_notification(new_items, html_content):
         plain_text_summary += f"   Module: {item['module']}\n"
         plain_text_summary += f"   Deadline: {item['deadline']}\n"
         plain_text_summary += f"   Link: {item['link']}\n\n"
+    plain_text_summary += "\nDeveloped by Serai Houssem Eddine | 4th Year AI Engineering, Ferhat Abbas University Sétif 1\n"
 
     msg.set_content(plain_text_summary)
     msg.add_alternative(html_content, subtype='html')
@@ -592,11 +679,12 @@ def send_gmail_notification(new_items, html_content):
 
 
 # ==============================================================================
-# 5. Main Automation Controller
+# 6. Main Automation Controller
 # ==============================================================================
 def main():
     print("==================================================================")
     print("🎓 Academic Smart System: Course & Lab (TP/TD) Tracker")
+    print("Developed by Serai Houssem Eddine | Ferhat Abbas University Sétif 1")
     print(f"⏰ Execution Time (UTC): {datetime.now(timezone.utc).isoformat()}")
     print("==================================================================")
 
@@ -634,8 +722,12 @@ def main():
     print("\n📧 Step 5: Dispatching email notification...")
     send_gmail_notification(new_items, html_email)
 
-    # Step 6: Commit new items to seen state
-    print("\n💾 Step 6: Updating state file with new items...")
+    # Step 6: Sync with Google Calendar API
+    print("\n📅 Step 6: Synchronizing with Google Calendar API...")
+    sync_with_google_calendar(new_items)
+
+    # Step 7: Commit new items to seen state
+    print("\n💾 Step 7: Updating state file with new items...")
     state["items"].extend(new_items)
     save_state(state, DEFAULT_STATE_FILE)
     print("🏁 Automation cycle finished successfully.")
@@ -643,3 +735,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

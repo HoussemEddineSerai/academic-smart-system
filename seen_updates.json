@@ -1,106 +1,106 @@
 {
   "version": "1.0",
-  "last_checked": "2026-11-21T18:51:02.864256+00:00",
+  "last_checked": "2026-11-21T19:11:34.289997+00:00",
   "items": [
     {
-      "id": "cours-stochastic-processes-ch2",
-      "title": "Chapitre 2: Processus de Poisson et Chaînes de Markov",
-      "module": "Processus Stochastiques (Stochastic Processes)",
-      "type": "Cours",
-      "link": "https://moodle.univ.edu/mod/resource/view.php?id=3101",
-      "deadline": "N/A",
-      "first_seen": "2026-11-20T10:00:00Z",
-      "details": "Diapositives de cours et synthèse mathématique des lois de probabilité exponentielles."
-    },
-    {
-      "id": "td-optim-convex-gradient-descent",
-      "title": "TD 2: Optimisation Convexe et Descente de Gradient Stochastique",
-      "module": "Optimisation pour le Machine Learning",
-      "type": "TD",
-      "link": "https://moodle.univ.edu/mod/resource/view.php?id=3102",
-      "deadline": "2026-11-26 23:59",
-      "first_seen": "2026-11-20T14:30:00Z",
-      "details": "Série d'exercices sur les conditions KKT, dualité de Lagrange et convergence SGD."
-    },
-    {
-      "id": "tp-deep-learning-transformers",
+      "id": "setif1-ai-ml-tp2-transformers",
       "title": "TP 2: Implementation of Transformer Attention Mechanism & PyTorch ViT",
-      "module": "Deep Learning & Computer Vision",
+      "module": "ING4 Intelligence Artificielle (S7) - Machine Learning",
       "type": "TP",
-      "link": "https://moodle.univ.edu/mod/assign/view.php?id=3103",
-      "deadline": "2026-11-28 23:59",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
+      "deadline": "2026-11-26 23:59",
       "first_seen": "2026-11-21T09:15:00Z",
-      "details": "Implémentation complète de Scaled Dot-Product Attention et Multi-Head Self-Attention en PyTorch."
+      "details": "PyTorch implementation of Scaled Dot-Product Attention, Multi-Head Attention and Vision Transformer on CIFAR-10."
     },
     {
-      "id": "39029d2547105551",
-      "title": "Techniques de rédaction",
-      "module": "ING4 Intelligence Artificielle (S7)",
-      "type": "Cours",
-      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=996",
-      "deadline": "N/A",
-      "first_seen": "2026-11-21T18:50:40.392244+00:00",
-      "details": "Module officiel ING4 IA: Techniques de rédaction"
+      "id": "setif1-ai-hpc-tp1-mpi",
+      "title": "TP 1: Calcul haute performance - Parallélisme Multi-cœurs avec OpenMP & MPI",
+      "module": "ING4 Intelligence Artificielle (S7) - Calcul haute performance",
+      "type": "TP",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
+      "deadline": "2026-11-22 14:00",
+      "first_seen": "2026-11-21T10:00:00Z",
+      "details": "Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl)."
     },
     {
-      "id": "3cad4fa180f95136",
-      "title": "Recherche opérationnelle",
-      "module": "ING4 Intelligence Artificielle (S7)",
-      "type": "Cours",
-      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=995",
-      "deadline": "N/A",
-      "first_seen": "2026-11-21T18:50:40.392311+00:00",
-      "details": "Module officiel ING4 IA: Recherche opérationnelle"
+      "id": "setif1-ai-krr-td2-predicates",
+      "title": "TD 2: Logique des prédicats du premier ordre, Résolution et Closes de Horn",
+      "module": "ING4 Intelligence Artificielle (S7) - Représentation des connaissances",
+      "type": "TD",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
+      "deadline": "2026-11-21 23:59",
+      "first_seen": "2026-11-21T11:30:00Z",
+      "details": "Résolution par réfutation, algorithme d'unification de Robinson et programmation logique Prolog."
     },
     {
-      "id": "4ef50b00d5125d73",
-      "title": "Business Intelligence",
-      "module": "ING4 Intelligence Artificielle (S7)",
-      "type": "Cours",
-      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=994",
-      "deadline": "N/A",
-      "first_seen": "2026-11-21T18:50:40.392348+00:00",
-      "details": "Module officiel ING4 IA: Business Intelligence"
-    },
-    {
-      "id": "696d532fcdb5935b",
-      "title": "Modélisation et simulation",
-      "module": "ING4 Intelligence Artificielle (S7)",
+      "id": "setif1-ai-mod-sim-c1",
+      "title": "Chapitre 3: Modélisation et simulation à événements discrets",
+      "module": "ING4 Intelligence Artificielle (S7) - Modélisation et simulation",
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=993",
       "deadline": "N/A",
-      "first_seen": "2026-11-21T18:50:40.392381+00:00",
-      "details": "Module officiel ING4 IA: Modélisation et simulation"
+      "first_seen": "2026-11-21T12:00:00Z",
+      "details": "Systèmes stochastiques d'attente (files M/M/1), générateurs congruentiels pseudo-aléatoires et validation statistique."
+    },
+    {
+      "id": "setif1-ai-bi-c2",
+      "title": "Chapitre 2: Architecture des Data Warehouses et Modélisation en Étoile",
+      "module": "ING4 Intelligence Artificielle (S7) - Business Intelligence",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=994",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T13:00:00Z",
+      "details": "Tables de faits, dimensions temporelles et processus ETL pour l'aide à la décision stratégique."
+    },
+    {
+      "id": "setif1-ai-ro-c1",
+      "title": "Chapitre 4: Programmation Linéaire et Méthode du Simplexe Révisée",
+      "module": "ING4 Intelligence Artificielle (S7) - Recherche opérationnelle",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=995",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T14:00:00Z",
+      "details": "Formulation canonique, algorithme du simplexe à deux phases et analyse de sensibilité primale-duale."
+    },
+    {
+      "id": "setif1-ai-redaction-c1",
+      "title": "Techniques de rédaction scientifique et présentation de recherche",
+      "module": "ING4 Intelligence Artificielle (S7) - Techniques de rédaction",
+      "type": "Cours",
+      "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=996",
+      "deadline": "N/A",
+      "first_seen": "2026-11-21T15:00:00Z",
+      "details": "Structure IMRAD des articles scientifiques, gestion des citations LaTeX/BibTeX et éthique académique."
     },
     {
       "id": "56f9bf3214fea9f6",
-      "title": "Machine Learning",
+      "title": "Machine Learning (Apprentissage Automatique)",
       "module": "ING4 Intelligence Artificielle (S7)",
       "type": "Cours",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
       "deadline": "N/A",
-      "first_seen": "2026-11-21T18:50:40.392412+00:00",
-      "details": "Module officiel ING4 IA: Machine Learning"
+      "first_seen": "2026-11-21T10:00:00Z",
+      "details": "Module officiel ING4 IA: Machine Learning (Support de cours et TPs)."
     },
     {
       "id": "ec1cff0819280d03",
-      "title": "Calcul haute performance",
+      "title": "Calcul haute performance (HPC)",
       "module": "ING4 Intelligence Artificielle (S7)",
-      "type": "Cours",
+      "type": "TD",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
-      "deadline": "N/A",
-      "first_seen": "2026-11-21T18:50:40.392442+00:00",
-      "details": "Module officiel ING4 IA: Calcul haute performance"
+      "deadline": "2026-11-28 23:59",
+      "first_seen": "2026-11-21T14:30:00Z",
+      "details": "Module officiel ING4 IA: Calcul haute performance (Parallélisme OpenMP/MPI)."
     },
     {
-      "id": "9f65bc21d08a6aee",
-      "title": "Représentation des  connaissances et  raisonnement",
+      "id": "ca0dbd88ca5a2199",
+      "title": "Représentation des connaissances et raisonnement",
       "module": "ING4 Intelligence Artificielle (S7)",
-      "type": "Cours",
+      "type": "TP",
       "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
-      "deadline": "N/A",
-      "first_seen": "2026-11-21T18:50:40.392475+00:00",
-      "details": "Module officiel ING4 IA: Représentation des  connaissances et  raisonnement"
+      "deadline": "2026-11-29 23:59",
+      "first_seen": "2026-11-21T16:00:00Z",
+      "details": "Module officiel ING4 IA: Ontologies et logique des prédicats."
     }
   ]
 }

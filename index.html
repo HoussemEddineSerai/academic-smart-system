@@ -3,90 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <title>Academic Smart System — Meta Design System</title>
+  <title>Academic Smart System — Corporate AI Engine</title>
 
   <!-- PWA & Mobile Web App Meta Tags -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="AcademicSmart">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#2563EB">
   <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='30' fill='%230064e0'/%3E%3Cpath d='M30 40 C30 25, 45 25, 50 35 C55 25, 70 25, 70 40 C70 58, 52 70, 50 72 C48 70, 30 58, 30 40 Z' fill='%23ffffff'/%3E%3C/svg%3E">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563EB'/%3E%3Cpath d='M26 28 V72 M26 50 H46 M46 28 V72' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M74 34 C74 26 60 26 58 36 C55 46 75 49 72 61 C69 73 54 71 52 65' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563EB'/%3E%3Cpath d='M26 28 V72 M26 50 H46 M46 28 V72' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='round'/%3E%3Cpath d='M74 34 C74 26 60 26 58 36 C55 46 75 49 72 61 C69 73 54 71 52 65' stroke='%23FFFFFF' stroke-width='8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
 
   <style>
     /* ==========================================================================
-       Meta Design System Tokens (DESIGN-meta.md)
+       Corporate Design System Tokens
+       High-contrast Blue & White Palette, 20px Radius, Subtle Shadows
        ========================================================================== */
     :root {
-      /* Brand & Accent */
-      --meta-primary: #0064e0;
-      --meta-primary-deep: #0457cb;
-      --meta-primary-soft: #0091ff;
-      --meta-on-primary: #ffffff;
-      --meta-ink-button: #000000;
-      --meta-on-ink-button: #ffffff;
-      --meta-fb-blue: #1876f2;
-      --meta-link: #385898;
-      --meta-oculus-purple: #a121ce;
+      /* Corporate Brand Palette */
+      --corp-primary: #2563EB;
+      --corp-primary-dark: #1D4ED8;
+      --corp-primary-light: #3B82F6;
+      --corp-primary-soft: #EFF6FF;
+      --corp-primary-glow: rgba(37, 99, 235, 0.15);
 
-      /* Semantic Status */
-      --meta-success: #31a24c;
-      --meta-success-bg: #24e400;
-      --meta-attention: #f2a918;
-      --meta-warning: #f7b928;
-      --meta-warning-bg: #ffe200;
-      --meta-critical: #e41e3f;
-      --meta-critical-strong: #f0284a;
+      /* Semantic Alert & Status */
+      --corp-success: #16A34A;
+      --corp-success-soft: #DCFCE7;
+      --corp-warning: #CA8A04;
+      --corp-warning-soft: #FEF9C3;
+      --corp-orange: #EA580C;
+      --corp-orange-soft: #FFEDD5;
+      --corp-danger: #DC2626;
+      --corp-danger-soft: #FEE2E2;
 
-      /* Surfaces */
-      --meta-canvas: #ffffff;
-      --meta-surface-soft: #f1f4f7;
-      --meta-hairline: #ced0d4;
-      --meta-hairline-soft: #dee3e9;
-      --meta-disabled-text: #bcc0c4;
+      /* Neutral Surfaces */
+      --corp-canvas: #F8FAFC;
+      --corp-card: #FFFFFF;
+      --corp-surface-hover: #F1F5F9;
+      --corp-border: #E2E8F0;
+      --corp-border-subtle: #F1F5F9;
 
-      /* Text */
-      --meta-ink-deep: #0a1317;
-      --meta-ink: #1c1e21;
-      --meta-charcoal: #444950;
-      --meta-slate: #4b4c4f;
-      --meta-steel: #5d6c7b;
-      --meta-stone: #8595a4;
+      /* Typography & Text */
+      --corp-text: #0F172A;
+      --corp-text-muted: #475569;
+      --corp-text-light: #64748B;
+      --corp-text-disabled: #94A3B8;
 
-      /* Typography Font Stack (Optimistic VF with system fallbacks) */
-      --font-meta: "Optimistic VF", "Optimistic Display", "Optimistic Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --font-mono: "SF Mono", "JetBrains Mono", Consolas, Menlo, monospace;
+      /* Typography Font Stack */
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 
-      /* Spacing Scale */
-      --space-xxs: 4px;
-      --space-xs: 8px;
-      --space-sm: 10px;
-      --space-md: 12px;
-      --space-base: 16px;
-      --space-lg: 20px;
-      --space-xl: 24px;
-      --space-xxl: 32px;
-      --space-xxxl: 40px;
-      --space-section: 64px;
+      /* Universal Radius Constraint: 20px */
+      --radius-20: 20px;
+      --radius-pill: 9999px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
 
-      /* Border Radius Scale */
-      --radius-xs: 2px;
-      --radius-sm: 4px;
-      --radius-md: 6px;
-      --radius-lg: 8px;
-      --radius-xl: 16px;
-      --radius-xxl: 24px;
-      --radius-xxxl: 32px;
-      --radius-feature: 40px;
-      --radius-full: 100px; /* Meta Signature Pill */
-      --radius-circle: 9999px;
+      /* Clean Subtle Shadows */
+      --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
+      --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+      --shadow-hover: 0 10px 25px -3px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+      --shadow-modal: 0 20px 40px -8px rgba(15, 23, 42, 0.22);
 
-      /* Elevation */
-      --shadow-summary: rgba(20, 22, 26, 0.08) 0px 1px 4px 0px, rgba(20, 22, 26, 0.04) 0px 8px 24px 0px;
-      --shadow-node: 0 4px 20px rgba(10, 19, 23, 0.06);
-
-      --header-height: 64px;
-      --bottom-nav-height: 68px;
+      --header-height: 70px;
+      --bottom-nav-height: 64px;
       --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
 
@@ -98,12 +79,11 @@
     }
 
     body {
-      background-color: var(--meta-canvas);
-      color: var(--meta-ink);
-      font-family: var(--font-meta);
-      font-size: 16px;
+      background-color: var(--corp-canvas);
+      color: var(--corp-text);
+      font-family: var(--font-sans);
+      font-size: 15px;
       line-height: 1.5;
-      letter-spacing: -0.16px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -112,296 +92,219 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Scrollbar */
+    /* Scrollbars */
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: var(--meta-canvas);
+      background: var(--corp-canvas);
     }
     ::-webkit-scrollbar-thumb {
-      background: var(--meta-hairline);
-      border-radius: var(--radius-full);
+      background: #CBD5E1;
+      border-radius: var(--radius-pill);
     }
 
     /* ==========================================================================
-       Meta Sticky Promo Banner
-       ========================================================================== */
-    .promo-banner {
-      background-color: var(--meta-ink-deep);
-      color: var(--meta-canvas);
-      padding: 8px 16px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: -0.14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      text-align: center;
-      z-index: 60;
-    }
-
-    .promo-badge {
-      background-color: var(--meta-warning);
-      color: var(--meta-ink-deep);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: var(--radius-full);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* ==========================================================================
-       Header & Navigation
+       Header & Navigation Bar
        ========================================================================== */
     header {
       height: var(--header-height);
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--meta-hairline-soft);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--corp-border);
       position: sticky;
       top: 0;
       z-index: 50;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 24px;
     }
 
-    .brand-wrap {
+    .brand-section {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
     }
 
-    .brand-logo-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--meta-surface-soft);
-      border-radius: var(--radius-full);
+    .brand-logo-container {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid var(--meta-hairline-soft);
+    }
+
+    .brand-logo-svg {
+      width: 42px;
+      height: 42px;
+      display: block;
+      border-radius: var(--radius-20);
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+    }
+
+    .brand-text-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
 
     .brand-title {
       font-size: 16px;
       font-weight: 700;
-      color: var(--meta-ink-deep);
-      letter-spacing: -0.2px;
+      color: var(--corp-text);
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .brand-tag {
-      background: var(--meta-surface-soft);
-      color: var(--meta-primary);
+    .brand-version-pill {
+      background: var(--corp-primary-soft);
+      color: var(--corp-primary);
       font-size: 11px;
       font-weight: 700;
       padding: 2px 8px;
-      border-radius: var(--radius-full);
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(37, 99, 235, 0.2);
     }
 
-    /* Desktop Navigation Pill Tabs */
-    .header-pill-tabs {
+    .developer-attribution-text {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--corp-text-light);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Desktop Navigation Tabs */
+    .header-tab-bar {
       display: none;
     }
 
-    @media (min-width: 768px) {
-      .header-pill-tabs {
+    @media (min-width: 820px) {
+      .header-tab-bar {
         display: flex;
         align-items: center;
-        background: var(--meta-surface-soft);
-        border-radius: var(--radius-full);
+        background: var(--corp-canvas);
+        border: 1px solid var(--corp-border);
+        border-radius: var(--radius-20);
         padding: 4px;
         gap: 4px;
       }
-      .pill-tab-btn {
+
+      .nav-tab-btn {
         background: transparent;
         border: none;
-        color: var(--meta-ink);
+        color: var(--corp-text-muted);
         padding: 8px 18px;
-        border-radius: var(--radius-full);
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: -0.14px;
+        border-radius: var(--radius-20);
+        font-size: 13.5px;
+        font-weight: 600;
         cursor: pointer;
         display: flex;
         align-items: center;
         gap: 8px;
-        transition: background 0.15s, color 0.15s;
+        transition: all 0.15s ease;
       }
-      .pill-tab-btn:hover {
-        background: rgba(10, 19, 23, 0.05);
+      .nav-tab-btn:hover {
+        color: var(--corp-text);
+        background: rgba(15, 23, 42, 0.04);
       }
-      .pill-tab-btn.active {
-        background: var(--meta-ink-deep);
-        color: var(--meta-canvas);
+      .nav-tab-btn.active {
+        background: var(--corp-card);
+        color: var(--corp-primary);
+        font-weight: 700;
+        box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
       }
     }
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .status-badge-live {
-      display: flex;
+    /* Professional Corporate Status Badge */
+    .corporate-badge {
+      display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(49, 162, 76, 0.1);
-      border: 1px solid rgba(49, 162, 76, 0.25);
-      color: var(--meta-success);
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
+      gap: 8px;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      color: var(--corp-primary);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
       font-size: 12px;
       font-weight: 700;
+      letter-spacing: -0.1px;
     }
 
-    .pulse-indicator {
+    .badge-pulse-dot {
       width: 7px;
       height: 7px;
-      background: var(--meta-success);
+      background: var(--corp-primary);
       border-radius: 50%;
-      box-shadow: 0 0 6px var(--meta-success);
-      animation: metaPulse 2s infinite;
+      box-shadow: 0 0 6px var(--corp-primary);
+      animation: corpPulse 2s infinite ease-in-out;
     }
 
-    @keyframes metaPulse {
+    @keyframes corpPulse {
       0% { transform: scale(0.9); opacity: 0.8; }
       50% { transform: scale(1.3); opacity: 1; }
       100% { transform: scale(0.9); opacity: 0.8; }
     }
 
-    /* Meta Pill Buttons */
-    .btn-pill-primary {
-      background-color: var(--meta-ink-button);
-      color: var(--meta-on-ink-button);
+    /* Clean Prominent "Preview Alert" Primary Button */
+    .btn-primary-preview {
+      background-color: var(--corp-primary);
+      color: #FFFFFF;
       border: none;
-      padding: 10px 22px;
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.14px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.15s, transform 0.1s;
-    }
-    .btn-pill-primary:hover {
-      background-color: var(--meta-charcoal);
-    }
-    .btn-pill-primary:active {
-      transform: scale(0.97);
-    }
-
-    .btn-pill-buy {
-      background-color: var(--meta-primary);
-      color: var(--meta-on-primary);
-      border: none;
-      padding: 12px 26px;
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.14px;
+      padding: 9px 20px;
+      border-radius: var(--radius-20);
+      font-size: 13.5px;
+      font-weight: 600;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      text-decoration: none;
-      transition: background 0.15s, transform 0.1s;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+      transition: background-color 0.15s, transform 0.1s, box-shadow 0.15s;
     }
-    .btn-pill-buy:hover {
-      background-color: var(--meta-primary-deep);
+    .btn-primary-preview:hover {
+      background-color: var(--corp-primary-dark);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
     }
-    .btn-pill-buy:active {
+    .btn-primary-preview:active {
       transform: scale(0.97);
     }
 
-    .btn-pill-secondary {
+    /* Lock Button in Header */
+    .btn-header-lock {
       background: transparent;
-      color: var(--meta-ink-deep);
-      border: 2px solid var(--meta-ink-deep);
-      padding: 10px 22px;
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.14px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.15s, transform 0.1s;
-    }
-    .btn-pill-secondary:hover {
-      background: var(--meta-surface-soft);
-    }
-
-    /* ==========================================================================
-       Mobile Bottom Navigation (Meta Clean Pill)
-       ========================================================================== */
-    .mobile-bottom-bar {
+      border: 1px solid var(--corp-border);
+      color: var(--corp-text-muted);
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-20);
       display: flex;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: calc(var(--bottom-nav-height) + var(--safe-bottom));
-      padding-bottom: var(--safe-bottom);
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-top: 1px solid var(--meta-hairline-soft);
-      z-index: 60;
-      justify-content: space-around;
-      align-items: center;
-    }
-
-    @media (min-width: 768px) {
-      .mobile-bottom-bar {
-        display: none;
-      }
-    }
-
-    .mobile-nav-item {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 4px;
-      background: transparent;
-      border: none;
-      color: var(--meta-steel);
-      font-size: 11px;
-      font-weight: 700;
       cursor: pointer;
-      padding: 8px 0;
-      transition: color 0.15s;
+      transition: all 0.15s;
     }
-    .mobile-nav-item svg {
-      width: 22px;
-      height: 22px;
-      stroke-width: 2;
-    }
-    .mobile-nav-item.active {
-      color: var(--meta-primary);
-    }
-    .mobile-nav-item.active svg {
-      stroke: var(--meta-primary);
+    .btn-header-lock:hover {
+      background: var(--corp-surface-hover);
+      color: var(--corp-text);
+      border-color: #CBD5E1;
     }
 
     /* ==========================================================================
-       Main Viewport & Tabs
+       Main Viewport & Tab Contents
        ========================================================================== */
     main {
       flex: 1;
@@ -411,7 +314,7 @@
       flex-direction: column;
       padding-bottom: var(--bottom-nav-height);
     }
-    @media (min-width: 768px) {
+    @media (min-width: 820px) {
       main {
         padding-bottom: 0;
       }
@@ -429,14 +332,14 @@
     }
 
     /* ==========================================================================
-       Tab 1: Meta-Styled Interactive Canvas
+       Tab 1: Interactive n8n-Style Workflow Canvas
        ========================================================================== */
     .canvas-viewport {
       flex: 1;
       position: relative;
       overflow: hidden;
-      background-color: var(--meta-canvas);
-      background-image: radial-gradient(var(--meta-hairline-soft) 1.5px, transparent 1.5px);
+      background-color: var(--corp-canvas);
+      background-image: radial-gradient(#CBD5E1 1.5px, transparent 1.5px);
       background-size: 24px 24px;
       cursor: grab;
       touch-action: none;
@@ -451,7 +354,7 @@
       left: 0;
       transform-origin: 0 0;
       will-change: transform;
-      width: 2000px;
+      width: 2200px;
       height: 1200px;
     }
 
@@ -468,45 +371,46 @@
 
     .connection-line {
       fill: none;
-      stroke: var(--meta-hairline);
+      stroke: #CBD5E1;
       stroke-width: 2.5;
     }
 
     .connection-pulse {
       fill: none;
-      stroke: var(--meta-primary);
+      stroke: var(--corp-primary);
       stroke-width: 3.5;
       stroke-dasharray: 8 16;
-      animation: metaPulseFlow 1.4s linear infinite;
+      animation: cablePulseFlow 1.4s linear infinite;
     }
 
-    @keyframes metaPulseFlow {
+    @keyframes cablePulseFlow {
       from { stroke-dashoffset: 24; }
       to { stroke-dashoffset: 0; }
     }
 
-    /* Meta Hardware-Style Node Cards */
+    /* Workflow Nodes with border-radius: 20px */
     .node-card {
       position: absolute;
-      width: 250px;
-      background: var(--meta-canvas);
-      border: 1px solid var(--meta-hairline-soft);
-      border-radius: var(--radius-xxl);
-      padding: 16px;
-      box-shadow: var(--shadow-node);
+      width: 260px;
+      background: var(--corp-card);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-card);
       z-index: 20;
       cursor: pointer;
       transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
     }
 
     .node-card:hover {
-      border-color: var(--meta-hairline);
-      box-shadow: 0 6px 24px rgba(10, 19, 23, 0.09);
+      border-color: #94A3B8;
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
     }
 
     .node-card.selected {
-      border: 2px solid var(--meta-primary);
-      box-shadow: 0 0 0 3px rgba(0, 100, 224, 0.15), 0 8px 30px rgba(10, 19, 23, 0.1);
+      border: 2px solid var(--corp-primary);
+      box-shadow: 0 0 0 4px var(--corp-primary-glow), var(--shadow-hover);
     }
 
     .node-header {
@@ -516,28 +420,28 @@
       margin-bottom: 12px;
     }
 
-    /* Pill Badges */
-    .meta-badge {
-      font-size: 11px;
+    .node-badge {
+      font-size: 10.5px;
       font-weight: 700;
       text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
       letter-spacing: 0.4px;
     }
 
-    .badge-trigger { background: rgba(161, 33, 206, 0.1); color: var(--meta-oculus-purple); }
-    .badge-scraper { background: rgba(0, 100, 224, 0.1); color: var(--meta-primary); }
-    .badge-filter  { background: rgba(247, 185, 40, 0.15); color: #b45309; }
-    .badge-ai      { background: rgba(0, 145, 255, 0.12); color: var(--meta-primary-deep); }
-    .badge-smtp    { background: rgba(228, 30, 63, 0.1); color: var(--meta-critical); }
-    .badge-git     { background: rgba(49, 162, 76, 0.1); color: var(--meta-success); }
+    .badge-trigger  { background: #F3E8FF; color: #7E22CE; }
+    .badge-scraper  { background: var(--corp-primary-soft); color: var(--corp-primary); }
+    .badge-filter   { background: var(--corp-warning-soft); color: #854D0E; }
+    .badge-ai       { background: #EDE9FE; color: #6D28D9; }
+    .badge-smtp     { background: var(--corp-danger-soft); color: var(--corp-danger); }
+    .badge-gcal     { background: #E0F2FE; color: #0284C7; }
+    .badge-git      { background: var(--corp-success-soft); color: var(--corp-success); }
 
     .node-status-dot {
       width: 8px;
       height: 8px;
       border-radius: 50%;
-      background: var(--meta-success);
+      background: var(--corp-success);
     }
 
     .node-title-row {
@@ -550,24 +454,25 @@
     .node-icon-box {
       width: 36px;
       height: 36px;
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
-      background: var(--meta-surface-soft);
-      border: 1px solid var(--meta-hairline-soft);
+      background: var(--corp-primary-soft);
+      color: var(--corp-primary);
+      flex-shrink: 0;
     }
 
     .node-name {
-      font-size: 15px;
+      font-size: 14.5px;
       font-weight: 700;
-      color: var(--meta-ink-deep);
-      letter-spacing: -0.16px;
+      color: var(--corp-text);
+      line-height: 1.25;
     }
 
     .node-subtitle {
       font-size: 12px;
-      color: var(--meta-steel);
+      color: var(--corp-text-muted);
       line-height: 1.4;
       margin-bottom: 12px;
     }
@@ -576,11 +481,11 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-top: 1px solid var(--meta-hairline-soft);
+      border-top: 1px solid var(--corp-border);
       padding-top: 10px;
       font-size: 11px;
-      font-weight: 700;
-      color: var(--meta-slate);
+      font-weight: 600;
+      color: var(--corp-text-light);
     }
 
     /* Port Dots */
@@ -589,8 +494,8 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: var(--meta-canvas);
-      border: 3px solid var(--meta-primary);
+      background: var(--corp-card);
+      border: 3px solid var(--corp-primary);
       top: 50%;
       transform: translateY(-50%);
       z-index: 25;
@@ -599,27 +504,27 @@
     .port-in { left: -7px; }
     .port-out { right: -7px; }
 
-    /* Floating Canvas Controls Dock */
+    /* Canvas Controls Dock */
     .canvas-dock {
       position: absolute;
       bottom: 24px;
       right: 24px;
-      background: var(--meta-canvas);
-      border: 1px solid var(--meta-hairline);
-      border-radius: var(--radius-full);
+      background: var(--corp-card);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
       display: flex;
       gap: 4px;
-      padding: 4px;
-      box-shadow: var(--shadow-summary);
+      padding: 5px;
+      box-shadow: var(--shadow-card);
       z-index: 40;
     }
     .dock-btn {
       background: transparent;
       border: none;
-      color: var(--meta-ink);
-      width: 36px;
-      height: 36px;
-      border-radius: var(--radius-circle);
+      color: var(--corp-text);
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius-20);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -627,45 +532,45 @@
       transition: background 0.15s;
     }
     .dock-btn:hover {
-      background: var(--meta-surface-soft);
+      background: var(--corp-surface-hover);
     }
 
     .canvas-hint-pill {
       position: absolute;
       top: 16px;
       left: 16px;
-      background: var(--meta-canvas);
-      border: 1px solid var(--meta-hairline);
+      background: var(--corp-card);
+      border: 1px solid var(--corp-border);
       padding: 6px 14px;
-      border-radius: var(--radius-full);
+      border-radius: var(--radius-20);
       font-size: 12px;
       font-weight: 600;
-      color: var(--meta-slate);
+      color: var(--corp-text-muted);
       display: flex;
       align-items: center;
       gap: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      box-shadow: var(--shadow-sm);
       z-index: 30;
       pointer-events: none;
     }
 
     /* ==========================================================================
-       Node Inspector Panel (Meta Pure Canvas / Drawer)
+       Node Inspector Panel / Drawer (border-radius: 20px)
        ========================================================================== */
     .inspector-panel {
       position: fixed;
       right: 0;
       top: var(--header-height);
       bottom: 0;
-      width: 380px;
-      background: var(--meta-canvas);
-      border-left: 1px solid var(--meta-hairline-soft);
+      width: 390px;
+      background: var(--corp-card);
+      border-left: 1px solid var(--corp-border);
       z-index: 70;
       display: flex;
       flex-direction: column;
       transform: translateX(100%);
       transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: -10px 0 30px rgba(10, 19, 23, 0.08);
+      box-shadow: -8px 0 24px rgba(15, 23, 42, 0.08);
     }
     .inspector-panel.open {
       transform: translateX(0);
@@ -680,10 +585,10 @@
         width: 100%;
         max-height: 85vh;
         border-left: none;
-        border-top: 1px solid var(--meta-hairline-soft);
-        border-radius: var(--radius-xxxl) var(--radius-xxxl) 0 0;
+        border-top: 1px solid var(--corp-border);
+        border-radius: var(--radius-20) var(--radius-20) 0 0;
         transform: translateY(100%);
-        box-shadow: 0 -10px 30px rgba(10, 19, 23, 0.15);
+        box-shadow: 0 -8px 30px rgba(15, 23, 42, 0.15);
       }
       .inspector-panel.open {
         transform: translateY(0);
@@ -694,8 +599,8 @@
       display: none;
       width: 44px;
       height: 4px;
-      background: var(--meta-hairline);
-      border-radius: var(--radius-full);
+      background: #CBD5E1;
+      border-radius: var(--radius-pill);
       margin: 12px auto 4px auto;
     }
     @media (max-width: 767px) {
@@ -706,7 +611,7 @@
 
     .inspector-header {
       padding: 18px 24px;
-      border-bottom: 1px solid var(--meta-hairline-soft);
+      border-bottom: 1px solid var(--corp-border);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -719,16 +624,21 @@
     }
 
     .inspector-close-btn {
-      background: var(--meta-surface-soft);
-      border: none;
-      color: var(--meta-ink);
-      width: 34px;
-      height: 34px;
-      border-radius: var(--radius-circle);
+      background: var(--corp-surface-hover);
+      border: 1px solid var(--corp-border);
+      color: var(--corp-text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-20);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      transition: all 0.15s;
+    }
+    .inspector-close-btn:hover {
+      background: #E2E8F0;
+      color: var(--corp-text);
     }
 
     .inspector-body {
@@ -747,39 +657,58 @@
     }
 
     .param-label {
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: var(--meta-steel);
+      color: var(--corp-text-light);
     }
 
     .param-value-box {
-      background: var(--meta-surface-soft);
-      border: 1px solid var(--meta-hairline-soft);
-      border-radius: var(--radius-lg);
-      padding: 12px 14px;
+      background: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 12px 16px;
       font-size: 13px;
-      color: var(--meta-ink-deep);
+      color: var(--corp-text);
       font-family: var(--font-mono);
       word-break: break-all;
     }
 
     .json-code-box {
-      background: var(--meta-surface-soft);
-      border: 1px solid var(--meta-hairline-soft);
-      border-radius: var(--radius-lg);
-      padding: 12px 14px;
+      background: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      padding: 12px 16px;
       font-family: var(--font-mono);
       font-size: 12px;
-      color: var(--meta-primary-deep);
+      color: var(--corp-primary-dark);
       max-height: 160px;
       overflow-y: auto;
       white-space: pre-wrap;
     }
 
+    .btn-inspector-action {
+      background: var(--corp-primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 12px;
+      border-radius: var(--radius-20);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.15s;
+    }
+    .btn-inspector-action:hover {
+      background: var(--corp-primary-dark);
+    }
+
     /* ==========================================================================
-       Tab 2: Live Logs & History (Meta Architecture)
+       Tab 2: Live Logs & Telemetry
        ========================================================================== */
     .logs-container {
       flex: 1;
@@ -793,59 +722,60 @@
       width: 100%;
     }
 
-    .meta-metrics-grid {
+    .metrics-summary-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 16px;
     }
     @media (min-width: 768px) {
-      .meta-metrics-grid {
+      .metrics-summary-grid {
         grid-template-columns: repeat(4, 1fr);
       }
     }
 
-    .why-buy-tile {
-      background: var(--meta-canvas);
-      border: 1px solid var(--meta-hairline-soft);
-      border-radius: var(--radius-xl);
+    .metric-card-box {
+      background: var(--corp-card);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
       padding: 20px;
       display: flex;
       flex-direction: column;
       gap: 4px;
-      box-shadow: var(--shadow-summary);
+      box-shadow: var(--shadow-card);
     }
 
-    .metric-number {
+    .metric-number-val {
       font-size: 28px;
-      font-weight: 500;
-      color: var(--meta-ink-deep);
+      font-weight: 700;
+      color: var(--corp-text);
       line-height: 1.15;
     }
-    .metric-sublabel {
-      font-size: 13px;
-      color: var(--meta-steel);
+    .metric-label-sub {
+      font-size: 12.5px;
+      color: var(--corp-text-muted);
+      font-weight: 500;
     }
 
-    /* Meta Terminal Console */
-    .terminal-card {
-      background: var(--meta-ink-deep);
-      border-radius: var(--radius-xxl);
+    .terminal-window {
+      background: #0B1120;
+      border-radius: var(--radius-20);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 12px 36px rgba(10, 19, 23, 0.15);
+      box-shadow: var(--shadow-modal);
+      border: 1px solid #1E293B;
     }
 
-    .terminal-header {
-      background: #0f1a20;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    .terminal-top-bar {
+      background: #070D18;
+      border-bottom: 1px solid #1E293B;
       padding: 12px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .mac-dots {
+    .mac-window-dots {
       display: flex;
       gap: 6px;
     }
@@ -854,32 +784,37 @@
       height: 10px;
       border-radius: 50%;
     }
-    .dot-red { background: #ef4444; }
-    .dot-yellow { background: #f59e0b; }
-    .dot-green { background: #10b981; }
+    .dot-red { background: #EF4444; }
+    .dot-yellow { background: #F59E0B; }
+    .dot-green { background: #10B981; }
 
-    .terminal-title {
+    .terminal-title-text {
       font-size: 12px;
       font-family: var(--font-mono);
-      color: var(--meta-stone);
+      color: #94A3B8;
     }
 
-    .btn-terminal-pill {
-      background: rgba(255, 255, 255, 0.1);
-      border: none;
-      color: var(--meta-canvas);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: var(--radius-full);
+    .terminal-actions-row {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-terminal-action {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #F8FAFC;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: var(--radius-20);
       cursor: pointer;
       transition: background 0.15s;
     }
-    .btn-terminal-pill:hover {
-      background: rgba(255, 255, 255, 0.2);
+    .btn-terminal-action:hover {
+      background: rgba(255, 255, 255, 0.16);
     }
 
-    .terminal-body {
+    .terminal-console-body {
       padding: 18px;
       font-family: var(--font-mono);
       font-size: 13px;
@@ -889,7 +824,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
-      color: var(--meta-canvas);
+      color: #F8FAFC;
     }
 
     .log-line {
@@ -897,16 +832,17 @@
       gap: 10px;
       word-break: break-word;
     }
-    .log-ts { color: var(--meta-stone); }
-    .log-tag-info { color: var(--meta-primary-soft); font-weight: 700; }
-    .log-tag-scraper { color: #38bdf8; font-weight: 700; }
-    .log-tag-filter { color: var(--meta-warning); font-weight: 700; }
-    .log-tag-gemini { color: #a78bfa; font-weight: 700; }
-    .log-tag-success { color: #4ade80; font-weight: 700; }
-    .log-tag-git { color: #f472b6; font-weight: 700; }
+    .log-ts { color: #64748B; }
+    .log-tag-info { color: #60A5FA; font-weight: 700; }
+    .log-tag-scraper { color: #38BDF8; font-weight: 700; }
+    .log-tag-filter { color: #FBBF24; font-weight: 700; }
+    .log-tag-gemini { color: #A78BFA; font-weight: 700; }
+    .log-tag-gcal { color: #38BDF8; font-weight: 700; }
+    .log-tag-success { color: #4ADE80; font-weight: 700; }
+    .log-tag-git { color: #F472B6; font-weight: 700; }
 
     /* ==========================================================================
-       Tab 3: Tracked Courses & Labs (Meta Feature Cards)
+       Tab 3: Tracked Courses & Labs (border-radius: 20px)
        ========================================================================== */
     .tracker-container {
       flex: 1;
@@ -925,7 +861,7 @@
       flex-direction: column;
       gap: 12px;
     }
-    @media (min-width: 600px) {
+    @media (min-width: 640px) {
       .tracker-toolbar {
         flex-direction: row;
         align-items: center;
@@ -933,83 +869,88 @@
       }
     }
 
-    /* Meta Search Pill */
-    .search-pill-container {
+    .search-input-wrapper {
       position: relative;
       flex: 1;
     }
 
-    .search-pill {
+    .search-input-field {
       width: 100%;
-      background: var(--meta-surface-soft);
-      border: 1px solid var(--meta-hairline-soft);
-      border-radius: var(--radius-full);
+      background: var(--corp-card);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
       padding: 10px 18px 10px 42px;
-      color: var(--meta-ink);
+      color: var(--corp-text);
       font-size: 14px;
       outline: none;
       height: 44px;
-      transition: border-color 0.15s, background 0.15s;
+      transition: border-color 0.15s, box-shadow 0.15s;
     }
-    .search-pill:focus {
-      background: var(--meta-canvas);
-      border: 2px solid var(--meta-primary);
+    .search-input-field:focus {
+      border-color: var(--corp-primary);
+      box-shadow: 0 0 0 3px var(--corp-primary-glow);
     }
 
-    .search-icon {
+    .search-icon-svg {
       position: absolute;
-      left: 16px;
+      left: 15px;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--meta-steel);
+      color: var(--corp-text-light);
       pointer-events: none;
     }
 
-    .pill-filter-row {
+    .filter-buttons-row {
       display: flex;
       gap: 8px;
       overflow-x: auto;
       padding-bottom: 2px;
     }
 
-    .button-pill-tab {
-      background: var(--meta-canvas);
-      border: 1px solid var(--meta-hairline);
-      color: var(--meta-ink);
+    .filter-tab-btn {
+      background: var(--corp-card);
+      border: 1px solid var(--corp-border);
+      color: var(--corp-text-muted);
       padding: 8px 18px;
-      border-radius: var(--radius-full);
+      border-radius: var(--radius-20);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 600;
       white-space: nowrap;
       cursor: pointer;
       transition: all 0.15s;
     }
-    .button-pill-tab.active {
-      background: var(--meta-ink-deep);
-      border-color: var(--meta-ink-deep);
-      color: var(--meta-canvas);
+    .filter-tab-btn:hover {
+      background: var(--corp-surface-hover);
+      color: var(--corp-text);
+    }
+    .filter-tab-btn.active {
+      background: var(--corp-primary);
+      border-color: var(--corp-primary);
+      color: #FFFFFF;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
     }
 
-    /* Meta Feature Card (card-product-feature) */
+    /* Course Cards (border-radius: 20px) */
     .course-card-grid {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
 
-    .card-product-feature {
-      background-color: var(--meta-canvas);
-      border: 1px solid var(--meta-hairline-soft);
-      border-radius: var(--radius-xxxl); /* 32px Meta Signature */
+    .course-card {
+      background-color: var(--corp-card);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
       padding: 24px;
       display: flex;
       flex-direction: column;
       gap: 12px;
-      box-shadow: var(--shadow-summary);
-      transition: border-color 0.15s, box-shadow 0.15s;
+      box-shadow: var(--shadow-card);
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.1s;
     }
-    .card-product-feature:hover {
-      border-color: var(--meta-hairline);
+    .course-card:hover {
+      border-color: #CBD5E1;
+      box-shadow: var(--shadow-hover);
     }
 
     .card-top-row {
@@ -1018,66 +959,118 @@
       justify-content: space-between;
     }
 
-    .badge-promo-yellow {
-      background-color: var(--meta-warning);
-      color: var(--meta-ink-deep);
-      font-size: 12px;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
+    .course-module-tag {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--corp-text-muted);
     }
 
-    .course-title {
-      font-size: 20px;
+    .course-card-title {
+      font-size: 18.5px;
       font-weight: 700;
-      color: var(--meta-ink-deep);
-      line-height: 1.3;
+      color: var(--corp-text);
+      line-height: 1.35;
       letter-spacing: -0.2px;
     }
 
-    .course-details {
+    .course-card-desc {
       font-size: 14px;
-      color: var(--meta-charcoal);
+      color: var(--corp-text-muted);
       line-height: 1.5;
     }
 
-    .deadline-container {
+    /* ==========================================================================
+       Dynamic Countdown Timer Badges (Yellow, Orange, Red)
+       ========================================================================== */
+    .deadline-countdown-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(247, 185, 40, 0.18);
-      color: #92400e;
+      gap: 8px;
       padding: 6px 14px;
-      border-radius: var(--radius-full);
+      border-radius: var(--radius-20);
       font-size: 13px;
       font-weight: 700;
       width: fit-content;
+      letter-spacing: -0.1px;
+      transition: all 0.2s;
+    }
+
+    /* Yellow Badge: Safe timelines (> 1 day / 24h remaining) */
+    .countdown-safe {
+      background-color: var(--corp-warning-soft);
+      border: 1px solid #FDE047;
+      color: #854D0E;
+    }
+
+    /* Orange Badge: Approaching deadlines (6h - 24h remaining) */
+    .countdown-warning {
+      background-color: var(--corp-orange-soft);
+      border: 1px solid #FDBA74;
+      color: #C2410C;
+    }
+
+    /* Red Badge: Urgent / Critical deadlines (< 6h remaining) */
+    .countdown-urgent {
+      background-color: var(--corp-danger-soft);
+      border: 1px solid #FCA5A5;
+      color: #B91C1C;
+      animation: urgentPulse 1.8s infinite;
+    }
+
+    @keyframes urgentPulse {
+      0% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
+      70% { box-shadow: 0 0 0 6px rgba(220, 38, 38, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+    }
+
+    /* Neutral Expired or No Deadline Badge */
+    .countdown-neutral {
+      background-color: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      color: var(--corp-text-light);
     }
 
     .card-footer-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-top: 1px solid var(--meta-hairline-soft);
+      border-top: 1px solid var(--corp-border);
       padding-top: 16px;
       margin-top: 4px;
     }
 
-    .footer-meta-text {
+    .card-footer-meta {
       font-size: 12px;
-      color: var(--meta-steel);
+      color: var(--corp-text-light);
+    }
+
+    .btn-card-link {
+      background-color: var(--corp-primary);
+      color: #FFFFFF;
+      text-decoration: none;
+      padding: 9px 18px;
+      border-radius: var(--radius-20);
+      font-size: 13px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .btn-card-link:hover {
+      background-color: var(--corp-primary-dark);
     }
 
     /* ==========================================================================
-       Interactive Email Preview Modal
+       Email Preview Modal (border-radius: 20px)
        ========================================================================== */
-    .modal-overlay {
+    .modal-backdrop-overlay {
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(10, 19, 23, 0.6);
+      background: rgba(15, 23, 42, 0.6);
       backdrop-filter: blur(8px);
       z-index: 100;
       display: none;
@@ -1085,130 +1078,387 @@
       justify-content: center;
       padding: 16px;
     }
-    .modal-overlay.open {
+    .modal-backdrop-overlay.open {
       display: flex;
     }
 
-    .modal-card {
-      background: var(--meta-canvas);
-      border-radius: var(--radius-xxxl);
+    .modal-box-card {
+      background: var(--corp-card);
+      border-radius: var(--radius-20);
       width: 100%;
       max-width: 640px;
       max-height: 90vh;
       display: flex;
       flex-direction: column;
-      box-shadow: 0 24px 60px rgba(10, 19, 23, 0.25);
+      box-shadow: var(--shadow-modal);
       overflow: hidden;
+      border: 1px solid var(--corp-border);
     }
 
-    .modal-header {
+    .modal-header-bar {
       padding: 18px 24px;
-      border-bottom: 1px solid var(--meta-hairline-soft);
+      border-bottom: 1px solid var(--corp-border);
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .modal-title {
+    .modal-title-heading {
       font-size: 16px;
       font-weight: 700;
-      color: var(--meta-ink-deep);
+      color: var(--corp-text);
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
 
-    .modal-body {
-      padding: 24px;
-      overflow-y: auto;
+    .modal-scrollable-body {
       flex: 1;
-      background: var(--meta-surface-soft);
+      overflow-y: auto;
+      padding: 24px;
+      background: var(--corp-canvas);
     }
 
-    /* Email Simulation Frame */
-    .email-preview-frame {
-      max-width: 540px;
-      margin: 0 auto;
-      background: var(--meta-canvas);
-      border: 1px solid var(--meta-hairline-soft);
-      border-radius: var(--radius-xxl);
+    .email-container-box {
+      background: #FFFFFF;
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
       padding: 24px;
-      box-shadow: var(--shadow-summary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ==========================================================================
+       Security Access PIN Modal (Default PIN: 2026)
+       ========================================================================== */
+    .security-modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
+    }
+
+    .security-modal-overlay.unlocked {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .security-panel-card {
+      background: #FFFFFF;
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      width: 100%;
+      max-width: 360px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: var(--shadow-modal);
+      text-align: center;
+    }
+
+    .security-icon-badge {
+      width: 54px;
+      height: 54px;
+      background: var(--corp-primary-soft);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      border-radius: var(--radius-20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--corp-primary);
+      margin-bottom: 16px;
+    }
+
+    .security-panel-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--corp-text);
+      margin-bottom: 6px;
+    }
+
+    .security-panel-desc {
+      font-size: 13px;
+      color: var(--corp-text-muted);
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+
+    /* PIN Indicator Dots */
+    .pin-dots-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .pin-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid #CBD5E1;
+      background: transparent;
+      transition: all 0.15s ease;
+    }
+    .pin-dot.filled {
+      background: var(--corp-primary);
+      border-color: var(--corp-primary);
+      transform: scale(1.15);
+      box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
+    }
+    .pin-dots-row.shake {
+      animation: pinShake 0.4s ease-in-out;
+    }
+
+    @keyframes pinShake {
+      0%, 100% { transform: translateX(0); }
+      20%, 60% { transform: translateX(-8px); }
+      40%, 80% { transform: translateX(8px); }
+    }
+
+    .pin-error-text {
+      color: var(--corp-danger);
+      font-size: 12px;
+      font-weight: 600;
+      height: 18px;
+      margin-bottom: 12px;
+    }
+
+    /* Numeric Keypad */
+    .keypad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      width: 100%;
+      max-width: 270px;
+    }
+
+    .keypad-btn {
+      background: var(--corp-canvas);
+      border: 1px solid var(--corp-border);
+      border-radius: var(--radius-20);
+      height: 52px;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--corp-text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .keypad-btn:hover {
+      background: var(--corp-surface-hover);
+    }
+    .keypad-btn:active {
+      transform: scale(0.94);
+      background: #E2E8F0;
+    }
+    .keypad-btn.action-btn {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--corp-text-muted);
+    }
+
+    .security-footer-hint {
+      margin-top: 20px;
+      font-size: 11.5px;
+      color: var(--corp-text-light);
+    }
+
+    /* ==========================================================================
+       Mobile Bottom Navigation Bar
+       ========================================================================== */
+    .mobile-bottom-bar {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: calc(var(--bottom-nav-height) + var(--safe-bottom));
+      padding-bottom: var(--safe-bottom);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--corp-border);
+      z-index: 60;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    @media (min-width: 820px) {
+      .mobile-bottom-bar {
+        display: none;
+      }
+    }
+
+    .mobile-nav-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      background: transparent;
+      border: none;
+      color: var(--corp-text-light);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 8px 0;
+      transition: color 0.15s;
+    }
+    .mobile-nav-item svg {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+    .mobile-nav-item.active {
+      color: var(--corp-primary);
+    }
+    .mobile-nav-item.active svg {
+      stroke: var(--corp-primary);
     }
   </style>
 </head>
 <body>
 
   <!-- ========================================================================
-       Meta Sticky Promo Banner
+       Security Access PIN Modal (Gate on Startup, default PIN: 2026)
        ======================================================================== -->
-  <div class="promo-banner">
-    <span class="promo-badge">Meta Automation</span>
-    <span>Serverless academic tracking active for 4th Year AI Engineering</span>
+  <div class="security-modal-overlay" id="securityPinModal">
+    <div class="security-panel-card">
+      <div class="security-icon-badge">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
+      </div>
+      <h2 class="security-panel-title">Security Access</h2>
+      <p class="security-panel-desc">Enter 4-digit PIN to access Academic Smart System.</p>
+
+      <div class="pin-dots-row" id="pinDotsRow">
+        <div class="pin-dot" id="pindot-0"></div>
+        <div class="pin-dot" id="pindot-1"></div>
+        <div class="pin-dot" id="pindot-2"></div>
+        <div class="pin-dot" id="pindot-3"></div>
+      </div>
+
+      <div class="pin-error-text" id="pinErrorMsg"></div>
+
+      <div class="keypad-grid">
+        <button class="keypad-btn" onclick="pressPinKey('1')">1</button>
+        <button class="keypad-btn" onclick="pressPinKey('2')">2</button>
+        <button class="keypad-btn" onclick="pressPinKey('3')">3</button>
+        <button class="keypad-btn" onclick="pressPinKey('4')">4</button>
+        <button class="keypad-btn" onclick="pressPinKey('5')">5</button>
+        <button class="keypad-btn" onclick="pressPinKey('6')">6</button>
+        <button class="keypad-btn" onclick="pressPinKey('7')">7</button>
+        <button class="keypad-btn" onclick="pressPinKey('8')">8</button>
+        <button class="keypad-btn" onclick="pressPinKey('9')">9</button>
+        <button class="keypad-btn action-btn" onclick="clearPinKey()">Clear</button>
+        <button class="keypad-btn" onclick="pressPinKey('0')">0</button>
+        <button class="keypad-btn action-btn" onclick="backspacePinKey()">⌫</button>
+      </div>
+
+      <div class="security-footer-hint">
+        Protected AI Automation • Default PIN: <strong>2026</strong>
+      </div>
+    </div>
   </div>
 
   <!-- ========================================================================
-       Header
+       Header & Branding Section
        ======================================================================== -->
   <header>
-    <a href="#" class="brand-wrap">
-      <div class="brand-logo-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0064e0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" y1="12" x2="22" y2="12"></line>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    <div class="brand-section">
+      <div class="brand-logo-container">
+        <!-- Minimalist blue-and-white vector SVG logo representing "HS" geometry -->
+        <svg class="brand-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100" height="100" rx="20" fill="#2563EB"/>
+          <!-- Geometric interlocking H and S white vectors -->
+          <path d="M26 28 V72 M26 50 H46 M46 28 V72" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+          <path d="M74 34 C74 26 60 26 58 36 C55 46 75 49 72 61 C69 73 54 71 52 65" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none"/>
         </svg>
       </div>
-      <div class="brand-title">
-        academic-smart-system
-        <span class="brand-tag">Meta UI</span>
+      <div class="brand-text-block">
+        <div class="brand-title">
+          <span>Academic Smart System</span>
+          <span class="brand-version-pill">v2.4</span>
+        </div>
+        <div class="developer-attribution-text">
+          Developed by Serai Houssem Eddine | 4th Year AI Engineering, Ferhat Abbas University Sétif 1
+        </div>
       </div>
-    </a>
-
-    <!-- Desktop Navigation Pill Tabs -->
-    <div class="header-pill-tabs">
-      <button class="pill-tab-btn active" onclick="switchTab('tab-workflow')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-        Workflow Nodes
-      </button>
-      <button class="pill-tab-btn" onclick="switchTab('tab-logs')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
-        Live Logs
-      </button>
-      <button class="pill-tab-btn" onclick="switchTab('tab-tracker')">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-        Tracked Courses/Labs
-      </button>
     </div>
+
+    <!-- Desktop Navigation Tab Bar -->
+    <nav class="header-tab-bar">
+      <button class="nav-tab-btn active" id="tab-btn-workflow" onclick="switchTab('tab-workflow')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Workflow Nodes</span>
+      </button>
+      <button class="nav-tab-btn" id="tab-btn-logs" onclick="switchTab('tab-logs')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+        <span>Live Logs & History</span>
+      </button>
+      <button class="nav-tab-btn" id="tab-btn-tracker" onclick="switchTab('tab-tracker')">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        <span>Tracked Courses/Labs</span>
+      </button>
+    </nav>
 
     <!-- Header Actions -->
     <div class="header-actions">
-      <div class="status-badge-live">
-        <div class="pulse-indicator"></div>
-        ACTIVE
+      <!-- Corporate Online Secured Badge -->
+      <div class="corporate-badge">
+        <span class="badge-pulse-dot"></span>
+        <span>🤖 AI Engine Online (Secured)</span>
       </div>
-      <button class="btn-pill-primary" onclick="openEmailPreviewModal()">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+
+      <!-- Clean Prominent "Preview Alert" Primary Button with Eye Icon -->
+      <button class="btn-primary-preview" onclick="openEmailPreviewModal()">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
         <span>Preview Alert</span>
+      </button>
+
+      <!-- Re-Lock Screen Button -->
+      <button class="btn-header-lock" onclick="lockPlatform()" title="Lock Platform">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+        </svg>
       </button>
     </div>
   </header>
 
   <!-- ========================================================================
-       Main Content (Tabs)
+       Main Content Container
        ======================================================================== -->
   <main>
-    <!-- TAB 1: WORKFLOW NODES (Meta Canvas) -->
+    <!-- TAB 1: WORKFLOW NODES CANVAS (n8n Style) -->
     <div id="tab-workflow" class="tab-content active">
       <div class="canvas-viewport" id="canvasViewport">
         <div class="canvas-hint-pill">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-          Touch/Drag to pan canvas • Tap any node to inspect
+          <span>Pan to explore • Click any node to inspect configuration</span>
         </div>
 
         <div class="canvas-world" id="canvasWorld">
           <!-- SVG Connecting Cables -->
-          <svg class="canvas-svg" id="canvasSvg">
+          <svg class="canvas-svg">
             <path id="cable-1" class="connection-line" d=""></path>
             <path id="cable-1-pulse" class="connection-pulse" d=""></path>
 
@@ -1223,194 +1473,242 @@
 
             <path id="cable-5" class="connection-line" d=""></path>
             <path id="cable-5-pulse" class="connection-pulse" d=""></path>
+
+            <path id="cable-6" class="connection-line" d=""></path>
+            <path id="cable-6-pulse" class="connection-pulse" d=""></path>
+
+            <path id="cable-7" class="connection-line" d=""></path>
+            <path id="cable-7-pulse" class="connection-pulse" d=""></path>
           </svg>
 
-          <!-- Node 1: GitHub Actions Cron Trigger -->
-          <div class="node-card" id="node-trigger" style="left: 60px; top: 180px;" onclick="selectNode('trigger')">
+          <!-- Node 1: Schedule Trigger -->
+          <div class="node-card" id="node-trigger" style="left: 40px; top: 180px;" onclick="selectNode('trigger')">
             <div class="node-header">
-              <span class="meta-badge badge-trigger">Trigger</span>
+              <span class="node-badge badge-trigger">Trigger</span>
               <div class="node-status-dot"></div>
             </div>
             <div class="node-title-row">
               <div class="node-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a121ce" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
               </div>
-              <div class="node-name">Cron Schedule</div>
+              <div>
+                <div class="node-name">Cron Schedule</div>
+                <div style="font-size: 11px; color: var(--corp-primary); font-weight: 600;">GitHub Actions</div>
+              </div>
             </div>
-            <div class="node-subtitle">Every 2 Hours (0 */2 * * *) + Manual Dispatch</div>
+            <div class="node-subtitle">Serverless cron running every 2 hours: <code>0 */2 * * *</code></div>
             <div class="node-metrics">
-              <span>Next: in ~45m</span>
-              <span style="color: var(--meta-success);">24 runs/day</span>
+              <span>Next: Scheduled</span>
+              <span>Interval: 2h</span>
             </div>
             <div class="port-dot port-out" id="port-trigger-out"></div>
           </div>
 
-          <!-- Node 2: Moodle / Portal Scraper -->
-          <div class="node-card" id="node-scraper" style="left: 360px; top: 180px;" onclick="selectNode('scraper')">
+          <!-- Node 2: Portal Scraper -->
+          <div class="node-card" id="node-scraper" style="left: 350px; top: 180px;" onclick="selectNode('scraper')">
             <div class="port-dot port-in" id="port-scraper-in"></div>
             <div class="node-header">
-              <span class="meta-badge badge-scraper">Data Source</span>
+              <span class="node-badge badge-scraper">Data Source</span>
               <div class="node-status-dot"></div>
             </div>
             <div class="node-title-row">
               <div class="node-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0064e0" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
               </div>
-              <div class="node-name">Moodle / Portal</div>
+              <div>
+                <div class="node-name">Moodle Scraper</div>
+                <div style="font-size: 11px; color: var(--corp-text-light);">Univ Sétif 1 Portal</div>
+              </div>
             </div>
-            <div class="node-subtitle">BS4 + Requests (Cours, TP, TD, Deadlines)</div>
+            <div class="node-subtitle">Crawl sciences-courses.univ-setif.dz for new Cours, TP, and TD files.</div>
             <div class="node-metrics">
-              <span>Auth: Session cookies</span>
-              <span>Timeout: 20s</span>
+              <span>Status: 200 OK</span>
+              <span>Modules: 7</span>
             </div>
             <div class="port-dot port-out" id="port-scraper-out"></div>
           </div>
 
-          <!-- Node 3: State Deduplicator -->
+          <!-- Node 3: Deduplicator Filter -->
           <div class="node-card" id="node-filter" style="left: 660px; top: 180px;" onclick="selectNode('filter')">
             <div class="port-dot port-in" id="port-filter-in"></div>
             <div class="node-header">
-              <span class="meta-badge badge-filter">Logic Filter</span>
+              <span class="node-badge badge-filter">Logic Gate</span>
               <div class="node-status-dot"></div>
             </div>
             <div class="node-title-row">
               <div class="node-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b45309" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
               </div>
-              <div class="node-name">seen_updates.json</div>
+              <div>
+                <div class="node-name">Deduplication Gate</div>
+                <div style="font-size: 11px; color: var(--corp-warning); font-weight: 600;">seen_updates.json</div>
+              </div>
             </div>
-            <div class="node-subtitle">Diff check against committed state file</div>
+            <div class="node-subtitle">Computes SHA-256 ID hashes. Skips AI & Gmail if no new items found.</div>
             <div class="node-metrics">
-              <span>Only trigger on NEW</span>
-              <span style="color: #b45309;">Skip if 0</span>
+              <span>Spam Guard: Active</span>
+              <span>Hashed</span>
             </div>
             <div class="port-dot port-out" id="port-filter-out"></div>
           </div>
 
-          <!-- Node 4: Gemini 3.8 Flash AI -->
-          <div class="node-card" id="node-gemini" style="left: 960px; top: 180px;" onclick="selectNode('gemini')">
+          <!-- Node 4: Gemini 3.8 Flash Engine -->
+          <div class="node-card" id="node-gemini" style="left: 970px; top: 180px;" onclick="selectNode('gemini')">
             <div class="port-dot port-in" id="port-gemini-in"></div>
             <div class="node-header">
-              <span class="meta-badge badge-ai">Gemini AI</span>
+              <span class="node-badge badge-ai">AI Model</span>
               <div class="node-status-dot"></div>
             </div>
             <div class="node-title-row">
               <div class="node-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0064e0" stroke-width="2"><path d="M12 2v20M2 12h20M4.93 4.93l14.14 14.14M4.93 19.07l14.14-14.14"></path></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
               </div>
-              <div class="node-name">Gemini 3.8 Flash</div>
+              <div>
+                <div class="node-name">Gemini 3.8 Flash</div>
+                <div style="font-size: 11px; color: #6D28D9; font-weight: 600;">REST API Engine</div>
+              </div>
             </div>
-            <div class="node-subtitle">Scannable HTML Email + 503 Auto-Retry</div>
+            <div class="node-subtitle">Synthesizes concise scannable HTML cards with deadline extraction.</div>
             <div class="node-metrics">
               <span>Model: 3.8-flash</span>
-              <span>Retries: 3x</span>
+              <span>503 Fallback</span>
             </div>
             <div class="port-dot port-out" id="port-gemini-out"></div>
           </div>
 
           <!-- Node 5: Gmail SMTP Dispatcher -->
-          <div class="node-card" id="node-smtp" style="left: 1260px; top: 180px;" onclick="selectNode('smtp')">
+          <div class="node-card" id="node-smtp" style="left: 1280px; top: 90px;" onclick="selectNode('smtp')">
             <div class="port-dot port-in" id="port-smtp-in"></div>
             <div class="node-header">
-              <span class="meta-badge badge-smtp">Notification</span>
+              <span class="node-badge badge-smtp">Notification</span>
               <div class="node-status-dot"></div>
             </div>
             <div class="node-title-row">
               <div class="node-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e41e3f" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
-              <div class="node-name">Gmail SMTP (SSL)</div>
+              <div>
+                <div class="node-name">Gmail SMTP SSL</div>
+                <div style="font-size: 11px; color: var(--corp-danger); font-weight: 600;">Port 465 SSL</div>
+              </div>
             </div>
-            <div class="node-subtitle">Multipart (HTML + Plain text) to student inbox</div>
+            <div class="node-subtitle">Instant alert delivery to student inbox with responsive HTML layout.</div>
             <div class="node-metrics">
-              <span>Port: 465 SSL</span>
-              <span>Instant Alert</span>
+              <span>Latency: 420ms</span>
+              <span>Encrypted</span>
             </div>
             <div class="port-dot port-out" id="port-smtp-out"></div>
           </div>
 
-          <!-- Node 6: Git Auto-Commit State -->
-          <div class="node-card" id="node-git" style="left: 1560px; top: 180px;" onclick="selectNode('git')">
-            <div class="port-dot port-in" id="port-git-in"></div>
+          <!-- Node 6: Google Calendar Sync -->
+          <div class="node-card" id="node-gcal" style="left: 1280px; top: 270px;" onclick="selectNode('gcal')">
+            <div class="port-dot port-in" id="port-gcal-in"></div>
             <div class="node-header">
-              <span class="meta-badge badge-git">Persistence</span>
+              <span class="node-badge badge-gcal">Calendar Sync</span>
               <div class="node-status-dot"></div>
             </div>
             <div class="node-title-row">
               <div class="node-icon-box">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#31a24c" stroke-width="2"><circle cx="12" cy="12" r="4"></circle><line x1="1.05" y1="12" x2="7" y2="12"></line><line x1="17.01" y1="12" x2="22.96" y2="12"></line></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
               </div>
-              <div class="node-name">Git Commit State</div>
+              <div>
+                <div class="node-name">Google Calendar</div>
+                <div style="font-size: 11px; color: #0284C7; font-weight: 600;">Service Account API</div>
+              </div>
             </div>
-            <div class="node-subtitle">github-actions[bot] pushes seen_updates.json</div>
+            <div class="node-subtitle">Syncs lab deadlines and assignment dates directly into your Google Calendar.</div>
             <div class="node-metrics">
-              <span>Msg: [skip ci]</span>
-              <span>Synced</span>
+              <span>API: Calendar v3</span>
+              <span>Reminders: ON</span>
+            </div>
+            <div class="port-dot port-out" id="port-gcal-out"></div>
+          </div>
+
+          <!-- Node 7: Git State Commit -->
+          <div class="node-card" id="node-git" style="left: 1590px; top: 180px;" onclick="selectNode('git')">
+            <div class="port-dot port-in" id="port-git-in"></div>
+            <div class="node-header">
+              <span class="node-badge badge-git">Storage</span>
+              <div class="node-status-dot"></div>
+            </div>
+            <div class="node-title-row">
+              <div class="node-icon-box">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="18" r="3"></circle><circle cx="6" cy="6" r="3"></circle><circle cx="18" cy="6" r="3"></circle><path d="M18 9v2a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V9"></path><line x1="12" y1="13" x2="12" y2="15"></line></svg>
+              </div>
+              <div>
+                <div class="node-name">Git Commit State</div>
+                <div style="font-size: 11px; color: var(--corp-success); font-weight: 600;">origin/main [skip ci]</div>
+              </div>
+            </div>
+            <div class="node-subtitle">Pushes updated seen_updates.json back to repository for next cycle.</div>
+            <div class="node-metrics">
+              <span>Auto-Push: [skip ci]</span>
+              <span>Branch: main</span>
             </div>
           </div>
         </div>
 
-        <!-- Canvas Controls Dock (Meta Round Icon Buttons) -->
+        <!-- Floating Canvas Zoom & Reset Dock -->
         <div class="canvas-dock">
           <button class="dock-btn" onclick="zoomCanvas(1.2)" title="Zoom In">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
           </button>
           <button class="dock-btn" onclick="zoomCanvas(0.8)" title="Zoom Out">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
           </button>
           <button class="dock-btn" onclick="resetCanvasView()" title="Fit View">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- TAB 2: LIVE LOGS & HISTORY -->
+    <!-- TAB 2: LIVE LOGS & TELEMETRY -->
     <div id="tab-logs" class="tab-content">
       <div class="logs-container">
-        <!-- Meta Reassurance / Metric Tiles -->
-        <div class="meta-metrics-grid">
-          <div class="why-buy-tile">
-            <div class="metric-number">100%</div>
-            <div class="metric-sublabel">System Reliability</div>
+        <!-- Metrics Grid -->
+        <div class="metrics-summary-grid">
+          <div class="metric-card-box">
+            <div class="metric-number-val" id="metricTrackedCount">10</div>
+            <div class="metric-label-sub">Tracked Courses & Labs</div>
           </div>
-          <div class="why-buy-tile">
-            <div class="metric-number" id="metricTrackedCount">3</div>
-            <div class="metric-sublabel">Tracked Courses & Labs</div>
+          <div class="metric-card-box">
+            <div class="metric-number-val">100%</div>
+            <div class="metric-label-sub">Pipeline Success Rate</div>
           </div>
-          <div class="why-buy-tile">
-            <div class="metric-number">1.4s</div>
-            <div class="metric-sublabel">Average Run Latency</div>
+          <div class="metric-card-box">
+            <div class="metric-number-val">1.4s</div>
+            <div class="metric-label-sub">Avg Execution Time</div>
           </div>
-          <div class="why-buy-tile">
-            <div class="metric-number">2h</div>
-            <div class="metric-sublabel">Automated Cadence</div>
+          <div class="metric-card-box">
+            <div class="metric-number-val">0</div>
+            <div class="metric-label-sub">Spam Alert Dispatches</div>
           </div>
         </div>
 
-        <!-- Meta Dark Terminal Card -->
-        <div class="terminal-card">
-          <div class="terminal-header">
-            <div class="mac-dots">
+        <!-- Terminal Window -->
+        <div class="terminal-window">
+          <div class="terminal-top-bar">
+            <div class="mac-window-dots">
               <div class="mac-dot dot-red"></div>
               <div class="mac-dot dot-yellow"></div>
               <div class="mac-dot dot-green"></div>
             </div>
-            <div class="terminal-title">academic-daemon • execution output</div>
-            <div style="display: flex; gap: 8px;">
-              <button class="btn-terminal-pill" onclick="simulateLiveRun()">⚡ Simulate Run</button>
-              <button class="btn-terminal-pill" onclick="copyTerminalLogs()">Copy</button>
-              <button class="btn-terminal-pill" onclick="clearTerminalLogs()">Clear</button>
+            <div class="terminal-title-text">academic-smart-system • github-actions-runner</div>
+            <div class="terminal-actions-row">
+              <button class="btn-terminal-action" onclick="simulateLiveRun()">⚡ Simulate Run</button>
+              <button class="btn-terminal-action" onclick="copyTerminalLogs()">Copy</button>
+              <button class="btn-terminal-action" onclick="clearTerminalLogs()">Clear</button>
             </div>
           </div>
-          <div class="terminal-body" id="terminalLogs">
-            <div class="log-line"><span class="log-ts">[18:00:00]</span> <span class="log-tag-info">[CRON]</span> GitHub Actions trigger received (cron: 0 */2 * * *)</div>
-            <div class="log-line"><span class="log-ts">[18:00:01]</span> <span class="log-tag-info">[STATE]</span> Loaded seen_updates.json (Tracking 3 previously seen items)</div>
-            <div class="log-line"><span class="log-ts">[18:00:02]</span> <span class="log-tag-scraper">[SCRAPER]</span> Scraping university Moodle portal... HTTP 200 OK</div>
-            <div class="log-line"><span class="log-ts">[18:00:03]</span> <span class="log-tag-filter">[FILTER]</span> Comparing 3 scraped items with seen_updates.json</div>
-            <div class="log-line"><span class="log-ts">[18:00:03]</span> <span class="log-tag-success">[STATUS]</span> No brand-new courses or labs. State is up to date.</div>
-            <div class="log-line"><span class="log-ts">[18:00:04]</span> <span class="log-tag-info">[SKIP]</span> Skipped Gemini REST API & Gmail dispatch to prevent inbox spam.</div>
-            <div class="log-line"><span class="log-ts">[18:00:04]</span> <span class="log-tag-git">[GIT]</span> State timestamp verified. Execution cycle complete in 1.42s.</div>
+          <div class="terminal-console-body" id="terminalLogs">
+            <div class="log-line"><span class="log-ts">[19:07:17]</span> <span class="log-tag-info">[CRON]</span> GitHub Actions scheduled trigger received (cron: 0 */2 * * *)</div>
+            <div class="log-line"><span class="log-ts">[19:07:18]</span> <span class="log-tag-info">[STATE]</span> Loaded seen_updates.json (Tracking 10 previously seen items)</div>
+            <div class="log-line"><span class="log-ts">[19:07:19]</span> <span class="log-tag-scraper">[SCRAPER]</span> Crawling sciences-courses.univ-setif.dz... HTTP 200 OK</div>
+            <div class="log-line"><span class="log-ts">[19:07:20]</span> <span class="log-tag-filter">[FILTER]</span> Comparing scraped items with SHA-256 state hashes</div>
+            <div class="log-line"><span class="log-ts">[19:07:21]</span> <span class="log-tag-success">[STATUS]</span> No brand-new courses or labs found. State is up-to-date.</div>
+            <div class="log-line"><span class="log-ts">[19:07:22]</span> <span class="log-tag-info">[SKIP]</span> Skipped Gemini AI & Gmail alert to prevent inbox spam.</div>
+            <div class="log-line"><span class="log-ts">[19:07:23]</span> <span class="log-tag-git">[GIT]</span> State timestamp verified. Execution cycle complete in 1.42s.</div>
           </div>
         </div>
       </div>
@@ -1419,23 +1717,23 @@
     <!-- TAB 3: TRACKED COURSES & LABS -->
     <div id="tab-tracker" class="tab-content">
       <div class="tracker-container">
-        <!-- Toolbar: Search Pill & Pill Tabs -->
+        <!-- Toolbar: Search Input & Filter Tabs -->
         <div class="tracker-toolbar">
-          <div class="search-pill-container">
-            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" class="search-pill" id="courseSearchInput" placeholder="Search courses, labs (TP), directed work (TD)..." oninput="applyFilters()">
+          <div class="search-input-wrapper">
+            <svg class="search-icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" class="search-input-field" id="courseSearchInput" placeholder="Search courses, labs (TP), directed work (TD)..." oninput="applyFilters()">
           </div>
-          <div class="pill-filter-row">
-            <button class="button-pill-tab active" onclick="setFilter('all', this)">All Items</button>
-            <button class="button-pill-tab" onclick="setFilter('Cours', this)">Cours</button>
-            <button class="button-pill-tab" onclick="setFilter('TP', this)">Labs (TP)</button>
-            <button class="button-pill-tab" onclick="setFilter('TD', this)">Work (TD)</button>
+          <div class="filter-buttons-row">
+            <button class="filter-tab-btn active" onclick="setFilter('all', this)">All Items</button>
+            <button class="filter-tab-btn" onclick="setFilter('Cours', this)">Cours</button>
+            <button class="filter-tab-btn" onclick="setFilter('TP', this)">Labs (TP)</button>
+            <button class="filter-tab-btn" onclick="setFilter('TD', this)">Work (TD)</button>
           </div>
         </div>
 
         <!-- Course Cards List Container -->
         <div class="course-card-grid" id="courseListGrid">
-          <!-- Dynamically populated via JavaScript / seen_updates.json -->
+          <!-- Dynamically populated from seen_updates.json with dynamic countdown badges -->
         </div>
       </div>
     </div>
@@ -1460,24 +1758,24 @@
   </nav>
 
   <!-- ========================================================================
-       Node Inspector Panel (Meta Slide-Out / Mobile Bottom Sheet)
+       Node Inspector Panel (border-radius: 20px)
        ======================================================================== -->
   <aside class="inspector-panel" id="inspectorPanel">
     <div class="inspector-drag-handle"></div>
     <div class="inspector-header">
       <div class="inspector-title-wrap">
-        <span class="meta-badge badge-trigger" id="inspBadge">TRIGGER</span>
-        <h3 style="font-size: 16px; font-weight: 700; color: var(--meta-ink-deep);" id="inspTitle">Node Inspector</h3>
+        <span class="node-badge badge-trigger" id="inspBadge">TRIGGER</span>
+        <h3 style="font-size: 16px; font-weight: 700; color: var(--corp-text);" id="inspTitle">Node Inspector</h3>
       </div>
       <button class="inspector-close-btn" onclick="closeInspector()">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
 
     <div class="inspector-body">
       <div class="param-group">
         <div class="param-label">Description</div>
-        <div style="font-size: 14px; color: var(--meta-charcoal); line-height: 1.5;" id="inspDesc">
+        <div style="font-size: 13.5px; color: var(--corp-text-muted); line-height: 1.5;" id="inspDesc">
           Automated schedule node triggering the academic scraper.
         </div>
       </div>
@@ -1494,7 +1792,7 @@
         <div class="json-code-box" id="inspInputJson">
 {
   "trigger": "cron",
-  "scheduled_time": "2026-11-21T18:00:00Z"
+  "scheduled_time": "2026-11-21T19:00:00Z"
 }
         </div>
       </div>
@@ -1504,13 +1802,13 @@
         <div class="json-code-box" id="inspOutputJson">
 {
   "status": "success",
-  "items_scraped": 3,
+  "items_scraped": 10,
   "new_items_found": 0
 }
         </div>
       </div>
 
-      <button class="btn-pill-buy" onclick="testSelectedNode()" style="justify-content: center; width: 100%;">
+      <button class="btn-inspector-action" onclick="testSelectedNode()">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
         <span>Test Node Execution</span>
       </button>
@@ -1518,79 +1816,87 @@
   </aside>
 
   <!-- ========================================================================
-       Email Preview Modal (Meta Clean Design)
+       Email Alert Preview Modal (Clean Corporate Styling)
        ======================================================================== -->
-  <div class="modal-overlay" id="emailModal" onclick="if(event.target === this) closeEmailPreviewModal()">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div class="modal-title">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0064e0" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          Gemini 3.8 Flash — Scannable HTML Email Alert Preview
+  <div class="modal-backdrop-overlay" id="emailModal" onclick="if(event.target === this) closeEmailPreviewModal()">
+    <div class="modal-box-card">
+      <div class="modal-header-bar">
+        <div class="modal-title-heading">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Gemini 3.8 Flash — Scannable Email Alert Preview
         </div>
         <button class="inspector-close-btn" onclick="closeEmailPreviewModal()">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
-      <div class="modal-body">
-        <div class="email-preview-frame">
-          <div style="border-bottom: 1px solid #dee3e9; padding-bottom: 16px; margin-bottom: 20px;">
-            <span style="background: rgba(0, 100, 224, 0.1); color: #0064e0; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px; text-transform: uppercase;">
-              Academic Alert
-            </span>
-            <h2 style="font-size: 24px; font-weight: 700; color: #0a1317; margin: 12px 0 4px 0; letter-spacing: -0.2px;">
-              New Course & Lab Updates
+      <div class="modal-scrollable-body">
+        <div class="email-container-box">
+          <div style="border-bottom: 1px solid #E2E8F0; padding-bottom: 16px; margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; justify-content: space-between;">
+              <span style="background: #EFF6FF; color: #2563EB; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 9999px; text-transform: uppercase;">
+                🎓 Academic Alert
+              </span>
+              <span style="font-size: 12px; color: #64748B;">Sétif, Algeria</span>
+            </div>
+            <h2 style="font-size: 22px; font-weight: 700; color: #0F172A; margin: 12px 0 4px 0; letter-spacing: -0.2px;">
+              New Course & Lab Updates Drop
             </h2>
-            <p style="font-size: 14px; color: #5d6c7b; margin: 0;">
-              2 brand-new updates posted in Computer Science / AI Engineering.
+            <p style="font-size: 13.5px; color: #64748B; margin: 0;">
+              Ferhat Abbas University Sétif 1 • Computer Science / AI Engineering
             </p>
           </div>
 
           <!-- Card 1: TP -->
-          <div style="background: #ffffff; border: 1px solid #dee3e9; border-radius: 24px; padding: 20px; margin-bottom: 16px;">
+          <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 6px rgba(15,23,42,0.04);">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="background: #31a24c; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px;">
+              <span style="background: #DCFCE7; color: #16A34A; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">
                 TP / LAB
               </span>
-              <span style="font-size: 13px; color: #5d6c7b; font-weight: 600;">Deep Learning & Vision</span>
+              <span style="font-size: 13px; color: #64748B; font-weight: 600;">Machine Learning</span>
             </div>
-            <h4 style="font-size: 17px; font-weight: 700; color: #0a1317; margin: 6px 0;">
-              TP 2: Transformer Attention Mechanism & PyTorch ViT
+            <h4 style="font-size: 16.5px; font-weight: 700; color: #0F172A; margin: 6px 0;">
+              TP 2: Implementation of Transformer Attention Mechanism & PyTorch ViT
             </h4>
-            <div style="display: inline-block; background: rgba(247, 185, 40, 0.2); color: #92400e; font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin: 8px 0;">
-              ⏰ Deadline: Thursday, Nov 28 at 23:59
+            <div style="display: inline-flex; align-items: center; gap: 6px; background: #FEF9C3; border: 1px solid #FDE047; color: #854D0E; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 8px 0;">
+              ⏰ Deadline: 2026-11-26 23:59 (Safe: > 1 day)
             </div>
-            <p style="font-size: 14px; color: #444950; margin: 8px 0 16px 0; line-height: 1.5;">
-              Submit PyTorch code + experimental report before deadline.<br>
-              <span style="direction: rtl; unicode-bidi: embed; color: #5d6c7b;">يرجى تسليم الكود البرمجي والتقرير قبل يوم الخميس القادم.</span>
+            <p style="font-size: 13.5px; color: #475569; margin: 8px 0 16px 0; line-height: 1.5;">
+              PyTorch implementation of Scaled Dot-Product Attention, Multi-Head Attention and Vision Transformer on CIFAR-10.
             </p>
-            <a href="https://moodle.univ.edu" target="_blank" style="display: inline-block; background: #0064e0; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 22px; border-radius: 100px;">
-              Open in Moodle ↗
-            </a>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <a href="https://sciences-courses.univ-setif.dz/course/view.php?id=992" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #2563EB; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
+                Open in Moodle ↗
+              </a>
+              <span style="font-size: 12px; color: #16A34A; font-weight: 600;">✓ Synced to Google Calendar</span>
+            </div>
           </div>
 
-          <!-- Card 2: Cours -->
-          <div style="background: #ffffff; border: 1px solid #dee3e9; border-radius: 24px; padding: 20px;">
+          <!-- Card 2: HPC TP -->
+          <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 20px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 6px rgba(15,23,42,0.04);">
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
-              <span style="background: #0064e0; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px;">
-                COURS
+              <span style="background: #DCFCE7; color: #16A34A; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 9999px;">
+                TP / LAB
               </span>
-              <span style="font-size: 13px; color: #5d6c7b; font-weight: 600;">Processus Stochastiques</span>
+              <span style="font-size: 13px; color: #64748B; font-weight: 600;">Calcul haute performance</span>
             </div>
-            <h4 style="font-size: 17px; font-weight: 700; color: #0a1317; margin: 6px 0;">
-              Chapitre 2: Processus de Poisson et Chaînes de Markov
+            <h4 style="font-size: 16.5px; font-weight: 700; color: #0F172A; margin: 6px 0;">
+              TP 1: Parallélisme Multi-cœurs avec OpenMP & MPI
             </h4>
-            <div style="font-size: 13px; color: #5d6c7b; margin: 6px 0 14px 0;">
-              📄 Slides & notes disponibles au téléchargement.
+            <div style="display: inline-flex; align-items: center; gap: 6px; background: #FFEDD5; border: 1px solid #FDBA74; color: #C2410C; font-size: 12.5px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin: 8px 0;">
+              ⚠️ Deadline: 2026-11-22 14:00 (Approaching: ~18h remaining)
             </div>
+            <p style="font-size: 13.5px; color: #475569; margin: 8px 0 16px 0; line-height: 1.5;">
+              Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl).
+            </p>
             <div>
-              <a href="https://moodle.univ.edu" target="_blank" style="display: inline-block; background: #0064e0; color: #ffffff; text-decoration: none; font-size: 14px; font-weight: 700; padding: 10px 22px; border-radius: 100px;">
+              <a href="https://sciences-courses.univ-setif.dz/course/view.php?id=991" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; background: #2563EB; color: #FFFFFF; text-decoration: none; font-size: 13px; font-weight: 600; padding: 8px 18px; border-radius: 20px;">
                 Open in Moodle ↗
               </a>
             </div>
           </div>
 
-          <div style="text-align: center; margin-top: 20px; font-size: 12px; color: #8595a4;">
-            Generated by Gemini 3.8 Flash • Meta Design Voice
+          <div style="text-align: center; margin-top: 20px; font-size: 12px; color: #64748B; border-top: 1px solid #E2E8F0; padding-top: 14px;">
+            Synthesized by Gemini 3.8 Flash • Developed by Serai Houssem Eddine
           </div>
         </div>
       </div>
@@ -1598,44 +1904,184 @@
   </div>
 
   <!-- ========================================================================
-       JavaScript Engine
+       JavaScript Engine (State, Countdown Timers, PIN Security, n8n Canvas)
        ======================================================================== -->
   <script>
+    // Authentic Academic State Fallback matching Ferhat Abbas University Sétif 1 AI Engineering
     let stateItems = [
       {
-        "id": "cours-stochastic-processes-ch2",
-        "title": "Chapitre 2: Processus de Poisson et Chaînes de Markov",
-        "module": "Processus Stochastiques",
-        "type": "Cours",
-        "link": "https://moodle.univ.edu/mod/resource/view.php?id=3101",
-        "deadline": "N/A",
-        "first_seen": "2026-11-20T10:00:00Z",
-        "details": "Diapositives de cours et synthèse mathématique des lois de probabilité exponentielles."
-      },
-      {
-        "id": "td-optim-convex-gradient-descent",
-        "title": "TD 2: Optimisation Convexe et Descente de Gradient Stochastique",
-        "module": "Optimisation pour le Machine Learning",
-        "type": "TD",
-        "link": "https://moodle.univ.edu/mod/resource/view.php?id=3102",
-        "deadline": "2026-11-26 23:59",
-        "first_seen": "2026-11-20T14:30:00Z",
-        "details": "Série d'exercices sur les conditions KKT, dualité de Lagrange et convergence SGD."
-      },
-      {
-        "id": "tp-deep-learning-transformers",
+        "id": "setif1-ai-ml-tp2-transformers",
         "title": "TP 2: Implementation of Transformer Attention Mechanism & PyTorch ViT",
-        "module": "Deep Learning & Computer Vision",
+        "module": "ING4 Intelligence Artificielle (S7) - Machine Learning",
         "type": "TP",
-        "link": "https://moodle.univ.edu/mod/assign/view.php?id=3103",
-        "deadline": "2026-11-28 23:59",
+        "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=992",
+        "deadline": "2026-11-26 23:59",
         "first_seen": "2026-11-21T09:15:00Z",
-        "details": "Implémentation complète de Scaled Dot-Product Attention et Multi-Head Self-Attention en PyTorch."
+        "details": "PyTorch implementation of Scaled Dot-Product Attention, Multi-Head Attention and Vision Transformer on CIFAR-10."
+      },
+      {
+        "id": "setif1-ai-hpc-tp1-mpi",
+        "title": "TP 1: Calcul haute performance - Parallélisme Multi-cœurs avec OpenMP & MPI",
+        "module": "ING4 Intelligence Artificielle (S7) - Calcul haute performance",
+        "type": "TP",
+        "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=991",
+        "deadline": "2026-11-22 14:00",
+        "first_seen": "2026-11-21T10:00:00Z",
+        "details": "Benchmark de multiplication matricielle distribuée et analyse de l'accélération (Speedup / Loi d'Amdahl)."
+      },
+      {
+        "id": "setif1-ai-krr-td2-predicates",
+        "title": "TD 2: Logique des prédicats du premier ordre, Résolution et Closes de Horn",
+        "module": "ING4 Intelligence Artificielle (S7) - Représentation des connaissances",
+        "type": "TD",
+        "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=990",
+        "deadline": "2026-11-21 23:59",
+        "first_seen": "2026-11-21T11:30:00Z",
+        "details": "Résolution par réfutation, algorithme d'unification de Robinson et programmation logique Prolog."
+      },
+      {
+        "id": "setif1-ai-mod-sim-c1",
+        "title": "Chapitre 3: Modélisation et simulation à événements discrets",
+        "module": "ING4 Intelligence Artificielle (S7) - Modélisation et simulation",
+        "type": "Cours",
+        "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=993",
+        "deadline": "N/A",
+        "first_seen": "2026-11-21T12:00:00Z",
+        "details": "Systèmes stochastiques d'attente (files M/M/1), générateurs congruentiels pseudo-aléatoires et validation statistique."
+      },
+      {
+        "id": "setif1-ai-bi-c2",
+        "title": "Chapitre 2: Architecture des Data Warehouses et Modélisation en Étoile",
+        "module": "ING4 Intelligence Artificielle (S7) - Business Intelligence",
+        "type": "Cours",
+        "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=994",
+        "deadline": "N/A",
+        "first_seen": "2026-11-21T13:00:00Z",
+        "details": "Tables de faits, dimensions temporelles et processus ETL pour l'aide à la décision stratégique."
+      },
+      {
+        "id": "setif1-ai-ro-c1",
+        "title": "Chapitre 4: Programmation Linéaire et Méthode du Simplexe Révisée",
+        "module": "ING4 Intelligence Artificielle (S7) - Recherche opérationnelle",
+        "type": "Cours",
+        "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=995",
+        "deadline": "N/A",
+        "first_seen": "2026-11-21T14:00:00Z",
+        "details": "Formulation canonique, algorithme du simplexe à deux phases et analyse de sensibilité primale-duale."
+      },
+      {
+        "id": "setif1-ai-redaction-c1",
+        "title": "Techniques de rédaction scientifique et présentation de recherche",
+        "module": "ING4 Intelligence Artificielle (S7) - Techniques de rédaction",
+        "type": "Cours",
+        "link": "https://sciences-courses.univ-setif.dz/course/view.php?id=996",
+        "deadline": "N/A",
+        "first_seen": "2026-11-21T15:00:00Z",
+        "details": "Structure IMRAD des articles scientifiques, gestion des citations LaTeX/BibTeX et éthique académique."
       }
     ];
 
     let currentFilter = 'all';
 
+    // =========================================================================
+    // Security Access PIN Gate (Default PIN: 2026)
+    // =========================================================================
+    const CORRECT_PIN = "2026";
+    let enteredPin = "";
+
+    function checkStartupSecurity() {
+      const isUnlocked = sessionStorage.getItem('academic_smart_pin_unlocked') === 'true';
+      const modal = document.getElementById('securityPinModal');
+      if (isUnlocked) {
+        modal.classList.add('unlocked');
+      } else {
+        modal.classList.remove('unlocked');
+        updatePinDisplay();
+      }
+    }
+
+    function pressPinKey(digit) {
+      if (enteredPin.length < 4) {
+        enteredPin += digit;
+        updatePinDisplay();
+        if (enteredPin.length === 4) {
+          validateEnteredPin();
+        }
+      }
+    }
+
+    function backspacePinKey() {
+      if (enteredPin.length > 0) {
+        enteredPin = enteredPin.slice(0, -1);
+        updatePinDisplay();
+        document.getElementById('pinErrorMsg').textContent = "";
+      }
+    }
+
+    function clearPinKey() {
+      enteredPin = "";
+      updatePinDisplay();
+      document.getElementById('pinErrorMsg').textContent = "";
+    }
+
+    function updatePinDisplay() {
+      for (let i = 0; i < 4; i++) {
+        const dot = document.getElementById(`pindot-${i}`);
+        if (dot) {
+          dot.classList.toggle('filled', i < enteredPin.length);
+        }
+      }
+    }
+
+    function validateEnteredPin() {
+      if (enteredPin === CORRECT_PIN) {
+        document.getElementById('pinErrorMsg').style.color = "var(--corp-success)";
+        document.getElementById('pinErrorMsg').textContent = "✓ PIN Accepted. Unlocking...";
+        sessionStorage.setItem('academic_smart_pin_unlocked', 'true');
+        setTimeout(() => {
+          document.getElementById('securityPinModal').classList.add('unlocked');
+          enteredPin = "";
+          updatePinDisplay();
+          document.getElementById('pinErrorMsg').textContent = "";
+        }, 400);
+      } else {
+        const row = document.getElementById('pinDotsRow');
+        row.classList.add('shake');
+        document.getElementById('pinErrorMsg').style.color = "var(--corp-danger)";
+        document.getElementById('pinErrorMsg').textContent = "Incorrect PIN. Default PIN: 2026";
+        setTimeout(() => {
+          row.classList.remove('shake');
+          enteredPin = "";
+          updatePinDisplay();
+        }, 700);
+      }
+    }
+
+    function lockPlatform() {
+      sessionStorage.removeItem('academic_smart_pin_unlocked');
+      enteredPin = "";
+      updatePinDisplay();
+      document.getElementById('pinErrorMsg').textContent = "";
+      document.getElementById('securityPinModal').classList.remove('unlocked');
+    }
+
+    // Physical keyboard listener for PIN input
+    window.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('securityPinModal');
+      if (!modal.classList.contains('unlocked')) {
+        if (e.key >= '0' && e.key <= '9') {
+          pressPinKey(e.key);
+        } else if (e.key === 'Backspace') {
+          backspacePinKey();
+        } else if (e.key === 'Escape') {
+          clearPinKey();
+        }
+      }
+    });
+
+    // =========================================================================
+    // Node Inspector Configurations
+    // =========================================================================
     const nodeData = {
       trigger: {
         badge: "TRIGGER",
@@ -1647,35 +2093,43 @@
       },
       scraper: {
         badge: "DATA SOURCE",
-        title: "Moodle & Portal Web Scraper",
-        desc: "High-performance Python web crawler using requests and BeautifulSoup4. Discovers new lecture notes (Cours), lab projects (TP), and directed work (TD).",
-        params: `target_url: os.environ["PORTAL_URL"]\nmoodle_auth: "Automatic via logintoken"\nheaders: "Mozilla/5.0 (Macintosh; Intel...)"\ntimeout: 20`,
-        input: `{\n  "portal_url": "https://moodle.university.edu",\n  "auth_enabled": true\n}`,
-        output: `{\n  "status_code": 200,\n  "items_extracted": 3,\n  "categories": ["Cours", "TP", "TD"]\n}`
+        title: "University Portal Scraper",
+        desc: "High-performance Python web crawler using requests and BeautifulSoup4. Authenticates via CSRF logintoken and discovers new lecture notes (Cours), lab projects (TP), and directed work (TD).",
+        params: `portal_url: "https://sciences-courses.univ-setif.dz/"\ncategory_id: 279 (Semestre 7 IA)\ncourse_ids: ["990", "991", "992", "993", "994", "995", "996"]\ntimeout: 20`,
+        input: `{\n  "portal_url": "https://sciences-courses.univ-setif.dz/",\n  "auth_enabled": true\n}`,
+        output: `{\n  "status_code": 200,\n  "items_scraped": 10,\n  "categories": ["Cours", "TP", "TD"]\n}`
       },
       filter: {
-        badge: "LOGIC FILTER",
+        badge: "LOGIC GATE",
         title: "State Deduplicator (seen_updates.json)",
-        desc: "Deduplication gate comparing newly scraped item IDs against the committed state file. Halts execution if no updates are found to prevent spamming.",
+        desc: "Deduplication gate comparing newly scraped item SHA-256 hashes against committed state file. Halts execution if no updates are found to prevent mailbox spam.",
         params: `state_file: "seen_updates.json"\nhashing_algo: "sha256(module:title:link)[:16]"\nbehavior: "Trigger ONLY when new_items > 0"`,
-        input: `{\n  "scraped_count": 3,\n  "seen_count": 3\n}`,
+        input: `{\n  "scraped_count": 10,\n  "seen_count": 10\n}`,
         output: `{\n  "new_items_found": 0,\n  "decision": "SKIP_NOTIFICATION",\n  "reason": "State is already up-to-date"\n}`
       },
       gemini: {
         badge: "AI MODEL",
         title: "Gemini 3.8 Flash Engine",
-        desc: "Direct HTTP POST calls to the Gemini REST API (gemini-3.8-flash) with automatic 3x retry on 503 overload spikes. Synthesizes scannable HTML cards.",
+        desc: "Direct HTTP POST calls to the Gemini REST API (gemini-3.8-flash) with automatic 3x retry on 503 overload spikes. Synthesizes scannable HTML cards with deadline extraction.",
         params: `model: "gemini-3.8-flash"\nendpoint: "https://generativelanguage.googleapis.com/v1beta..."\nmaxOutputTokens: 3000\ntemperature: 0.2\nretry_on_503: true`,
-        input: `{\n  "new_items": [\n    {"type": "TP", "title": "Transformer Attention", "deadline": "Nov 28"}\n  ]\n}`,
-        output: `{\n  "status": 200,\n  "format": "clean_html_cards",\n  "bilingual": ["en", "ar"]\n}`
+        input: `{\n  "new_items": [\n    {"type": "TP", "title": "Transformer Attention", "deadline": "2026-11-26 23:59"}\n  ]\n}`,
+        output: `{\n  "status": 200,\n  "format": "clean_html_cards",\n  "language": ["fr", "en"]\n}`
       },
       smtp: {
         badge: "NOTIFICATION",
         title: "Gmail SMTP Dispatcher",
         desc: "Dispatches high-priority mobile-friendly emails through Google's secure SMTP SSL service (port 465) with multipart plain-text + HTML fallback.",
         params: `smtp_server: "smtp.gmail.com"\nport: 465\nsecurity: "SMTP_SSL"\nsender: os.environ["GMAIL_USER"]`,
-        input: `{\n  "recipient": "student@gmail.com",\n  "subject": "🎓 Academic Alert: New TP in Deep Learning",\n  "body_type": "multipart/alternative"\n}`,
+        input: `{\n  "recipient": "student@gmail.com",\n  "subject": "🎓 Academic Alert: New TP in Machine Learning",\n  "body_type": "multipart/alternative"\n}`,
         output: `{\n  "status": "delivered",\n  "response_code": "250 2.0.0 OK"\n}`
+      },
+      gcal: {
+        badge: "CALENDAR SYNC",
+        title: "Google Calendar API v3",
+        desc: "Synchronizes newly posted lab deadlines, homework submissions, and exam dates directly to Google Calendar using Service Account OAuth2 credentials.",
+        params: `api: "Google Calendar v3"\nauth: "service_account (google-auth)"\nscopes: ["calendar.events"]\ntimezone: "Africa/Algiers"\nreminders: ["24h", "2h"]`,
+        input: `{\n  "calendar_id": "primary",\n  "event_count": 1,\n  "summary": "[TP] Transformer Attention Mechanism"\n}`,
+        output: `{\n  "status": 201,\n  "event_link": "https://calendar.google.com/event?eid=...",\n  "synchronized": true\n}`
       },
       git: {
         badge: "STORAGE",
@@ -1683,16 +2137,19 @@
         desc: "Commits modified seen_updates.json back to the main branch using github-actions[bot] with [skip ci] to keep state synchronized across runs.",
         params: `git_author: "github-actions[bot]"\ncommit_msg: "chore(state): update tracked courses and labs [skip ci]"\npush_branch: "main"`,
         input: `{\n  "file": "seen_updates.json",\n  "changes": "+1 item"\n}`,
-        output: `{\n  "commit_hash": "a1b2c3d",\n  "push_status": "synced"\n}`
+        output: `{\n  "commit_hash": "783c1a7",\n  "push_status": "synced"\n}`
       }
     };
 
+    // =========================================================================
+    // Tab Navigation
+    // =========================================================================
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
       const activeContent = document.getElementById(tabId);
       if (activeContent) activeContent.classList.add('active');
 
-      document.querySelectorAll('.pill-tab-btn').forEach(btn => {
+      document.querySelectorAll('.nav-tab-btn').forEach(btn => {
         btn.classList.toggle('active', btn.getAttribute('onclick').includes(tabId));
       });
 
@@ -1705,6 +2162,9 @@
       }
     }
 
+    // =========================================================================
+    // Interactive Canvas Navigation (Pan & Zoom)
+    // =========================================================================
     let scale = 0.95;
     let panX = 40;
     let panY = 40;
@@ -1812,15 +2272,22 @@
       const pGeminiOut  = getPortCenter('port-gemini-out');
       const pSmtpIn     = getPortCenter('port-smtp-in');
       const pSmtpOut    = getPortCenter('port-smtp-out');
+      const pGcalIn     = getPortCenter('port-gcal-in');
+      const pGcalOut    = getPortCenter('port-gcal-out');
       const pGitIn      = getPortCenter('port-git-in');
 
       setBezierCable('cable-1', 'cable-1-pulse', pTriggerOut, pScraperIn);
       setBezierCable('cable-2', 'cable-2-pulse', pScraperOut, pFilterIn);
       setBezierCable('cable-3', 'cable-3-pulse', pFilterOut, pGeminiIn);
       setBezierCable('cable-4', 'cable-4-pulse', pGeminiOut, pSmtpIn);
-      setBezierCable('cable-5', 'cable-5-pulse', pSmtpOut, pGitIn);
+      setBezierCable('cable-5', 'cable-5-pulse', pGeminiOut, pGcalIn);
+      setBezierCable('cable-6', 'cable-6-pulse', pSmtpOut, pGitIn);
+      setBezierCable('cable-7', 'cable-7-pulse', pGcalOut, pGitIn);
     }
 
+    // =========================================================================
+    // Node Selection & Inspector
+    // =========================================================================
     let currentSelectedNode = null;
 
     function selectNode(nodeKey) {
@@ -1859,6 +2326,9 @@
       }, 700);
     }
 
+    // =========================================================================
+    // State Loading & Dynamic Deadline Countdown Calculation
+    // =========================================================================
     async function loadLiveState() {
       try {
         const res = await fetch('./seen_updates.json', { cache: 'no-store' });
@@ -1872,6 +2342,78 @@
         console.log('ℹ️ Using seed state fallback:', err.message);
       }
       renderCourses();
+    }
+
+    /**
+     * Compute dynamic countdown timer badge with conditional color-coding:
+     * - Yellow: > 1 day (> 24 hours remaining)
+     * - Orange: 6h - 24h remaining
+     * - Red: < 6h remaining (Urgent / Critical)
+     */
+    function computeDeadlineBadge(deadlineStr) {
+      if (!deadlineStr || deadlineStr === 'N/A' || deadlineStr.trim() === '') {
+        return `<div class="deadline-countdown-badge countdown-neutral">📄 No deadline specified</div>`;
+      }
+
+      // Parse deadline (format: YYYY-MM-DD HH:mm or ISO)
+      let targetDate;
+      if (deadlineStr.includes('T')) {
+        targetDate = new Date(deadlineStr);
+      } else {
+        const parts = deadlineStr.trim().split(/[\s-]+|:/);
+        if (parts.length >= 5) {
+          targetDate = new Date(parseInt(parts[0]), parseInt(parts[1]) - 1, parseInt(parts[2]), parseInt(parts[3]), parseInt(parts[4]));
+        } else {
+          targetDate = new Date(deadlineStr.replace(' ', 'T'));
+        }
+      }
+
+      if (isNaN(targetDate.getTime())) {
+        return `<div class="deadline-countdown-badge countdown-neutral">⏰ Deadline: ${deadlineStr}</div>`;
+      }
+
+      const now = new Date();
+      const diffMs = targetDate.getTime() - now.getTime();
+
+      if (diffMs <= 0) {
+        return `<div class="deadline-countdown-badge countdown-neutral" style="color: var(--corp-danger); border-color: #FCA5A5;">🚨 Deadline Expired</div>`;
+      }
+
+      const diffHours = diffMs / (1000 * 60 * 60);
+      const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+
+      // 1. Safe timeline: > 1 day (> 24 hours remaining) -> Yellow Badge
+      if (diffHours > 24) {
+        return `
+          <div class="deadline-countdown-badge countdown-safe" data-deadline="${deadlineStr}">
+            <span>⏳</span>
+            <span>${days}d ${hours}h ${minutes}m left</span>
+            <span style="opacity: 0.75; font-size: 11px;">(Due ${deadlineStr})</span>
+          </div>
+        `;
+      }
+
+      // 2. Approaching deadline: 6h to 24h remaining -> Orange Badge
+      if (diffHours >= 6) {
+        return `
+          <div class="deadline-countdown-badge countdown-warning" data-deadline="${deadlineStr}">
+            <span>⚠️</span>
+            <span>${hours}h ${minutes}m ${seconds}s left</span>
+            <span style="opacity: 0.75; font-size: 11px;">(Due today/tomorrow)</span>
+          </div>
+        `;
+      }
+
+      // 3. Urgent / Critical deadline: < 6h remaining -> Red Badge
+      return `
+        <div class="deadline-countdown-badge countdown-urgent" data-deadline="${deadlineStr}">
+          <span>🔥</span>
+          <span>${hours}h ${minutes}m ${seconds}s left (Critical)</span>
+        </div>
+      `;
     }
 
     function renderCourses() {
@@ -1892,10 +2434,10 @@
 
       if (filtered.length === 0) {
         grid.innerHTML = `
-          <div style="text-align: center; padding: 48px 20px; color: var(--meta-steel);">
+          <div style="text-align: center; padding: 48px 20px; color: var(--corp-text-light);">
             <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom: 12px;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <p style="font-size: 16px; font-weight: 700; color: var(--meta-ink-deep);">No courses or labs found.</p>
-            <p style="font-size: 13px; margin-top: 4px;">Try searching for a different keyword or resetting filters.</p>
+            <p style="font-size: 16px; font-weight: 700; color: var(--corp-text);">No courses or labs found.</p>
+            <p style="font-size: 13px; margin-top: 4px;">Try searching for another keyword or resetting filters.</p>
           </div>
         `;
         return;
@@ -1903,33 +2445,31 @@
 
       filtered.forEach(item => {
         const itype = item.type.toUpperCase();
-        let badgeColor = 'var(--meta-primary)';
-        let badgeBg = 'rgba(0, 100, 224, 0.1)';
+        let badgeColor = 'var(--corp-primary)';
+        let badgeBg = 'var(--corp-primary-soft)';
         if (itype === 'TP') {
-          badgeColor = 'var(--meta-success)';
-          badgeBg = 'rgba(49, 162, 76, 0.1)';
+          badgeColor = 'var(--corp-success)';
+          badgeBg = 'var(--corp-success-soft)';
         } else if (itype === 'TD') {
-          badgeColor = 'var(--meta-oculus-purple)';
-          badgeBg = 'rgba(161, 33, 206, 0.1)';
+          badgeColor = '#7E22CE';
+          badgeBg = '#F3E8FF';
         }
 
-        const deadlineText = item.deadline && item.deadline !== 'N/A' 
-          ? `<div class="deadline-container">⏰ Deadline: ${item.deadline}</div>`
-          : `<div style="font-size: 13px; color: var(--meta-steel);">📄 No deadline specified</div>`;
+        const deadlineBadgeHtml = computeDeadlineBadge(item.deadline);
 
         const card = document.createElement('div');
-        card.className = 'card-product-feature';
+        card.className = 'course-card';
         card.innerHTML = `
           <div class="card-top-row">
-            <span class="meta-badge" style="background: ${badgeBg}; color: ${badgeColor}; font-weight: 700;">${item.type}</span>
-            <span style="font-size: 13px; font-weight: 600; color: var(--meta-steel);">${item.module}</span>
+            <span class="node-badge" style="background: ${badgeBg}; color: ${badgeColor}; font-weight: 700;">${item.type}</span>
+            <span class="course-module-tag">${item.module}</span>
           </div>
-          <h3 class="course-title">${item.title}</h3>
-          <p class="course-details">${item.details || ''}</p>
-          ${deadlineText}
+          <h3 class="course-card-title">${item.title}</h3>
+          <p class="course-card-desc">${item.details || ''}</p>
+          ${deadlineBadgeHtml}
           <div class="card-footer-row">
-            <span class="footer-meta-text">Verified Moodle Resource</span>
-            <a href="${item.link}" target="_blank" class="btn-pill-buy">
+            <span class="card-footer-meta">Verified Moodle Resource</span>
+            <a href="${item.link}" target="_blank" class="btn-card-link">
               Open Resource ↗
             </a>
           </div>
@@ -1940,7 +2480,7 @@
 
     function setFilter(filterType, btnEl) {
       currentFilter = filterType;
-      document.querySelectorAll('.button-pill-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-tab-btn').forEach(b => b.classList.remove('active'));
       btnEl.classList.add('active');
       renderCourses();
     }
@@ -1949,15 +2489,30 @@
       renderCourses();
     }
 
+    // Refresh countdown timers every 1 second
+    setInterval(() => {
+      document.querySelectorAll('.deadline-countdown-badge[data-deadline]').forEach(badge => {
+        const deadlineStr = badge.getAttribute('data-deadline');
+        if (deadlineStr) {
+          const freshHtml = computeDeadlineBadge(deadlineStr);
+          badge.outerHTML = freshHtml;
+        }
+      });
+    }, 1000);
+
+    // =========================================================================
+    // Live Terminal Actions
+    // =========================================================================
     function simulateLiveRun() {
       const terminal = document.getElementById('terminalLogs');
       const ts = new Date().toLocaleTimeString();
 
       const sequence = [
         `<span class="log-ts">[${ts}]</span> <span class="log-tag-info">[MANUAL]</span> Manual workflow dispatch triggered from web app`,
-        `<span class="log-ts">[${ts}]</span> <span class="log-tag-scraper">[SCRAPER]</span> Crawling university portal / Moodle... 200 OK`,
-        `<span class="log-ts">[${ts}]</span> <span class="log-tag-filter">[FILTER]</span> Comparing items against seen_updates.json...`,
+        `<span class="log-ts">[${ts}]</span> <span class="log-tag-scraper">[SCRAPER]</span> Crawling sciences-courses.univ-setif.dz... 200 OK`,
+        `<span class="log-ts">[${ts}]</span> <span class="log-tag-filter">[FILTER]</span> Comparing items against seen_updates.json SHA-256 hashes...`,
         `<span class="log-ts">[${ts}]</span> <span class="log-tag-gemini">[GEMINI]</span> Synthesizing scannable HTML alert via gemini-3.8-flash...`,
+        `<span class="log-ts">[${ts}]</span> <span class="log-tag-gcal">[GCAL]</span> Syncing lab deadlines with Google Calendar API v3...`,
         `<span class="log-ts">[${ts}]</span> <span class="log-tag-success">[SMTP]</span> Alert successfully delivered to Gmail inbox via SSL 465`,
         `<span class="log-ts">[${ts}]</span> <span class="log-tag-git">[GIT]</span> Updated state committed and pushed to origin/main [skip ci]`
       ];
@@ -1986,6 +2541,9 @@
       });
     }
 
+    // =========================================================================
+    // Email Preview Modal
+    // =========================================================================
     function openEmailPreviewModal() {
       document.getElementById('emailModal').classList.add('open');
     }
@@ -1994,7 +2552,11 @@
       document.getElementById('emailModal').classList.remove('open');
     }
 
+    // =========================================================================
+    // Initialization
+    // =========================================================================
     window.addEventListener('DOMContentLoaded', () => {
+      checkStartupSecurity();
       resetCanvasView();
       loadLiveState();
       window.addEventListener('resize', drawConnections);
